@@ -1,0 +1,64 @@
+			BACKLOG:
+
+
+SQL:
+Crear tabla Socios
+Crear tabla Turnos
+
+Crear tabla Cambio de Plan Medico (ID afiliado, fecha, motivo)
+Crear tabla Baja de Socios(ID afiliado, fecha)
+Crear tabla Recetas (ID afiliado, ID receta)
+Crear tabla Profesionales (ID, Nom, Ap)
+Crear tabla DisponibilidadProf(ID, ID turno, hora)
+
+APLICACION WEB:
+Crear Interface Logueo
+Crear Interfaz ABM Socios
+Crear Interfaz ABM Turnos
+Crear Interfaz ABM Pacientes
+
+Funcionalidad Busqueda
+Funcionalidad Ordenamiento
+Funcionalidad Paginado
+Crear Interfaz consulta de cambio de planes
+Crear Interfaz consulta de baja de socios
+
+
+ACLARACIONES:
+Pacientes o afiliados: Toda persona que puede ser atentida en el hospital
+Pacientes o afiliados: NO se puede moficiar nombre, apellido, DNI ni fecha de nacimiento.
+
+ABM Turnos: 
+Ingresar datos usuario
+Ingresar Profesional (texto predictivo, busqueda por nombre y apellido)
+Seleccionar Fecha (disponible para el profesional)
+Seleccionar Hora  (disponible para esa fecha)
+Seleccionar Prestador (de la lista)
+Seleccionar Plan 	(posibles del prestador)
+
+
+Tabla recetas: al eliminar alumno, se deben eliminar las recetas a su nombre
+
+
+DUDAS:
+Que es prestador? Que campos tiene?
+**Crear tabla Usuarios de la aplicacion**¿? (Lo Explican el Jueves)
+Baja logica, como se implementa?
+
+
+					SPRINTS
+
+1)
+POJOs
+Interfaces
+Tablas
+
+2)
+Consultas
+Clases Java de Implementacion
+Funcionalidad tablas WEB
+
+3)
+Funcionalidades adicionales de menor importancia
+
+
