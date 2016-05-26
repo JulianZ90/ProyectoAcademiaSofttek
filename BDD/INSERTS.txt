@@ -1,0 +1,9 @@
+INSERT INTO Profesionales (nombre, apellido, horaIngreso, horaSalida, practica)
+VALUES 
+('Pedro','Gomez',10:00:00,16:00:00)
+('Oscar','Jimenez',10:00:00,16:00:00)
+('Omar','Perez',10:00:00,16:00:00)
+('Ramiro','Rodriguez',10:00:00,16:00:00)
+('Joaquin','Sabina',10:00:00,16:00:00)
+('Juan','Ramirez',10:00:00,16:00:00)
+
