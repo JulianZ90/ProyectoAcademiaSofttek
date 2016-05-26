@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+ 
+ 	<bean id="recetaAction" class="ar.com.softtek.action.RecetaAction">
+		<property name="recetaService" ref="recetaService" />	
+	</bean>
+	
+	<bean id="recetaService" class="ar.com.softtek.service.impl.RecetaServiceImpl">
+		<property name="recetaBo" ref="recetaBo" />	
+	</bean>
+
+	<bean id="recetaBo" class="ar.com.softtek.bo.impl.RecetaBoImpl" >
+		<property name="recetaDAO" ref="recetaDAO" />
+	</bean>
+	
+   	<bean id="recetaDAO" class="ar.com.softtek.dao.impl.RecetaDAOImpl" >
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+ 
+</beans>

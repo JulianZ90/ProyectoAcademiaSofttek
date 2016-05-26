@@ -14,14 +14,14 @@
     
         <action name="pacienteAlta"
             class="ar.com.softtek.action.NuevoPacienteAction">
-            <result name="success">Alta de Afiliado.html</result>
-            <result name="error">Alta de Afiliado.html</result>
+            <result name="success">AltadeAfiliado.html</result>
+            <result name="error">AltadeAfiliado.html</result>
         </action>
     
         <action name="pacienteBaja"
             class="ar.com.softtek.action.BajaPacienteAction">
-            <result name="success">Baja de Afiliado.html</result>
-            <result name="error">Baja de Afiliado.html</result>
+            <result name="success">BajadeAfiliado.html</result>
+            <result name="error">BajadeAfiliado.html</result>
         </action>
     
         
@@ -33,7 +33,7 @@
         
         
         <action name="pacientes"
-            class="ar.com.softtek.action.PacientesAction">
+            class="ar.com.softtek.action.ListaPacientesAction">
             <result name="success">Pacientes.jsp</result>
             <result name="error">Welcome.jsp</result>
         </action>        
