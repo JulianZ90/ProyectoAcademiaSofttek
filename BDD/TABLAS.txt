@@ -18,8 +18,9 @@ create table Pacientes(
 	fecNac date,
 	sexo char,
 	estadoCivil varchar(20),
-	cantHijos int,
-	planMedico int references Planes(idPlan)
+	familiaresACargo int,
+	planMedico int references Planes(idPlan),
+	fechaBaja date
 )
 
 create table Recetas(
@@ -58,18 +59,3 @@ create table turnosProf(
 	horaHasta time
 )
 
-create table exPacientes(
-	idEPaciente int NOT NULL primary key,
-	nombre varchar(50),
-	apellido varchar(50),
-	dni int,
-	tipoDni varchar(5),
-	telefono int,
-	mail varchar(50)
-	fecNac date,
-	sexo char,
-	estadoCivil varchar(20),
-	cantHijos int,
-	planMedico int references Planes(idPlan)
-	fechaBaja date;
-)

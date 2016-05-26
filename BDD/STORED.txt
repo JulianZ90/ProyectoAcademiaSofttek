@@ -1,0 +1,43 @@
+CREATE PROCEDURE bajarPaciente
+    @paciente int
+AS 
+	update pacientes
+	set fechaBaja=GETDATE()
+	where nroPaciente=@paciente;
+
+EXEC bajarPaciente @paciente = 2;
+
+_______________________________________________________
+
+CREATE PROCEDURE modificarDatos
+    @paciente int,
+    @tel int,
+    @estadoCivil varchar(20),
+    @cantFamiliares int,
+    @plan int,
+    @motivo varchar(200)
+AS 
+IF @plan = (SELECT planMedico FROM Pacientes WHERE nroPaciente=@paciente) 
+(
+	update pacientes
+	set 
+		telefono=@tel,
+		estadoCivil=@estadoCivil,
+		familiaresACargo=@cantFamiliares,
+	where nroPaciente=@paciente;
+)
+ELSE
+(
+	update pacientes
+	set 
+		planMedico=@plan,
+		telefono=@tel,
+		estadoCivil=@estadoCivil,
+		familiaresACargo=@cantFamiliares,
+	where nroPaciente=@paciente;
+	
+	insert into cambioPlan (idPaciente,motivo)
+	values (@paciente,@plan,DATETIME(),@motivo)
+)
+
+EXEC modificarDatos @paciente = nro, @telefono=tel, @estadoCivil=estado, @cantFamiliares=cant, @plan=plan;

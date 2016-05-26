@@ -1,0 +1,23 @@
+create view pacientesActivos
+as
+select *
+from Pacientes 
+where fechaBaja IS NULL;
+
+create view exPacientes
+as
+select *
+from Pacientes
+where fechaBaja IS NOT NULL;
+
+create view recetasActivas
+as
+select *
+from recetas 
+where nroPaciente IN (select nroPaciente from pacientesActivos);
+
+create view turnosActivos
+as
+select *
+from turnos 
+where nroPaciente IN (select nroPaciente from pacientesActivos);
