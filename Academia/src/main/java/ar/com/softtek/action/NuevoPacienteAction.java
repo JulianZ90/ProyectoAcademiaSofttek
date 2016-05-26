@@ -1,26 +1,26 @@
 package ar.com.softtek.action;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.ModelDriven;
 
-import ar.com.softtek.model.Paciente;
+
 
 
  
 public class NuevoPacienteAction extends ActionSupport{
-
+	private String name;
+	
+	  public String getName() {
+	        return name;
+	    }
+	    
+	    public void setName(String name) {
+	        this.name = name;
+	    }
+	
 	public String execute() {
-				
-	        
-//			if (pacienteBo(new Paciente())) {
-//	            return "success";
-//	        }
-//	        else
-//	        	return "error";
+
+
 	    
 		if(true)
 		{
