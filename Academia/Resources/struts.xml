@@ -12,16 +12,37 @@
  
     <package name="default" extends="struts-default" namespace="/">
     
-        <action name="pais"
-            class="net.viralpatel.struts2.action.TraeListaAction">
-            <result name="success">Paises.jsp</result>
-            <result name="error">Login.jsp</result>
+        <action name="pacienteAlta"
+            class="ar.com.softtek.action.NuevoPacienteAction">
+            <result name="success">Alta de Afiliado.html</result>
+            <result name="error">Alta de Afiliado.html</result>
         </action>
+    
+        <action name="pacienteBaja"
+            class="ar.com.softtek.action.BajaPacienteAction">
+            <result name="success">Baja de Afiliado.html</result>
+            <result name="error">Baja de Afiliado.html</result>
+        </action>
+    
         
         <action name="login"
-            class="net.viralpatel.struts2.action.LoginAction">
+            class="ar.com.softtek.action.LoginAction">
             <result name="success">Welcome.jsp</result>
             <result name="error">Login.jsp</result>
         </action>        
+        
+        
+        <action name="pacientes"
+            class="ar.com.softtek.action.PacientesAction">
+            <result name="success">Pacientes.jsp</result>
+            <result name="error">Welcome.jsp</result>
+        </action>        
+    
+        <action name="turnos"
+            class="ar.com.softtek.action.TurnosAction">
+            <result name="success">Turnos.jsp</result>
+            <result name="error">Welcome.jsp</result>
+        </action>        
+    
     </package>
 </struts>
