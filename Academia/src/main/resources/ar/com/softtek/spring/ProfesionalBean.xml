@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+ 
+ 	<bean id="profesionalAction" class="ar.com.softtek.action.ProfesionalAction">
+		<property name="profesionalService" ref="profesionalService" />	
+	</bean>
+	
+	<bean id="profesionalService" class="ar.com.softtek.service.impl.ProfesionalServiceImpl">
+		<property name="profesionalBo" ref="profesionalBo" />	
+	</bean>
+
+	<bean id="profesionalBo" class="ar.com.softtek.bo.impl.ProfesionalBoImpl" >
+		<property name="profesionalDAO" ref="profesionalDAO" />
+	</bean>
+	
+   	<bean id="profesionalDAO" class="ar.com.softtek.dao.impl.ProfesionalDAOImpl" >
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+ 
+</beans>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+ 
+ 	<bean id="pacienteAction" class="ar.com.softtek.action.PacienteAction">
+		<property name="pacienteService" ref="pacienteService" />	
+	</bean>
+	
+	<bean id="pacienteService" class="ar.com.softtek.service.impl.PacienteServiceImpl">
+		<property name="pacienteBo" ref="pacienteBo" />	
+	</bean>
+
+	<bean id="pacienteBo" class="ar.com.softtek.bo.impl.PacienteBoImpl" >
+		<property name="pacienteDAO" ref="pacienteDAO" />
+	</bean>
+	
+   	<bean id="pacienteDAO" class="ar.com.softtek.dao.impl.PacienteDAOImpl" >
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+ 
+</beans>
