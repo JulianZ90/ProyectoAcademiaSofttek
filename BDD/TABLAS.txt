@@ -46,7 +46,7 @@ create table cambioPlan(
 )
 
 create table turnosPrest(
-	isTurnoP int IDENTITY (1,1) NOT NULL primary key,
+	idTurnoP int IDENTITY (1,1) NOT NULL primary key,
 	Id_Prestador int references Prestadores(Id_Prestador),
 	fecha date,
 	horaDesde time,
