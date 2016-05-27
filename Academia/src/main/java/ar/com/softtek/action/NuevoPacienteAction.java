@@ -1,6 +1,8 @@
 package ar.com.softtek.action;
 
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import com.opensymphony.xwork2.ActionSupport;
 
 
@@ -8,6 +10,11 @@ import com.opensymphony.xwork2.ActionSupport;
 
  
 public class NuevoPacienteAction extends ActionSupport{
+	
+	private static final long serialVersionUID = 1L;
+	private static final Logger log = LogManager.getLogger("NuevoPacienteAction: ");
+
+	
 	private String name;
 	
 	  public String getName() {
@@ -24,7 +31,9 @@ public class NuevoPacienteAction extends ActionSupport{
 	    
 		if(true)
 		{
-			
+					
+		log.info("Exito");
+
 			return "success";
 		}
 		else
