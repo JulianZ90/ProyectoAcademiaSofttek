@@ -15,7 +15,7 @@
         <action name="nuevoPaciente"
             class="ar.com.softtek.action.NuevoPacienteAction">
             <result name="success">Success.jsp</result>
-            <result name="error">AltadeAfiliado.jsp</result>
+            <result name="error">AltadeAfiliado.html</result>
         </action>
     
       <!--   <action name="bajaPaciente"
