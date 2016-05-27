@@ -3,7 +3,7 @@ CREATE PROCEDURE bajarPaciente
 AS 
 	update pacientes
 	set fechaBaja=GETDATE()
-	where nroPaciente=@paciente;
+	where idPaciente=@paciente;
 
 EXEC bajarPaciente @paciente = 2;
 
@@ -18,14 +18,14 @@ CREATE PROCEDURE modificarDatos
     @motivo varchar(200)
 AS 
 BEGIN
-	IF @plan = (SELECT planMedico FROM Pacientes WHERE nroPaciente=@paciente) 
+	IF @plan = (SELECT planMedico FROM Pacientes WHERE idPaciente=@paciente) 
 	BEGIN
 		UPDATE Pacientes
 		set 
 			telefono=@tel,
 			estadoCivil=@estadoCivil,
 			familiaresACargo=@cantFamiliares
-		where nroPaciente=@paciente;
+		where idPaciente=@paciente;
 	END
 	ELSE
 	BEGIN
@@ -35,7 +35,7 @@ BEGIN
 			telefono=@tel,
 			estadoCivil=@estadoCivil,
 			familiaresACargo=@cantFamiliares
-		where nroPaciente=@paciente;
+		where idPaciente=@paciente;
 	
 		insert into cambioPlan (idPaciente,idPlan,fecha,motivo)
 		values (@paciente,@plan,GETDATE(),@motivo)
