@@ -1,4 +1,4 @@
-package util;
+package ar.com.softtek.util;
 
 import java.io.FileInputStream;
 import java.io.IOException;
