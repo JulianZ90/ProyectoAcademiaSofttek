@@ -17,27 +17,29 @@ CREATE PROCEDURE modificarDatos
     @plan int,
     @motivo varchar(200)
 AS 
-IF @plan = (SELECT planMedico FROM Pacientes WHERE nroPaciente=@paciente) 
-(
-	update pacientes
-	set 
-		telefono=@tel,
-		estadoCivil=@estadoCivil,
-		familiaresACargo=@cantFamiliares,
-	where nroPaciente=@paciente;
-)
-ELSE
-(
-	update pacientes
-	set 
-		planMedico=@plan,
-		telefono=@tel,
-		estadoCivil=@estadoCivil,
-		familiaresACargo=@cantFamiliares,
-	where nroPaciente=@paciente;
+BEGIN
+	IF @plan = (SELECT planMedico FROM Pacientes WHERE nroPaciente=@paciente) 
+	BEGIN
+		UPDATE Pacientes
+		set 
+			telefono=@tel,
+			estadoCivil=@estadoCivil,
+			familiaresACargo=@cantFamiliares
+		where nroPaciente=@paciente;
+	END
+	ELSE
+	BEGIN
+		UPDATE pacientes
+		set 
+			planMedico=@plan,
+			telefono=@tel,
+			estadoCivil=@estadoCivil,
+			familiaresACargo=@cantFamiliares
+		where nroPaciente=@paciente;
 	
-	insert into cambioPlan (idPaciente,motivo)
-	values (@paciente,@plan,DATETIME(),@motivo)
-)
+		insert into cambioPlan (idPaciente,idPlan,fecha,motivo)
+		values (@paciente,@plan,GETDATE(),@motivo)
+	END
+END
 
 EXEC modificarDatos @paciente = nro, @telefono=tel, @estadoCivil=estado, @cantFamiliares=cant, @plan=plan;

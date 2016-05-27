@@ -1,10 +1,10 @@
 create table Profesionales(
-	idProfesional int IDENTITY (1,1) NOT NULL primary key,
+	nroProfesional int IDENTITY (1,1) NOT NULL primary key,
 	nombre varchar(50),
 	apellido varchar(50),
 	horaIngreso time,
 	horaSalida time,
-	practica int references Practicas(idPractica)
+	practica int references Practicas(Codigo)
 )
 
 create table Pacientes(
@@ -14,45 +14,46 @@ create table Pacientes(
 	dni int,
 	tipoDni varchar(5),
 	telefono int,
-	mail varchar(50)
+	mail varchar(50),
 	fecNac date,
 	sexo char,
 	estadoCivil varchar(20),
 	familiaresACargo int,
-	planMedico int references Planes(idPlan),
+	planMedico int references [plan](id_plan),
 	fechaBaja date
 )
 
 create table Recetas(
-	idReceta int IDENTITY (1,1) NOT NULL primary key,
-	idPaciente int references Pacientes(idPaciente) ON DELETE CASCADE,
-	idProfesional int references Profesionales(idProfesional) ON DELETE CASCADE,
+	nroReceta int IDENTITY (1,1) NOT NULL primary key,
+	nroPaciente int references Pacientes(nroPaciente) ON DELETE CASCADE,
+	nroProfesional int references Profesionales(idProfesional) ON DELETE CASCADE,
 	descripcion varchar(200)	
 )
+
 
 create table Turnos(
 	nroTurno int IDENTITY (1,1) NOT NULL primary key,
 	nombre varchar(50),
 	apellido varchar(50),
-	nroAfiliado int references Pacientes(nroPaciente),
-	planMedico int references Planes(idPlan),
-	fechaLlegada datetime,
-	fechaAtencion datetime,
-	idPrestador int references Prestadores(idPrestador),
+	nroPaciente int references Pacientes(nroPaciente),
+	planMedico int references [plan](id_plan),
+	horaLlegada datetime,
+	horaAtencion datetime,
+	idPrestador int references Prestadores(Id_Prestador),
 	importe int,
 	observaciones varchar(200)	
 )
 
 create table cambioPlan(
-	idCambio int IDENTITY (1,1) NOT NULL primary key,
-	idPaciente int references Pacientes(idPaciente),
-	idPlan int references Planes(idPlan),
+	nroCambio int IDENTITY (1,1) NOT NULL primary key,
+	nroPaciente int references Pacientes(nroPaciente),
+	nroPlan int references [plan](id_plan),
 	fecha date,
 	motivo varchar(200)
 )
 
 create table turnosProf(
-	idTurnoP int IDENTITY (1,1) NOT NULL primary key,
+	nroTurnoP int IDENTITY (1,1) NOT NULL primary key,
 	profesional int references Profesionales(idProfesional),
 	fecha date,
 	horaDesde time,

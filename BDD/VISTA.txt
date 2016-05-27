@@ -13,7 +13,7 @@ where fechaBaja IS NOT NULL;
 create view recetasActivas
 as
 select *
-from recetas 
+from recetas
 where nroPaciente IN (select nroPaciente from pacientesActivos);
 
 create view turnosActivos
