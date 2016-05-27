@@ -4,6 +4,7 @@ create table Pacientes(
 	apellido varchar(50),
 	dni int,
 	tipoDni varchar(5),
+	direccion varchar(100),
 	telefono int,
 	mail varchar(50),
 	fecNac date,
@@ -46,9 +47,8 @@ create table cambioPlan(
 
 create table turnosPrest(
 	isTurnoP int IDENTITY (1,1) NOT NULL primary key,
-	profesional int references Profesionales(Id_Prestador),
+	profesional int references Prestadores(Id_Prestador),
 	fecha date,
 	horaDesde time,
 	horaHasta time
 )
-
