@@ -18,7 +18,7 @@ create table Pacientes(
 create table Recetas(
 	idReceta int IDENTITY (1,1) NOT NULL primary key,
 	idPaciente int references Pacientes(idPaciente) ON DELETE CASCADE,
-	idProfesional int references Prestadores(Id_Prestador) ON DELETE CASCADE,
+	Id_Prestador int references Prestadores(Id_Prestador) ON DELETE CASCADE,
 	descripcion varchar(200)	
 )
 
@@ -32,7 +32,7 @@ create table Turnos(
 	horaLllegada time,
 	fechaAtencion date,
 	horaAtencion time,
-	idPrestador int references Prestadores(Id_Prestador),
+	Id_Prestador int references Prestadores(Id_Prestador),
 	idPractica int references Practicas(Codigo),
 	importe int,
 	observaciones varchar(200)	
@@ -47,7 +47,7 @@ create table cambioPlan(
 
 create table turnosPrest(
 	isTurnoP int IDENTITY (1,1) NOT NULL primary key,
-	profesional int references Prestadores(Id_Prestador),
+	Id_Prestador int references Prestadores(Id_Prestador),
 	fecha date,
 	horaDesde time,
 	horaHasta time
