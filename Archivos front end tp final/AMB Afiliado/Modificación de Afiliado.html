@@ -1,0 +1,90 @@
+<!doctype HTML>
+<html>
+	<head>
+		<link rel="stylesheet" href="../CSSs/Navbar.css">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+		<title>Modificación de Afiliado</title>
+	</head>
+	<body>
+		
+		<form>
+		
+			<ul>
+				<li><a href="Home Principal AMB.html">Principal</a></li>
+				<li class="dropdown" ><a href="#" class="dropbtn">Paciente</a>
+					<div class="dropdown-content">
+						<a href="../AMB Afiliado/Alta de Afiliado.html"> Alta Afiliado </a>
+						<a href="../AMB Afiliado/Modificación de Afiliado.html"> Modificación Afiliado </a>
+						<a href="../AMB Afiliado/Baja de Afiliado.html"> Baja Afiliado </a>
+					</div>
+				</li>
+				<li><a href="Home Turnos.html">Turnos</a></li>
+				<li style="float:right"><a href="Home AMB.html">Salir</a></li>
+			</ul>
+			</br>
+			<fieldset>
+				</br><legend>Modificación de Afiliado</legend>
+				</br><strong>Nombre : </strong>
+				<input type="text" name="Nombre" disabled>
+				
+				<strong> Apellido : </strong>
+				<input type="text" name="Apellido" disabled></br>
+				
+				</br><strong>Tipo de Documento : </strong>
+				<input list="Tipo Documento" disabled>
+				<strong> Número : </strong>
+				<input type="number" name="Numero Documento" disabled></br>
+				
+				</br><strong>Calle : </strong>
+				<input type="text" name="Calle">
+				<strong> Altura : </strong>
+				<input type="number" name="Altura" maxlength="5" size="5">
+				<strong> Piso : </strong>
+				<input type="text" name="Piso" size="2" maxlength="2">
+				<strong> Departamento : </strong>
+				<input type="text" name="Departamento" size="3" maxlength="3"></br>
+				
+				</br><strong>Telefono : </strong>
+				<input type="tel" name="Telefono"></br>
+				
+				</br><strong>Mail : </strong>
+				<input type="email" name="Mail" ></br>
+				
+				</br><strong>Fecha de Nacimiento :</strong>
+				<input type="date" name="Fecha Nacimiento" disabled></br>
+				
+				</br><strong>Sexo : </strong>
+				<input list="Sexo" disabled size="2"></br>
+				
+				</br><strong>Estado Civil : </strong>
+				<input list="Estado Civil"></br>
+				
+				</br><strong>Cantidad de Hijos o Familiares a Cargo :</strong>
+				<input type="number" name="Hijos Familiares a Cargo" size="2"></br>
+				
+				</br><strong>Plan Meidco : </strong>
+				<input type="text" name="Plan">
+				<strong>Fecha de Modificación : </strong>
+				<input type="date" name="Fecha Modificación"></br>
+				</br> <textarea name="Motivo de Cambio" placeholder="Indique el motivo de cambio..." maxlength="140"></textarea></br>
+				
+				</br><input type="submit" value="Modificar"></br>
+				
+			</fieldset>
+		</form>
+		
+	</body>
+</html>
+
+<datalist id="Sexo">
+	<option value="M">
+	<option value="F">
+</datalist>
+
+<datalist id="Estado Civil">
+	<option value="Soltero/a">
+	<option value="Casado/a">
+	<option value="Viudo/a">
+	<option value="Concubinato">	
+	<option value="Divorciado/a">
+</datalist>

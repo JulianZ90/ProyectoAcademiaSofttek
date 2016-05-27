@@ -1,0 +1,46 @@
+<!doctype HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> Busqueda de Paciente</title>
+		<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<script src="/scripts/jquery.min.js"></script>
+		<script src="/bootstrap/js/bootstrap.min.js"></script>
+	</head>
+	
+	<body>
+	
+	<p id="Barra de Busqueda">
+		<input type="search" name="Barra de Busqueda" placeholder="Ingrese Paciente / Documento / Plan / Nro. Afiliado" size="50" />
+		<!-- tiene que tener un evento onchange , para al escribir mostrar la tabla de pacientes -->
+	</p>
+	
+	<fieldset>
+		<legend> Pacientes</legend>
+		<!-- https://www.um.es/atica/documentos/forja/js/jqueryPlugins/tablesorter/doc/ejemplo.html ordenamiento de los campos de la tabla -->
+		<table border="1" style="width:90%">	
+			<tr>
+				<th>Seleccionar <button type = "button" class = "btn btn-default"></th>
+				<th>Nombre y Apellido</th>
+				<th>Tipo</th>
+				<th>Nro. Documento</th>
+				<th>Direccion</th>
+				<th>Teléfono</th>
+				<th>Mail</th>
+				<th>Fecha de Nacimiento</th>
+			</tr>
+			<tr>
+				<td><input type="radio" name="Paciente" ondblclick="location.href = 'Turnos del Paciente.html'" /></td> 
+				<td>Zorro Corvalan</td>
+				<td>L.E.</td>
+				<td>1234567</td>
+				<td>Rivadavia 123</td>
+				<td>41235678</td>
+				<td>zorro@corvalan.com</td>
+				<td> 12/12/1912</td>
+			</tr>
+		</table>
+	</fieldset>
+	
+	</body>
+</html>

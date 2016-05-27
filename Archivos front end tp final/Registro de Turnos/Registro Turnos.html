@@ -1,0 +1,75 @@
+<!doctype html>
+
+<html>
+	
+	<head>
+		<meta charset="utf-8">
+		<title>Registro de Turnos</title>
+		<link rel="stylesheet" href="../CSSs/Style Table.css">
+		<link rel="stylesheet" href="../CSSs/Navbar.css">
+		<!-- verificar por que no levanta el css-->
+</head>
+<body>
+
+	</head>
+
+	<body>
+		<ul>
+			<li><a href="Home Principal AMB.html">Principal</a></li>
+			<li class="dropdown" ><a href="#" class="dropbtn">Paciente</a>
+				<div class="dropdown-content">
+					<a href="AMB Afiliado/Alta de Afiliado.html"> Alta Afiliado </a>
+					<a href="AMB Afiliado/Modificación de Afiliado.html"> Modificación Afiliado </a>
+					<a href="AMB Afiliado/Baja de Afiliado.html"> Baja Afiliado </a>
+				</div>
+			</li>
+			<li class="dropdown" ><a href="#" class="dropbtn">Turnos</a>
+				<div class="dropdown-content">
+					<a href="Registro de Turnos/Registro de Turnos.html"> Registro de Turnos</a>
+					<a href="#"> Modificación de Turnos </a>
+				</div>
+			</li>
+			<li style="float:right"><a href="Home AMB.html">Salir</a></li>
+		</ul>
+		</br>
+		<form>
+			<fieldset>
+				
+				<legend>Registro de Turno</legend>
+				</br>
+				<strong><label for="Nro. Turno">Nro. Turno : </label></strong>
+				</br>
+				<strong><label for="Prestador">Prestador : </strong>
+				<input type="text" name="Prestador" placeholder="Prestador" required autofocus></label></br>
+				</br>
+				<label for="Fechas"><strong>Fecha Disponible : </strong>			
+				<input type="date" name="Fecha Disponible"/></label></br>
+				</br>
+				<label for="Horario"><strong>Horario Disponible :</strong>
+				<input type="time" name="Horarios"/></label>
+				</br>
+				</br><table style="width:20%">
+					<tr>
+						<th> Horario </th>
+						<th> Seleccione </th>
+					</tr>
+					<tr>
+						<td> horario 1</td>
+						<td> <input type="radio" name="Turno" value="Turno 1" checked/></td>
+					</tr>
+					<tr>
+						<td> horario 2</td>
+						<td> <input type="radio" name="Turno" value="Turno 2"/></td>
+					</tr>
+				</table>
+				</br>
+				<input type="submit" id="Solicitar Turno" value=" Solicitar Turno " />
+				<!-- este boton debe subir los datos -->
+				</br>
+			</fieldset>
+		</form>
+		
+	</body>
+
+</html>
+

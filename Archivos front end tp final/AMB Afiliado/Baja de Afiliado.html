@@ -1,0 +1,49 @@
+<!doctype HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Baja Afiliado</title>	
+		<link rel="stylesheet" href="../CSSs/Navbar.css">
+	</head>	
+	<body>
+	
+		<ul>
+			<li><a href="../Home Principal AMB.html">Principal</a></li>
+			<li class="dropdown" ><a href="#" class="dropbtn">Paciente</a>
+				<div class="dropdown-content">
+					<a href="../AMB Afiliado/Alta de Afiliado.html"> Alta Afiliado </a>
+					<a href="../AMB Afiliado/Modificación de Afiliado.html"> Modificación Afiliado </a>
+					<a href="../AMB Afiliado/Baja de Afiliado.html"> Baja Afiliado </a>
+				</div>
+			</li>
+			<li><a href="Home Turnos.html">Turnos</a></li>
+			<li style="float:right"><a href="../Home AMB.html">Salir</a></li>
+		</ul>	
+		</br>
+		<form>
+			<fieldset>
+			
+				<legend> Baja de Afiliados </legend>
+					</br><label for="numdocumento"><strong>Nº y Tipo de Documento :</strong></label>
+					<input type="number" name="numdocumento" required placeholder="Nº de Documento">
+						<input list="tipodoc" name="tipodoc" size="6" placeholder="Tipo">
+					</br>
+					
+					</br><label for="horabaja"><strong> Fecha Actual:  </strong></label>
+					<input type="datetime-local" name="horabaja"></br>
+					<!--generado automaticamente por codigo JS -->
+					<pre>
+					</br><input type="submit" value="Dar de Baja">                                              <input type="button" value="Modificar"></pre>
+					<!-- esto es una negrada, tengo que corregirlo-->
+					<!-- al presionar el boton deberia salir una ventana emergente confirmando que la accion se realizó correctaente-->
+			</fieldset>
+		</form>
+		
+	</body>
+</html>
+
+<datalist id="tipodoc">
+						<option value="D.N.I.">
+						<option value ="L.E.">
+						<option value="L.C.">
+					</datalist>
