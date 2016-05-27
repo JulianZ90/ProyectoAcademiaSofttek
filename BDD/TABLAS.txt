@@ -1,5 +1,5 @@
 create table Profesionales(
-	nroProfesional int IDENTITY (1,1) NOT NULL primary key,
+	idProfesional int IDENTITY (1,1) NOT NULL primary key,
 	nombre varchar(50),
 	apellido varchar(50),
 	horaIngreso time,
@@ -8,7 +8,7 @@ create table Profesionales(
 )
 
 create table Pacientes(
-	nroPaciente int IDENTITY (1,1) NOT NULL primary key,
+	idPaciente int IDENTITY (1,1) NOT NULL primary key,
 	nombre varchar(50),
 	apellido varchar(50),
 	dni int,
@@ -24,36 +24,37 @@ create table Pacientes(
 )
 
 create table Recetas(
-	nroReceta int IDENTITY (1,1) NOT NULL primary key,
-	nroPaciente int references Pacientes(nroPaciente) ON DELETE CASCADE,
-	nroProfesional int references Profesionales(idProfesional) ON DELETE CASCADE,
+	idReceta int IDENTITY (1,1) NOT NULL primary key,
+	idPaciente int references Pacientes(idPaciente) ON DELETE CASCADE,
+	idProfesional int references Profesionales(idProfesional) ON DELETE CASCADE,
 	descripcion varchar(200)	
 )
 
-
 create table Turnos(
-	nroTurno int IDENTITY (1,1) NOT NULL primary key,
+	idTurno int IDENTITY (1,1) NOT NULL primary key,
 	nombre varchar(50),
 	apellido varchar(50),
-	nroPaciente int references Pacientes(nroPaciente),
+	idPaciente int references Pacientes(idPaciente),
 	planMedico int references [plan](id_plan),
-	horaLlegada datetime,
-	horaAtencion datetime,
+	fechaLlegada date,
+	horaLllegada time,
+	fechaAtencion date,
+	horaAtencion time,
 	idPrestador int references Prestadores(Id_Prestador),
+	idPractica int references Practicas(Codigo),
 	importe int,
 	observaciones varchar(200)	
 )
-
 create table cambioPlan(
-	nroCambio int IDENTITY (1,1) NOT NULL primary key,
-	nroPaciente int references Pacientes(nroPaciente),
-	nroPlan int references [plan](id_plan),
+	idCambio int IDENTITY (1,1) NOT NULL primary key,
+	idPaciente int references Pacientes(idPaciente),
+	idPlan int references [plan](id_plan),
 	fecha date,
 	motivo varchar(200)
 )
 
 create table turnosProf(
-	nroTurnoP int IDENTITY (1,1) NOT NULL primary key,
+	isTurnoP int IDENTITY (1,1) NOT NULL primary key,
 	profesional int references Profesionales(idProfesional),
 	fecha date,
 	horaDesde time,

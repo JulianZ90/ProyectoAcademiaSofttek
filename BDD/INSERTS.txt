@@ -1,9 +1,43 @@
-INSERT INTO Profesionales (nombre, apellido, horaIngreso, horaSalida, practica)
-VALUES 
-('Pedro','Gomez',10:00:00,16:00:00)
-('Oscar','Jimenez',10:00:00,16:00:00)
-('Omar','Perez',10:00:00,16:00:00)
-('Ramiro','Rodriguez',10:00:00,16:00:00)
-('Joaquin','Sabina',10:00:00,16:00:00)
-('Juan','Ramirez',10:00:00,16:00:00)
+insert into Pacientes (nombre,apellido,dni,tipoDNI,telefono,mail,fecNac,sexo,estadoCivil,familiaresACargo,
+planMedico) values
+('Rodrigo','Boto',36822682,'DNI',44434321,'rodrisho@hotmail.com','1993-05-03','M','soltero',0,310);
+('Maxi','Kalaydjian',36822683,'DNI',44434322,'maxi.kdj@hotmail.com','1991-12-05','M','soltero',0,410);
+('Julian','Zelayeta',36822684,'DNI',44434323,'julian.zly@hotmail.com','1991-12-07','M','soltero',0,510);
+('Pablo','Prieto',36822654,'DNI',44434324,'pablo.prto@hotmail.com','1991-02-07','M','soltero',0,410);
 
+
+insert into Profesionales (nombre,apellido,horaIngreso,horaSalida,practica) values
+('Omar','Rodriguez','10:00:00','16:00:00',70107);
+('Pedro','Gonzalez','10:00:00','16:00:00',70260);
+('Rodrigo','Mamani','10:00:00','16:00:00',70261);
+('Gonzalo','Gonzales','10:00:00','16:00:00',70264);
+('Mariano','Marianez','10:00:00','16:00:00',70265);
+('Julian','Julianez','10:00:00','16:00:00',70266);
+('Pedro','Pedrez','10:00:00','16:00:00',70267);
+('Martin','Martinez','10:00:00','16:00:00',70270);
+('Pablo','Pablez','10:00:00','16:00:00',130163);
+('Omar','Omarez','10:00:00','16:00:00',130163);
+
+insert into recetas (idPaciente,idProfesional,descripcion) values
+(6,3,'Ibuprofeno'),
+(2,1,'Ibuprofeno'),
+(6,2,'Ibuprofeno'),
+(3,3,'Ibuprofeno'),
+(4,4,'Ibuprofeno'),
+(5,5,'Ibuprofeno'),
+(4,2,'Ibuprofeno');
+
+insert into turnos (nombre,apellido,idpaciente,planMedico,horaLlegada,
+idPrestador,importe,observaciones) values
+('mauro','mamani',6,210,'2016-05-26 10:00:00',14784,10000,'prueba1'),
+('rodrigo','boto',2,310,'2016-05-22 11:00:00',14784,10000,'prueba2'),
+('maxi','kalaydjian',3,410,'2016-05-15 12:00:00',14784,10000,'prueba3'),
+('julian','zelayeta',4,510,'2016-05-29 13:00:00',14784,10000,'prueba4'),
+('pablo','prieto',5,410,'2016-05-30 14:00:00',14784,10000,'prueba5');
+
+insert into turnosProf(profesional,fecha,horadesde,horahasta) values
+(1,'2016-05-26 10:00:00','10:00:00','16:00:00'),
+(2,'2016-05-22 10:00:00','10:00:00','16:00:00'),
+(3,'2016-05-15 10:00:00','10:00:00','16:00:00'),
+(4,'2016-05-29 10:00:00','10:00:00','16:00:00'),
+(5,'2016-05-30 10:00:00','10:00:00','16:00:00');
