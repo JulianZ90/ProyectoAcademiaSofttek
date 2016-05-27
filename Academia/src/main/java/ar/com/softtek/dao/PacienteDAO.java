@@ -6,8 +6,15 @@ import ar.com.softtek.model.Paciente;
 
 public interface PacienteDAO {
 
-	void addPaciente(Paciente paciente);
 	
-	List<Paciente> listPaciente();
+	List<Paciente> findAll();
+	Paciente findById(Long id);
+	List<Paciente> findByName();
+	
+	long addPaciente(Paciente paciente);
+	void deletePaciente(Paciente paciente);
+	void updatePaciente(Paciente paciente);
+
+	
 	
 }
