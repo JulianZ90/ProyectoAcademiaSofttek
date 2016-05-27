@@ -18,6 +18,7 @@ public class Paciente implements java.io.Serializable {
 	private Date fecNac;
 	private char sexo;
 	private String estadoCivil;
+	private String direccion;
 	private int cantHijos;
 	private Plan planMedico;
 	private Date fechaDeBaja;
@@ -100,6 +101,13 @@ public class Paciente implements java.io.Serializable {
 	}
 	public void setFechaDeBaja(Date fechaDeBaja) {
 		this.fechaDeBaja = fechaDeBaja;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
 	}
 
 	
