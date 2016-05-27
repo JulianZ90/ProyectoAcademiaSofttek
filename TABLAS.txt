@@ -1,0 +1,54 @@
+create table Pacientes(
+	idPaciente int IDENTITY (1,1) NOT NULL primary key,
+	nombre varchar(50),
+	apellido varchar(50),
+	dni int,
+	tipoDni varchar(5),
+	direccion varchar(100),
+	telefono int,
+	mail varchar(50),
+	fecNac date,
+	sexo char,
+	estadoCivil varchar(20),
+	familiaresACargo int,
+	planMedico int references [plan](id_plan),
+	fechaBaja date
+)
+
+create table Recetas(
+	idReceta int IDENTITY (1,1) NOT NULL primary key,
+	idPaciente int references Pacientes(idPaciente) ON DELETE CASCADE,
+	Id_Prestador int references Prestadores(Id_Prestador) ON DELETE CASCADE,
+	descripcion varchar(200)	
+)
+
+create table Turnos(
+	idTurno int IDENTITY (1,1) NOT NULL primary key,
+	nombre varchar(50),
+	apellido varchar(50),
+	idPaciente int references Pacientes(idPaciente),
+	planMedico int references [plan](id_plan),
+	fechaLlegada date,
+	horaLllegada time,
+	fechaAtencion date,
+	horaAtencion time,
+	Id_Prestador int references Prestadores(Id_Prestador),
+	idPractica int references Practicas(Codigo),
+	importe int,
+	observaciones varchar(200)	
+)
+create table cambioPlan(
+	idCambio int IDENTITY (1,1) NOT NULL primary key,
+	idPaciente int references Pacientes(idPaciente),
+	idPlan int references [plan](id_plan),
+	fecha date,
+	motivo varchar(200)
+)
+
+create table turnosPrest(
+	idTurnoP int IDENTITY (1,1) NOT NULL primary key,
+	Id_Prestador int references Prestadores(Id_Prestador),
+	fecha date,
+	horaDesde time,
+	horaHasta time
+)
