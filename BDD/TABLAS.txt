@@ -29,7 +29,7 @@ create table Turnos(
 	idPaciente int references Pacientes(idPaciente),
 	planMedico int references [plan](id_plan),
 	fechaLlegada date,
-	horaLllegada time,
+	horaLlegada time,
 	fechaAtencion date,
 	horaAtencion time,
 	Id_Prestador int references Prestadores(Id_Prestador),
