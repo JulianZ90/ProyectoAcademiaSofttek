@@ -5,19 +5,6 @@ planMedico) values
 ('Julian','Zelayeta',36822684,'DNI',44434323,'julian.zly@hotmail.com','1991-12-07','M','soltero',0,510);
 ('Pablo','Prieto',36822654,'DNI',44434324,'pablo.prto@hotmail.com','1991-02-07','M','soltero',0,410);
 
-
-insert into Profesionales (nombre,apellido,horaIngreso,horaSalida,practica) values
-('Omar','Rodriguez','10:00:00','16:00:00',70107);
-('Pedro','Gonzalez','10:00:00','16:00:00',70260);
-('Rodrigo','Mamani','10:00:00','16:00:00',70261);
-('Gonzalo','Gonzales','10:00:00','16:00:00',70264);
-('Mariano','Marianez','10:00:00','16:00:00',70265);
-('Julian','Julianez','10:00:00','16:00:00',70266);
-('Pedro','Pedrez','10:00:00','16:00:00',70267);
-('Martin','Martinez','10:00:00','16:00:00',70270);
-('Pablo','Pablez','10:00:00','16:00:00',130163);
-('Omar','Omarez','10:00:00','16:00:00',130163);
-
 insert into recetas (idPaciente,idProfesional,descripcion) values
 (6,3,'Ibuprofeno'),
 (2,1,'Ibuprofeno'),
