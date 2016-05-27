@@ -1,0 +1,84 @@
+<!doctype HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Alta Afiliado</title>
+		<link rel="stylesheet" href="css bsae.css">
+	</head>
+	
+	<title> Alta Afiliado</title>
+	
+	<body>
+		
+		<form action="nuevoPaciente" method="post">
+			<fieldset>
+				<legend> Ingrese los Datos del Nuevo Afiliado </legend>
+				
+				</br><label for="nombre"><strong>Nombre :</strong></label>
+				<input type="text" name="nombre" required placeholder="Nombre del Afiliado" autofocus></br>
+				
+				</br><label for="apellido"><strong>Apellido :</strong></label>
+				<input type="text" name="apellido" required placeholder="Apellido del Afiliado"></br>
+				
+				</br><label for="numdocumento"><strong>Nº y Tipo de Documento :</strong></label>
+				<input type="number" name="numdocumento" required placeholder="Nº de Documento">
+				<input list="tipodoc" name="tipodoc" size="6" placeholder="Tipo"></br>
+				
+				</br><strong><label for="calle">Calle : </label></strong>
+				<input type="text" name="calle" required placeholder="Calle" pattern="[A-Z a-z]">
+				<label for="altura"><strong> Altura : </strong></label>
+				<input type="number" name="altura" required placeholder="Altura" size="6" maxlength="5">
+				<label for="piso"><strong> Piso : </strong></label>
+				<input type="text" name="piso" placeholder="Piso" size="2" maxlength="2">
+				<label for="departamento"><strong> Departamento : </strong></label>
+				<input type="text" name="departamento" placeholder="Dpto" size="4" maxlength="3"></br>		
+				
+				</br><label for="telefono"><strong>Telefono : </strong></label>
+				<input type="tel" name="telefono" required placeholder="numero de telefono" maxlength="10"></br>
+				
+				</br><label for="mail"><strong>Mail : </strong></label><input type="email" name="mail" required placeholder="dirección de correo"></br>		   
+				
+				</br><label for="fechanac"><strong>Fecha de Nacimiento : </strong></label><input type="date" name="fechanac" placeholder="Fecha de Nacimiento" required></br>
+				
+				</br><label for="sexo"><strong>Sexo : </strong></label>
+				<input list="sexo" name="sexo" size="2" placeholder="M/F" required>
+				</br>
+				
+				</br><label for="estadocivil"><strong> Estado Civil : </strong></label>
+				<input list="estadocivil" name="estadocivil" placeholder="Estado Civil" required></br>
+				
+				</br><label for="canthijos"><strong>Cantidad de Hijos o Familiares a Cargo : </strong></label>
+				<input type="number" name="canthijos" size="2" required placeholder="N°"></br>
+				
+				</br><label for="plan"><strong>Plan Medico : </strong></label>
+				<input type="text" name="plan" placeholder="tipo de plan" required></br>
+				<!-- Aca falta definir el tipo de plan , ya que puede ser definido como una lista , un campo de texto o solo numerico-->
+				
+				</br><label for="numafiliado"><strong> N° de Afiliado : </strong></label>
+				<input type="number" name="numafiliado" disabled ></br> <!--Este casillero va a ser autoincremental , se realiza con css o js que en esta etapa no se incluye-->
+				
+				</br><input type="submit" value="Registrar">
+			</fieldset>	
+		</form>
+	</body>
+	
+</html>
+
+<datalist id="tipodoc">
+	<option value="D.N.I.">
+	<option value ="L.E.">
+	<option value="L.C.">
+</datalist>
+
+<datalist id="estadocivil">
+	<option value="Soltero/a">
+	<option value="Casado/a">
+	<option value="Viudo/a">
+	<option value="Concubinato">
+	<option value="Divorciado/a">
+</datalist>
+
+<datalist id="sexo">
+					<option value="M">
+					<option value="F">
+				</datalist>
