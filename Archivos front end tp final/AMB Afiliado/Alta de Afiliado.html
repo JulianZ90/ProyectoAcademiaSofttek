@@ -14,56 +14,74 @@
 		<form method="post">
 		
 			<ul>
-				<li><a href="Home Principal AMB.html">Principal</a></li>
+				<li class="dropdown"><a href="../Home Principal AMB.html" class="dropbtn">Principal</a></li>
 				<li class="dropdown" ><a href="#" class="dropbtn">Paciente</a>
 					<div class="dropdown-content">
-						<a href="../AMB Afiliado/Alta de Afiliado.html"> Alta Afiliado </a>
-						<a href="../AMB Afiliado/Modificación de Afiliado.html"> Modificación Afiliado </a>
-						<a href="../AMB Afiliado/Baja de Afiliado.html"> Baja Afiliado </a>
+						<a href="../AMB Afiliado/Alta de Afiliado.html"> Alta de Afiliado </a>
+						<a href="../AMB Afiliado/Baja de Afiliado.html"> Baja / Modificación de Afiliado </a>
 					</div>
 				</li>
-				<li><a href="Home Turnos.html">Turnos</a></li>
-				<li style="float:right"><a href="Home AMB.html">Salir</a></li>
+				<li class="dropdown" ><a href="#" class="dropbtn">Turnos</a>
+					<div class="dropdown-content">
+						<a href="../Registro de Turnos/Registro Turnos.html"> Registro de Turnos</a>
+						<a href="../Registro de Turnos/Modificacion Turnos.html"> Modificación de Turnos </a>
+					</div>
+				</li>
+				<li style="float:right" class="dropdown"><a href="../	Home AMB.html" class="dropbtn">Salir</a></li>
 			</ul>
 			</br>
 			<fieldset>
 				<legend> Ingrese los Datos del Nuevo Afiliado </legend>
 				
 				</br><label for="nombre"><strong>Nombre :</strong></label>
-				<input type="text" name="nombre" required placeholder="Nombre del Afiliado" autofocus></br>
+				<input type="text" name="nombre" required placeholder="Nombre del Afiliado" autofocus>
 				
-				</br><label for="apellido"><strong>Apellido :</strong></label>
+				<label for="apellido"><strong>  Apellido :</strong></label>
 				<input type="text" name="apellido" required placeholder="Apellido del Afiliado"></br>
 				
-				</br><label for="numdocumento"><strong>Nº y Tipo de Documento :</strong></label>
-				<input type="number" name="numdocumento" required placeholder="Nº de Documento">
-				<input list="tipodoc" name="tipodoc" size="6" placeholder="Tipo"></br>
+				</br><label for="numdocumento"><strong>Nro. y Tipo de Documento :</strong></label>
+				<input type="number" name="numdocumento" required placeholder="Nro. de Documento" min="1">
+				<select name="tipodoc" required>
+					<option value="D.N.I."> D.N.I. </option>
+					<option value="L.E."> L.E.</option>
+					<option value="L.C."> L.C.</option>
+				</select></br>
 				
 				</br><strong><label for="calle">Calle : </label></strong>
-				<input type="text" name="calle" required placeholder="Calle" pattern="[A-Z a-z]">
+				<input type="text" name="calle" required placeholder="Calle" pattern="[A-z]">
 				<label for="altura"><strong> Altura : </strong></label>
-				<input type="number" name="altura" required placeholder="Altura" size="6" maxlength="5">
+				<input type="number" name="altura" required placeholder="Altura" size="6" maxlength="5" min="1">
 				<label for="piso"><strong> Piso : </strong></label>
 				<input type="text" name="piso" placeholder="Piso" size="2" maxlength="2">
 				<label for="departamento"><strong> Departamento : </strong></label>
 				<input type="text" name="departamento" placeholder="Dpto" size="4" maxlength="3"></br>		
 				
 				</br><label for="telefono"><strong>Telefono : </strong></label>
-				<input type="tel" name="telefono" required placeholder="numero de telefono" maxlength="10"></br>
+				<input type="tel" name="telefono" required placeholder="numero de telefono" maxlength="10" pattern="[0-9]"></br>
 				
 				</br><label for="mail"><strong>Mail : </strong></label><input type="email" name="mail" required placeholder="dirección de correo"></br>		   
 				
 				</br><label for="fechanac"><strong>Fecha de Nacimiento : </strong></label><input type="date" name="fechanac" placeholder="Fecha de Nacimiento" required></br>
 				
 				</br><label for="sexo"><strong>Sexo : </strong></label>
-				<input list="sexo" name="sexo" size="2" placeholder="M/F" required>
+				<select name="sexo" required>
+						<option value="Masculino"> M </option>
+						<option value="Femenino"> F </option>
+				</select>
+				</br>
+	
+				</br><label for="estadocivil"><strong> Estado Civil : </strong></label>
+				<select name="estadocivil" required>
+					<option value="Soltero/a"> Soltero/a </option>
+					<option value="Casado/a"> Casado/a </option>
+					<option value="Viudo/a"> Viudo/a </option>
+					<option value="Concubinato"> Concubinato </option>
+					<option value="Divorciado/a"> Divorciado/a </option>
+					</select>
 				</br>
 				
-				</br><label for="estadocivil"><strong> Estado Civil : </strong></label>
-				<input list="estadocivil" name="estadocivil" placeholder="Estado Civil" required></br>
-				
 				</br><label for="canthijos"><strong>Cantidad de Hijos o Familiares a Cargo : </strong></label>
-				<input type="number" name="canthijos" size="2" required placeholder="N°"></br>
+				<input type="number" name="canthijos" size="2" required placeholder="N°" min="0"></br>
 				
 				</br><label for="plan"><strong>Plan Medico : </strong></label>
 				<input type="text" name="plan" placeholder="tipo de plan" required></br>
@@ -77,23 +95,4 @@
 		</form>
 	</body>
 	
-</html>
-
-<datalist id="tipodoc">
-	<option value="D.N.I.">
-	<option value ="L.E.">
-	<option value="L.C.">
-</datalist>
-
-<datalist id="estadocivil">
-	<option value="Soltero/a">
-	<option value="Casado/a">
-	<option value="Viudo/a">
-	<option value="Concubinato">
-	<option value="Divorciado/a">
-</datalist>
-
-<datalist id="sexo">
-					<option value="M">
-					<option value="F">
-				</datalist>
+</html>	 	

@@ -11,12 +11,16 @@
 			<li><a href="../Home Principal AMB.html">Principal</a></li>
 			<li class="dropdown" ><a href="#" class="dropbtn">Paciente</a>
 				<div class="dropdown-content">
-					<a href="../AMB Afiliado/Alta de Afiliado.html"> Alta Afiliado </a>
-					<a href="../AMB Afiliado/Modificación de Afiliado.html"> Modificación Afiliado </a>
-					<a href="../AMB Afiliado/Baja de Afiliado.html"> Baja Afiliado </a>
+					<a href="Alta de Afiliado.html"> Alta de Afiliado </a>
+					<a href="Baja de Afiliado.html"> Baja / Modificación de Afiliado </a>
 				</div>
 			</li>
-			<li><a href="Home Turnos.html">Turnos</a></li>
+			<li class="dropdown" ><a href="#" class="dropbtn">Turnos</a>
+				<div class="dropdown-content">
+					<a href="../Registro de Turnos/Registro Turnos.html"> Registro de Turnos</a>
+					<a href="../Registro de Turnos/Modificacion Turnos.html"> Modificación de Turnos </a>
+				</div>
+			</li>
 			<li style="float:right"><a href="../Home AMB.html">Salir</a></li>
 		</ul>	
 		</br>
@@ -24,16 +28,19 @@
 			<fieldset>
 			
 				<legend> Baja de Afiliados </legend>
-					</br><label for="numdocumento"><strong>Nº y Tipo de Documento :</strong></label>
-					<input type="number" name="numdocumento" required placeholder="Nº de Documento">
-						<input list="tipodoc" name="tipodoc" size="6" placeholder="Tipo">
-					</br>
+					</br><label for="numdocumento"><strong>Nro. y Tipo de Documento :</strong></label>
+						<input type="number" name="numdocumento" required placeholder="Nro. de Documento" min="1">
+						<select name="tipodoc" required>
+							<option value="D.N.I."> D.N.I. </option>
+							<option value="L.E."> L.E.</option>
+							<option value="L.C."> L.C.</option>
+						</select></br>
 					
 					</br><label for="horabaja"><strong> Fecha Actual:  </strong></label>
-					<input type="datetime-local" name="horabaja"></br>
+					<input type="datetime-local" name="horabaja" required></br>
 					<!--generado automaticamente por codigo JS -->
 					<pre>
-					</br><input type="submit" value="Dar de Baja">                                              <input type="button" value="Modificar"></pre>
+					</br><input type="submit" value="Dar de Baja">                                              <input type="Submit" value="Modificar" onclick="location.href = 'Modificación de Afiliado.html'"></pre>
 					<!-- esto es una negrada, tengo que corregirlo-->
 					<!-- al presionar el boton deberia salir una ventana emergente confirmando que la accion se realizó correctaente-->
 			</fieldset>
@@ -41,9 +48,3 @@
 		
 	</body>
 </html>
-
-<datalist id="tipodoc">
-						<option value="D.N.I.">
-						<option value ="L.E.">
-						<option value="L.C.">
-					</datalist>
