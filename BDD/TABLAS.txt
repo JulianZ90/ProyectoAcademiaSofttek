@@ -3,7 +3,7 @@ create table Pacientes(
 	nombre varchar(50),
 	apellido varchar(50),
 	dni int,
-	tipoDni varchar(5),
+	tipoDni varchar(10),
 	direccion varchar(100),
 	telefono int,
 	mail varchar(50),
