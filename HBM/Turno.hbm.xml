@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ar.com.sofftek.model.Paciente"
+        table="Turnos" catalog="softtek">
+        <id name="idTurno" type="java.lang.Integer">
+            <column name="idTurno" />
+            <generator class="identity" />
+        </id>
+        <property name="nombre" column="nombre" type="java.lang.String"/>
+        <property name="apellido" column="apellido" type="java.lang.String"/>
+        <property name="idPaciente" column="idPaciente" type="java.lang.Integer"/>
+		<property name="planMedico" column="planMedico" type="java.lang.Integer"/>
+        <property name="fechaLlegada" column="fechaLlegada" type="java.lang.Date"/>
+        <property name="horaLlegada" column="horaLlegada" type="java.lang.LocalTime"/>
+        <property name="fechaAtencion" column="fechaAtencion" type="java.lang.Date"/>
+        <property name="horaAtencion" column="horaAtencion" type="java.lang.LocalTime"/>
+        <property name="Id_Prestador" column="Id_Prestador" type="java.lang.Integer"/>
+        <property name="idPractica" column="idPractica" type="java.lang.Integer"/>
+        <property name="importe" column="importe" type="java.lang.Integer"/>
+        <property name="observaciones" column="observaciones" type="java.lang.String"/>
+    </class>
+</hibernate-mapping>
