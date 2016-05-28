@@ -66,3 +66,7 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+li a {
+	font-family: "Arial Black", Gadget, sans-serif;
+}
