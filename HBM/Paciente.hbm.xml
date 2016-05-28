@@ -5,8 +5,7 @@
 <hibernate-mapping>
     <class name="ar.com.sofftek.model.Paciente" 
 		table="Pacientes" catalog="softtek">
-        <id name="idPaciente" type="java.lang.Integer">
-            <column name="idPaciente" />
+        <id name="idPaciente" column="idPaciente" type="java.lang.Integer">
             <generator class="identity" />
         </id>
         <property name="nombre" column="nombre" type="java.lang.String"/>

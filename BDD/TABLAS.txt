@@ -28,6 +28,8 @@ create table Turnos(
 	apellido varchar(50),
 	idPaciente int references Pacientes(idPaciente),
 	planMedico int references [plan](id_plan),
+	fechaTurno date,
+	horaTurno time,
 	fechaLlegada date,
 	horaLlegada time,
 	fechaAtencion date,
