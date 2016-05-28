@@ -37,6 +37,7 @@ create table Turnos(
 	importe int,
 	observaciones varchar(200)	
 )
+
 create table cambioPlan(
 	idCambio int IDENTITY (1,1) NOT NULL primary key,
 	idPaciente int references Pacientes(idPaciente),
@@ -45,10 +46,5 @@ create table cambioPlan(
 	motivo varchar(200)
 )
 
-create table turnosPrest(
-	idTurnoP int IDENTITY (1,1) NOT NULL primary key,
-	Id_Prestador int references Prestadores(Id_Prestador),
-	fecha date,
-	horaDesde time,
-	horaHasta time
-)
+
+
