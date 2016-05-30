@@ -11,7 +11,8 @@
         <property name="nombre" column="nombre" type="java.lang.String"/>
         <property name="apellido" column="apellido" type="java.lang.String"/>
         <property name="dni" column="dni" type="java.lang.Integer"/>
-		<property name="direccion" column="direccion" type="java.lang.String"/>
+        <property name="tipoDni" column="tipodni" type="java.lang.String"/>
+        <property name="direccion" column="direccion" type="java.lang.String"/>
         <property name="telefono" column="telefono" type="java.lang.Integer"/>
         <property name="mail" column="mail" type="java.lang.String"/>
         <property name="fecNac" column="fecNac" type="java.lang.String"/>
