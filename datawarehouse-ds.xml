@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<datasources>
+ 
+   <local-tx-datasource>
+     <jndi-name>jdbc/AcademiaDS</jndi-name>
+		  
+   		<connection-url>jdbc:sqlserver://192.168.0.161\AUDITORIATERRENO;databaseName=grupo3</connection-url>
+		
+		  <driver-class>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver-class>
+		  <user-name>grupo3</user-name>
+		  <password>grupo3</password>
+		  
+		  <idle-timeout-minutes>5</idle-timeout-minutes>
+		  <min-pool-size>1</min-pool-size>
+		  <max-pool-size>15</max-pool-size>
+		
+      <metadata>
+         <type-mapping>MS SQLSERVER2000</type-mapping>
+      </metadata>
+   </local-tx-datasource>
+   
+</datasources>
+
+
