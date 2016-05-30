@@ -24,7 +24,7 @@ public class NuevoPacienteAction extends ActionSupport {
 	private String calle;
 	private String estadocivil;
 	private int canthijos;
-	private String plan;
+	private int plan;
 	private String departamento;
 	private String piso;
 	private int altura;
@@ -118,11 +118,11 @@ public class NuevoPacienteAction extends ActionSupport {
 		this.canthijos = canthijos;
 	}
 
-	public String getPlan() {
+	public int getPlan() {
 		return plan;
 	}
 
-	public void setPlan(String plan) {
+	public void setPlan(int plan) {
 		this.plan = plan;
 	}
 
