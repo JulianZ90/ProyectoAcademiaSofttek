@@ -7,12 +7,12 @@ create table Pacientes(
 	direccion varchar(100),
 	telefono int,
 	mail varchar(50),
-	fecNac date,
+	fecNac varchar(20),
 	sexo char,
 	estadoCivil varchar(20),
 	familiaresACargo int,
 	planMedico int references [plan](id_plan),
-	fechaBaja date
+	fechaBaja varchar(20)
 )
 
 create table Recetas(
@@ -28,12 +28,12 @@ create table Turnos(
 	apellido varchar(50),
 	idPaciente int references Pacientes(idPaciente),
 	planMedico int references [plan](id_plan),
-	fechaTurno date,
-	horaTurno time,
-	fechaLlegada date,
-	horaLlegada time,
-	fechaAtencion date,
-	horaAtencion time,
+	fechaTurno varchar(20),
+	horaTurno varchar(20),
+	fechaLlegada varchar(20),
+	horaLlegada varchar(20),
+	fechaAtencion varchar(20),
+	horaAtencion varchar(20),
 	Id_Prestador int references Prestadores(Id_Prestador),
 	idPractica int references Practicas(Codigo),
 	importe int,
@@ -44,7 +44,7 @@ create table cambioPlan(
 	idCambio int IDENTITY (1,1) NOT NULL primary key,
 	idPaciente int references Pacientes(idPaciente),
 	idPlan int references [plan](id_plan),
-	fecha date,
+	fecha varchar(20),
 	motivo varchar(200)
 )
 
