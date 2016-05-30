@@ -8,17 +8,17 @@ public class PlanDto implements java.io.Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	
-	private String descripcion;
+	private int descripcion;
 	
 	
-	public PlanDto(String descripcion) {
+	public PlanDto(int descripcion) {
 		
 		this.descripcion = descripcion;
 	}
-	public String getDescripcion() {
+	public int getDescripcion() {
 		return descripcion;
 	}
-	public void setDescripcion(String descripcion) {
+	public void setDescripcion(int descripcion) {
 		this.descripcion = descripcion;
 	}
 	public static long getSerialversionuid() {
