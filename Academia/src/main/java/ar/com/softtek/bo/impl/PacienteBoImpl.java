@@ -4,6 +4,7 @@ import java.util.List;
 import ar.com.softtek.bo.PacienteBo;
 import ar.com.softtek.dao.PacienteDAO;
 import ar.com.softtek.model.Paciente;
+import ar.com.softtek.dto.NuevoAfiliadoDto;
 
 public class PacienteBoImpl implements PacienteBo {
 
@@ -13,8 +14,8 @@ public class PacienteBoImpl implements PacienteBo {
 		this.pacienteDAO=paciente;
 	}
 
-	public void addPaciente(Paciente paciente) {
-		this.pacienteDAO.addPaciente(paciente);
+	public void addPaciente(NuevoAfiliadoDto pacienteDto) {
+		this.pacienteDAO.addPaciente(pacienteDto);
 		
 	}
 
