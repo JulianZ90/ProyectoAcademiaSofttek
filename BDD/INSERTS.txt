@@ -18,9 +18,12 @@ insert into recetas (idPaciente,Id_Prestador,descripcion) values
 
 
 insert into turnos (nombre,apellido,idpaciente,planMedico,fechaLlegada,horaLlegada,
-idPrestador,importe,observaciones) values
-('mauro','mamani',6,210,'2016-05-26','10:00:00',14784,10000,'prueba1'),
+Id_Prestador,importe,observaciones) values
+('mauro','mamani',1,210,'2016-05-26','10:00:00',14784,10000,'prueba1'),
 ('rodrigo','boto',2,310,'2016-05-22','11:00:00',14784,10000,'prueba2'),
 ('maxi','kalaydjian',3,410,'2016-05-15','12:00:00',14784,10000,'prueba3'),
 ('julian','zelayeta',4,510,'2016-05-29','13:00:00',14784,10000,'prueba4'),
 ('pablo','prieto',5,410,'2016-05-30','14:00:00',14784,10000,'prueba5');
+
+insert into usuarios (usuario, pass)
+values ('grupo3','grupo3');
