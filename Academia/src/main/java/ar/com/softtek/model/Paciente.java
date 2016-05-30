@@ -21,7 +21,7 @@ public class Paciente implements java.io.Serializable {
 	private String direccion;
 	private int familiaresACargo;
 	private int planMedico;
-	private String fechaDeBaja;
+	private String fechaBaja;
 	
 	
 	public int getId() {
@@ -97,10 +97,10 @@ public class Paciente implements java.io.Serializable {
 		this.planMedico = planMedico;
 	}
 	public String getFechaDeBaja() {
-		return fechaDeBaja;
+		return fechaBaja;
 	}
 	public void setFechaDeBaja(String fechaDeBaja) {
-		this.fechaDeBaja = fechaDeBaja;
+		this.fechaBaja = fechaDeBaja;
 	}
 
 	public String getDireccion() {
