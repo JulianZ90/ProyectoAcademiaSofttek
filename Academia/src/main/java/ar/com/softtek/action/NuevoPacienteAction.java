@@ -35,15 +35,15 @@ public class NuevoPacienteAction extends ActionSupport {
 	private int altura;
 	private NuevoAfiliadoDto nuevoAfiliadoDto;
 	private PacienteBo pacienteBo;
-	List<NuevoAfiliadoDto> pacienteList = new ArrayList<NuevoAfiliadoDto>();
-
-	public List<NuevoAfiliadoDto> getPacienteList() {
-		return pacienteList;
-	}
-
-	public void setPacienteList(List<NuevoAfiliadoDto> pacienteList) {
-		this.pacienteList = pacienteList;
-	}
+//	List<NuevoAfiliadoDto> pacienteList = new ArrayList<NuevoAfiliadoDto>();
+//
+//	public List<NuevoAfiliadoDto> getPacienteList() {
+//		return pacienteList;
+//	}
+//
+//	public void setPacienteList(List<NuevoAfiliadoDto> pacienteList) {
+//		this.pacienteList = pacienteList;
+//	}
 
 	
 	public String getNombre() {
@@ -189,8 +189,8 @@ public class NuevoPacienteAction extends ActionSupport {
 			
 			System.out.println(this.getNuevoAfiliadoDto().toString());
 
-		//	pacienteBo.addPaciente(this.getNuevoAfiliadoDto());
-			pacienteList.add(nuevoAfiliadoDto);
+			pacienteBo.addPaciente(this.getNuevoAfiliadoDto());
+
 			
 			return "success";
 
@@ -213,13 +213,6 @@ public class NuevoPacienteAction extends ActionSupport {
 	}
 
 	
-	//list all pacientes
-		public String listPacientes() throws Exception{
-			
-		//	pacienteList = pacienteBo.listPacientes();
-			
-			return "success";
-		
-		}
+
 	
 }
