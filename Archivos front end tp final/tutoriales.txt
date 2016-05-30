@@ -1,0 +1,8 @@
+tutorial para tooltip con conexcion a base de datos
+http://tutoriales.tumentor.net/ajax/mostrar-un-tooltip-con-datos-recuperados-del-servidor-en-forma-asincronica
+
+otro tutorial tooltip asincronico
+http://www.elreplicante.com.ar/2012/08/16/tooltip-con-ajax-y-sin-frameworks/
+
+http://www.ajaxshake.com/demo/ES/602/4850b6b0/tooltip-jquery-ajax-jqueryajax.html
+
