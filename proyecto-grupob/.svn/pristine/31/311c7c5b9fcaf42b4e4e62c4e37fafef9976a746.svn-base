@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 20 Julai 2010 11:40:18 AM by Hibernate Tools 3.2.5.Beta -->
+<hibernate-mapping>
+    <class name="ar.com.softtek.grupob.entity" 
+		table="Afiliafo">
+        <id name="numeroAfiliado" type="integer">
+            <column name="ID_AFILIADO" />
+            <generator class="identity" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="30" not-null="true" />
+        </property>
+         <property name="apellido" type="string">
+            <column name="APELLIDO" length="30" not-null="true" />
+        </property>
+        <property name="tipoDni" type="string">
+            <column name="TIPO_DNI" length="5" not-null="true" />
+        </property>
+        <property name="dni" type="int">
+            <column name="DNI" not-null="true" />
+        </property>
+         <property name="fechaDeNacimiento" type="java.util.Date">
+            <column name="FECHA_NACIMIENTO" not-null="true" />
+        </property>
+         <property name="direccion" type="string">
+            <column name="DIRECCION" length="50" not-null="true" />
+        </property>
+         <property name="telefono" type="integer">
+            <column name="TELEFONO" not-null="true" />
+        </property>
+         <property name="mail" type="string">
+            <column name="MAIL" length="40" not-null="true" />
+        </property>
+         <property name="planMedico" type="string">
+            <column name="PLAN_MEDICO" length="6" not-null="true" />
+        </property>
+         <property name="sexo" type="string">
+            <column name="SEXO" length="1" not-null="true" />
+        </property>
+         <property name="estadoCivil" type="string">
+            <column name="ESTADO_CIVIL" length="11" not-null="true" />
+        </property>
+         <property name="cantidadACargo" type="integer">
+            <column name="CANTIDAD_CARGO" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

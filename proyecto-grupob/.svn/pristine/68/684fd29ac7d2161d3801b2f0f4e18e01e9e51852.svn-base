@@ -1,0 +1,12 @@
+package ar.com.softtek.grupob.bo;
+
+import java.util.List;
+
+import ar.com.softtek.grupob.entity.Afiliado;
+
+public interface AfiliadoBo {
+	
+	public void add(Afiliado afiliado);
+
+	public List<Afiliado> getAll();
+}

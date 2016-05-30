@@ -1,0 +1,55 @@
+package ar.com.softtek.grupob.dao.impl;
+
+import java.util.List;
+
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+import ar.com.softtek.grupob.dao.AfiliadoDAO;
+import ar.com.softtek.grupob.entity.Afiliado;
+import ar.com.softtek.grupob.util.HibernateUtil;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+
+public class AfiliadoDAOImpl extends HibernateDaoSupport 
+implements AfiliadoDAO {
+
+	@Autowired
+	private HibernateUtil hibernateUtil;
+
+	public void add(Afiliado afiliado) {
+		hibernateUtil.create(afiliado);
+		//this.getHibernateTemplate().save(afiliado);
+	}
+
+	public Afiliado update(Afiliado afiliado) {
+		hibernateUtil.update(afiliado);
+		//this.getHibernateTemplate().update(afiliado);
+		return null;
+	}
+
+	public void delete(long numeroAfiliado) {
+		//Afiliado afiliado = (Afiliado)getHibernateTemplate().find("from Afiliado where numeroAfiliado=?", numeroAfiliado).get(0);
+		Afiliado afiliado = hibernateUtil.fetchById(numeroAfiliado, Afiliado.class);
+		afiliado.setEstado(false);
+		//this.getHibernateTemplate().update(afiliado);
+		hibernateUtil.update(afiliado);
+	}
+
+	public List<Afiliado> getAll() {
+		return hibernateUtil.fetchAll(Afiliado.class);
+		//return getHibernateTemplate().find("from Afiliado");
+	}
+
+	public Afiliado get(int numeroAfiliado) {
+		//Afiliado afiliado = (Afiliado)getHibernateTemplate().find("from Afiliado where numeroAfiliado=?", numeroAfiliado).get(0);
+		//return afiliado;
+		return hibernateUtil.fetchById(numeroAfiliado, Afiliado.class);
+	}
+
+	public List<Afiliado> getAll(String nombreAfiliado) {
+		
+		return getHibernateTemplate().find("from Afiliado where nombreAfiliado=?", nombreAfiliado);
+	}
+
+}

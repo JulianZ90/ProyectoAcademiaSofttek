@@ -1,0 +1,40 @@
+package ar.com.softtek.grupob.entity;
+
+import java.io.Serializable;
+
+
+public class Practica implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private int idPractica;
+	private String descripcion;
+	
+
+	public Practica(){}
+
+
+	public int getIdPractica() {
+		return idPractica;
+	}
+
+
+	public void setIdPractica(int idPractica) {
+		this.idPractica = idPractica;
+	}
+	
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	
+	
+	
+}

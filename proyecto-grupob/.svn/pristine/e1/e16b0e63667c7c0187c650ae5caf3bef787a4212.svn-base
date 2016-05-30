@@ -1,0 +1,28 @@
+package ar.com.softtek.grupob.dao.impl;
+
+import java.util.List;
+
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+import ar.com.softtek.grupob.dao.PlanDAO;
+import ar.com.softtek.grupob.entity.Plan;
+
+public class PlanDAOImpl extends HibernateDaoSupport
+implements PlanDAO {
+
+	public List<Plan> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Plan get(long legajo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Plan> getAll(String planID) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

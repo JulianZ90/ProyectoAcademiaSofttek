@@ -1,0 +1,16 @@
+package ar.com.softtek.grupob.dao;
+
+import java.util.List;
+//import java.util.Set;
+
+
+
+import ar.com.softtek.grupob.entity.Plan;
+
+public interface PlanDAO {
+
+	public List<Plan> getAll();
+
+	public Plan  get(int idPlan);
+
+}

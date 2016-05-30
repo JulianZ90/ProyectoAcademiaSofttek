@@ -1,0 +1,15 @@
+package ar.com.softtek.grupob.dao;
+
+import java.util.List;
+
+//import java.util.Set;
+import ar.com.softtek.grupob.entity.Prestador;
+
+public interface PrestadorDAO {
+
+	public List<Prestador> getAll();
+
+	public Prestador  get(long legajo);
+
+	public List<Prestador> getAll(String prestadorID);
+}

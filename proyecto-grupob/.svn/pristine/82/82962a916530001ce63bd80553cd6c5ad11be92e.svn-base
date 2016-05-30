@@ -1,0 +1,23 @@
+package ar.com.softtek.grupob.dao.impl;
+
+import java.util.List;
+
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+import ar.com.softtek.grupob.dao.PlanDAO;
+import ar.com.softtek.grupob.entity.Plan;
+
+public class PlanDAOImpl extends HibernateDaoSupport
+implements PlanDAO {
+
+	public List<Plan> getAll() {
+		return getHibernateTemplate().find("from Plan");
+	}
+
+	public Plan get(int idPlan) {
+		Plan plan = (Plan)getHibernateTemplate().find("from Plan where idPlan=?", idPlan).get(0);
+		return plan;
+	}
+
+
+}

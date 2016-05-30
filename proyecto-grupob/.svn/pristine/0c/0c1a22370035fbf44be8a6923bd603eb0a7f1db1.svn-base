@@ -1,0 +1,26 @@
+package ar.com.softtek.grupob.bo.impl;
+
+import java.util.List;
+
+import ar.com.softtek.grupob.bo.AfiliadoBo;
+import ar.com.softtek.grupob.dao.AfiliadoDAO;
+import ar.com.softtek.grupob.entity.Afiliado;
+
+public class AfiliadoBoImpl implements AfiliadoBo {
+
+	AfiliadoDAO afiliadoDAO;
+	//DI via Spring
+	public void setAfiliadoDAO(AfiliadoDAO afiliadoDAO) {
+		this.afiliadoDAO = afiliadoDAO;
+	}
+
+	//call DAO to save customer
+	public void add(Afiliado afiliado){
+		afiliadoDAO.add(afiliado);
+	}
+	
+	//call DAO to return customers
+	public List<Afiliado> getAll(){
+		return afiliadoDAO.getAll();
+	}
+}

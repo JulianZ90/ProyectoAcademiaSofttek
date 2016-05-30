@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ar.com.sofftek.model.Paciente" 
+		table="Pacientes" catalog="softtek">
+        <id name="idPaciente" column="idPaciente" type="java.lang.Integer">
+            <generator class="identity" />
+        </id>
+        <property name="nombre" column="nombre" type="java.lang.String"/>
+        <property name="apellido" column="apellido" type="java.lang.String"/>
+        <property name="dni" column="dni" type="java.lang.Integer"/>
+        <property name="tipoDni" column="tipodni" type="java.lang.String"/>
+        <property name="direccion" column="direccion" type="java.lang.String"/>
+        <property name="telefono" column="telefono" type="java.lang.Integer"/>
+        <property name="mail" column="mail" type="java.lang.String"/>
+        <property name="fecNac" column="fecNac" type="java.lang.String"/>
+        <property name="sexo" column="sexo" type="java.lang.Character"/>
+        <property name="estadoCivil" column="estadoCivil" type="java.lang.String"/>
+        <property name="familiaresACargo" column="familiaresACargo" type="java.lang.Integer"/>
+        <property name="planMedico" column="planMedico" type="java.lang.Integer"/>
+        <property name="fechaBaja" column="fechaBaja" type="java.lang.String"/>
+    </class>
+</hibernate-mapping>

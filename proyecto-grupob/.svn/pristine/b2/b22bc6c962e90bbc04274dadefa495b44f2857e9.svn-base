@@ -1,0 +1,23 @@
+package ar.com.softtek.grupob.dao;
+
+import java.util.List;
+//import java.util.Set;
+
+import ar.com.softtek.grupob.entity.Afiliado;
+
+public interface AfiliadoDAO {
+	
+	public long add(Afiliado afiliado);
+
+	public Afiliado update(Afiliado afiliado);
+
+	public void delete(long numeroAfiliado);
+
+	public List<Afiliado> getAll();
+
+	public Afiliado  get(long numeroAfiliado);
+
+	public List<Afiliado> getAll(String nombreAfiliado);
+
+	//public Set<Curso> getCursosAsignados(long legajo);
+}

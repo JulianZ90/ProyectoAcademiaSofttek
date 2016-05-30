@@ -1,0 +1,10 @@
+package ar.com.softtek.grupob.service.impl;
+
+import ar.com.softtek.grupob.dao.PracticaDAO;
+import ar.com.softtek.grupob.service.PracticaService;
+
+public class PracticaServiceImpl implements PracticaService {
+
+	PracticaDAO practicaDAO;
+	
+}

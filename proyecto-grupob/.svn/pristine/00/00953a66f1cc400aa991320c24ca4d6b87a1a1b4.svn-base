@@ -1,0 +1,40 @@
+package ar.com.softtek.grupob.dao.impl;
+
+import java.util.List;
+
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+import ar.com.softtek.grupob.dao.TurnoDAO;
+import ar.com.softtek.grupob.entity.Turno;
+import ar.com.softtek.grupob.entity.Turno;
+
+public class TurnoDAOImpl extends HibernateDaoSupport
+implements TurnoDAO {
+
+	public void add(Turno turno) {
+		this.getHibernateTemplate().save(turno);
+	}
+
+	public Turno update(Turno turno) {
+		this.getHibernateTemplate().update(turno);
+		return null;
+	}
+
+	public void delete(long numeroTurno) {
+		Turno turno = (Turno)getHibernateTemplate().find("from Turno where numeroTurno=?", numeroTurno).get(0);
+		turno.setEstado(false);
+		this.getHibernateTemplate().update(turno);
+	}
+
+	public List<Turno> getAll() {
+		return getHibernateTemplate().find("from Turno");
+	}
+
+	public Turno get(long numeroTurno) {
+		Turno turno = (Turno)getHibernateTemplate().find("from Turno where numeroTurno=?", numeroTurno).get(0);
+		return turno;
+	}
+
+	
+
+}
