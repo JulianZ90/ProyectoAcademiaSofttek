@@ -6,7 +6,7 @@ import ar.com.softtek.dao.PacienteDAO;
 import ar.com.softtek.model.Paciente;
 
 
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
 public class PacienteDAOImpl extends HibernateDaoSupport implements PacienteDAO {
 	
