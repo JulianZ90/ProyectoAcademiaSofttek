@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ar.com.sofftek.model.Prestador" 
+		table="Prestador" catalog="softtek">
+        <id name="Id_Prestador" column="Id_Prestador" type="java.lang.Integer">
+            <generator class="identity" />
+        </id>
+        <property name="ApellidoYNombre" column="ApellidoYNombre" type="java.lang.String"/>
+        <property name="Filial" column="Filial" type="java.lang.String"/>
+        <property name="Especialidad" column="Especialidad" type="java.lang.String"/>
+        <property name="Domicilio" column="Domicilio" type="java.lang.String"/>
+        <property name="Localidad" column="Localidad" type="java.lang.String"/>
+        <property name="telefono" column="telefono" type="java.lang.String"/>
+    </class>
+</hibernate-mapping>
