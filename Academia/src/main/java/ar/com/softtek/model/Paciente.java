@@ -19,9 +19,9 @@ public class Paciente implements java.io.Serializable {
 	private char sexo;
 	private String estadoCivil;
 	private String direccion;
-	private int cantHijos;
-	private Plan planMedico;
-	private Date fechaDeBaja;
+	private int familiaresACargo;
+	private int planMedico;
+	private String fechaDeBaja;
 	
 	
 	public int getId() {
@@ -85,21 +85,21 @@ public class Paciente implements java.io.Serializable {
 		this.estadoCivil = estadoCivil;
 	}
 	public int getCantHijos() {
-		return cantHijos;
+		return familiaresACargo;
 	}
 	public void setCantHijos(int cantHijos) {
-		this.cantHijos = cantHijos;
+		this.familiaresACargo = cantHijos;
 	}
-	public Plan getPlanMedico() {
+	public int getPlanMedico() {
 		return planMedico;
 	}
-	public void setPlanMedico(Plan planMedico) {
+	public void setPlanMedico(int planMedico) {
 		this.planMedico = planMedico;
 	}
-	public Date getFechaDeBaja() {
+	public String getFechaDeBaja() {
 		return fechaDeBaja;
 	}
-	public void setFechaDeBaja(Date fechaDeBaja) {
+	public void setFechaDeBaja(String fechaDeBaja) {
 		this.fechaDeBaja = fechaDeBaja;
 	}
 
