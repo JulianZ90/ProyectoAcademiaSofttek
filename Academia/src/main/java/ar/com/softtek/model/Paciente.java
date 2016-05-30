@@ -84,10 +84,10 @@ public class Paciente implements java.io.Serializable {
 	public void setEstadoCivil(String estadoCivil) {
 		this.estadoCivil = estadoCivil;
 	}
-	public int getCantHijos() {
+	public int getFamiliaresACargo() {
 		return familiaresACargo;
 	}
-	public void setCantHijos(int cantHijos) {
+	public void setFamiliaresACargo(int cantHijos) {
 		this.familiaresACargo = cantHijos;
 	}
 	public int getPlanMedico() {
@@ -110,6 +110,4 @@ public class Paciente implements java.io.Serializable {
 		this.direccion = direccion;
 	}
 
-	
-	
 }
