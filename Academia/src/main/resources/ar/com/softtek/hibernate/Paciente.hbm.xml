@@ -4,49 +4,21 @@
 
 <hibernate-mapping>
     <class name="ar.com.sofftek.model.Paciente" 
-		table="paciente" catalog="softtek">
-        <id name="idPaciente" type="java.lang.int">
-            <column name="ID_PACIENTE" />
+		table="Pacientes" catalog="softtek">
+        <id name="idPaciente" column="idPaciente" type="java.lang.Integer">
             <generator class="identity" />
         </id>
-        <property name="nombre" type="String">
-            <column name="NOMBRE" length="45" not-null="true" />
-        </property>
-        <property name="apellido" type="String">
-            <column name="APELLIDO" length="45" not-null="true" />
-        </property>
-        <property name="dni" type="int">
-            <column name="DNI"  not-null="true" />
-        </property>
-		 <property name="tipoDni" type="String">
-            <column name="TIPO_DNI" length="45" not-null="true" />
-        </property>
-        <property name="direccion" type="String">
-            <column name="DIRECCION" length="45" not-null="true" />
-        </property>
-		 <property name="telefono" type="int">
-            <column name="TELEFONO"  not-null="false" />
-        </property>
-		 <property name="mail" type="String">
-            <column name="MAIL" length="45" not-null="false" />
-        </property>
-		 <property name="fecNac" type="Date">
-            <column name="FECHA_NACIMIENTO"  not-null="true" />
-        </property>
-		 <property name="sexo" type="char">
-            <column name="SEXO"  not-null="true" />
-        </property>
-		 <property name="estadoCivil" type="String">
-            <column name="ESTADO_CIVIL" length="45" not-null="false" />
-        </property>
-		 <property name="familiaresACargo" type="int">
-            <column name="FAMILIARES_A_CARGO"  not-null="true" />
-        </property>
-		 <property name="planMedico" type="Plan">
-            <column name="PLAN_MEDICO"  not-null="true" />
-        </property>
-		 <property name="fechaBaja" type="Date">
-            <column name="FECHA_BAJA"  not-null="false" />
-        </property>
+        <property name="nombre" column="nombre" type="java.lang.String"/>
+        <property name="apellido" column="apellido" type="java.lang.String"/>
+        <property name="dni" column="dni" type="java.lang.Integer"/>
+		<property name="direccion" column="direccion" type="java.lang.String"/>
+        <property name="telefono" column="telefono" type="java.lang.Integer"/>
+        <property name="mail" column="mail" type="java.lang.String"/>
+        <property name="fecNac" column="fecNac" type="java.lang.String"/>
+        <property name="sexo" column="sexo" type="java.lang.Character"/>
+        <property name="estadoCivil" column="estadoCivil" type="java.lang.String"/>
+        <property name="familiaresACargo" column="familiaresACargo" type="java.lang.Integer"/>
+        <property name="planMedico" column="planMedico" type="java.lang.Integer"/>
+        <property name="fechaBaja" column="fechaBaja" type="java.lang.String"/>
     </class>
 </hibernate-mapping>
