@@ -94,7 +94,7 @@ public class BajaModificacionPacienteAction extends ActionSupport{
 				
 				//Para Probar
 				pacienteDatosViejos=
-				new PacienteModificacionDuplexDto(1111, "D.N.I.","Apee","NOMEE", "12123", "a@a.com", "09/09/1991", 'M',"Soltero/a", "Calle trucha",5, new PlanDto("UN PLAN"),"Estaba Aburrido");
+				new PacienteModificacionDuplexDto(1111, "D.N.I.","Apee","NOMEE", "12123", "a@a.com", "09/09/1991", 'M',"Soltero/a", "Calle trucha",5, new PlanDto(1111),"Estaba Aburrido");
 				System.out.println(pacienteDatosViejos.toString());
 				
 				return "modificarPaciente";
