@@ -24,7 +24,7 @@ public class PacienteDAOImpl extends HibernateDaoSupport implements PacienteDAO 
 
 
 	public List<Paciente> findAll() {
-		String queryString = "SELECT * FROM PACIENTE";
+		String queryString = "SELECT * FROM PACIENTE"; //PROBAR SINO SOLO CON "FROM PACIENTE"
 		return (List<Paciente>) super.getHibernateTemplate().find(queryString);
 		
 	}
