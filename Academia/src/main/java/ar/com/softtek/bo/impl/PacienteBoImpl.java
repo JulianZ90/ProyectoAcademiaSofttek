@@ -1,5 +1,6 @@
 package ar.com.softtek.bo.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import ar.com.softtek.bo.PacienteBo;
@@ -10,11 +11,21 @@ import ar.com.softtek.dto.NuevoAfiliadoDto;
 public class PacienteBoImpl implements PacienteBo {
 
 	PacienteDAO pacienteDAO;
+	private  ArrayList<Paciente> pacientes;
 	
-	public void setPacienteDAO(PacienteDAO paciente){
-		this.pacienteDAO=paciente;
+	public PacienteBoImpl() {
+		
+		pacientes=  new ArrayList<Paciente>();
+		for (Paciente paciente : this.listPaciente()) {
+
+			pacientes.add(paciente);
+
+		}
+		
+		
+
 	}
-	
+
 	private Paciente mapeo(NuevoAfiliadoDto pacienteDto) {
 		
 		Paciente paciente = new Paciente();
@@ -31,13 +42,14 @@ public class PacienteBoImpl implements PacienteBo {
 		paciente.setDireccion(pacienteDto.getDireccion());
 		paciente.setFamiliaresACargo(pacienteDto.getCantHijos());
 		paciente.setPlanMedico(pacienteDto.getPlanMedico().getDescripcion());
-		
+				
 		return paciente;
 	}
 
 	public void addPaciente(NuevoAfiliadoDto pacienteDto) {
-				
-		this.pacienteDAO.addPaciente(this.mapeo(pacienteDto));
+		Paciente paciente= this.mapeo(pacienteDto);		
+		this.pacienteDAO.addPaciente(paciente);
+		this.pacientes.add(paciente);
 	}
 
 	public List<Paciente> listPaciente() {
