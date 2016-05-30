@@ -4,22 +4,14 @@
 		<meta charset="utf-8">
 		<title>Baja Afiliado</title>	
 		<link rel="stylesheet" href="../CSSs/Navbar.css">
+		<link rel="stylesheet" href="../CSSs/Botones.css">
+		<link rel="stylesheet" href="../CSSs/solorecuadro.css">
+		<link rel="stylesheet" href="../CSSs/Modificacion Afiliado.css">
 	</head>	
 	<body>
 	
 		<ul>
 			<li><a href="../Home Principal AMB.html">Principal</a></li>
-			<li class="dropdown" ><a href="#" class="dropbtn">Paciente</a>
-				<div class="dropdown-content">
-					<a href="Alta de Afiliado.html"> Alta de Afiliado </a>
-					<a href="Baja de Afiliado.html"> Baja / Modificación de Afiliado </a>
-				</div>
-			</li>
-			<li class="dropdown" ><a href="#" class="dropbtn">Turnos</a>
-				<div class="dropdown-content">
-					<a href="../Registro de Turnos/Registro Turnos.html"> Registro de Turnos</a>
-					<a href="../Registro de Turnos/Modificacion Turnos.html"> Modificación de Turnos </a>
-				</div>
 			</li>
 			<li class="dropdown" ><a class="dropbtn" a href="../Busqueda Paciente/Busqueda de Paciente.html">Busqueda de Paciente</a>
 				</li>
@@ -41,8 +33,9 @@
 					</br><label for="horabaja"><strong> Fecha Actual:  </strong></label>
 					<input type="datetime-local" name="horabaja" required></br>
 					<!--generado automaticamente por codigo JS -->
-					<pre>
-					</br><input type="submit" value="Dar de Baja">                                              <input type="Submit" value="Modificar" onclick="location.href = 'Modificación de Afiliado.html'"></pre>
+					
+					</br><input id="izquierda" class="button" type="submit" value="Dar de Baja">
+					<button type="button" id="derecha" class="button" value="Modificar" onclick="location.href = 'Modificación de Afiliado.html'" value=> Modificar </button>
 					<!-- esto es una negrada, tengo que corregirlo-->
 					<!-- al presionar el boton deberia salir una ventana emergente confirmando que la accion se realizó correctaente-->
 			</fieldset>

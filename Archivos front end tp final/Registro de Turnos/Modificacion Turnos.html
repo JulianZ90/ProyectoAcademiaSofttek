@@ -4,56 +4,47 @@
 	<head>
 		<meta charset="utf-8">
 		<title> Modificación de Turno </title>
-		<link rel="stylesheet" href="../CSSs/Style Table.css">
+		<link rel="stylesheet" href="../CSSs/Fieldset.css" />
+		<link rel="stylesheet" href="../CSSs/Solorecuadro.css">
+		<link rel="stylesheet" href="../CSSs/Navbar.css" />
 	</head>
 	
 	<body>
 		<ul>
-			<li><a href="Home Principal AMB.html">Principal</a></li>
-			<li class="dropdown" ><a href="#" class="dropbtn">Paciente</a>
-				<div class="dropdown-content">
-					<a href="AMB Afiliado/Alta de Afiliado.html"> Alta Afiliado </a>
-					<a href="AMB Afiliado/Modificación de Afiliado.html"> Modificación Afiliado </a>
-					<a href="AMB Afiliado/Baja de Afiliado.html"> Baja Afiliado </a>
-				</div>
-			</li>
-			<li class="dropdown" ><a href="#" class="dropbtn">Turnos</a>
-				<div class="dropdown-content">
-					<a href="Registro de Turnos/Registro de Turnos.html"> Registro de Turnos</a>
-					<a href="#"> Modificación de Turnos </a>
-				</div>
-			</li>
-			<li style="float:right"><a href="Home AMB.html">Salir</a></li>
-		</ul>
-		</br>
+			<li class="dropdown"><a href="../Home Principal AMB.html" class="dropbtn">Principal</a></li>
+				<li class="dropdown" ><a href="Busqueda de Paciente.html" class="dropbtn"> Busqueda de Paciente</a>
+				</li>
+				<li style="float:right" class="dropdown"><a href="../Home AMB.html" class="dropbtn">Salir</a></li>
+			</ul>
+			</br>
 		<form>
 			<fieldset>
 				<legend>Ingrese los Datos del Paciente</legend>
 				</br>
-				<label for="Numero de Turno">Número de turno :</label>
+				<label for="Numero de Turno" >Número de turno :</label>
 				<input type="number" name="Numero de Turno" disabled/></br><!-- es automatico-->
 				</br>
-				<label for= "Nombre">Nombre : </label>
-				<input type="text" name="Nombre" readonly/>
-				<label for="Apellido"> Apellido : </label>
-				<input type="text" name="Apellido" readonly/></br>
+				<label for= "Nombre" id="izquierda">Nombre : </label>
+				<input type="text" name="Nombre" id="izquierda" readonly/>
+				<label for="Apellido" id="derecha" > Apellido : </label>
+				<input type="text" name="Apellido" id="derecha"readonly/></br>
 				</br>
-				<label for="Paciente"> Nº de Afiliado : </label>
-				<input type="number" name="Afiliado" readonly/>
-				<label for="Plan"> Plan : </label>
-				<input type="text" name="Plan" readonly/></br>
+				<label for="Paciente" id="izquierda"> Nº de Paciente : </label>
+				<input type="number" name="Paciente" id="izquierda" readonly/>
+				<label for="Plan" id="derecha"> Plan : </label>
+				<input type="text" name="Plan" id="derecha"readonly/></br>
 				</br>
-				<label type="Fecha Llegada">Fecha de Llegada : </label>
-				<input type="time" name="Hora Llegada" requiered />
-				<input type="date" name="Fecha Llegada" required/>
-				<label for="Fecha Atencion"> Fecha de Inicio de Atención : </label>
-				<input type="time" name="Hora Atencion" requiered />
-				<input type="date" name="Fecha Atencion" required /> </br>
+				<label type="Fecha Llegada" id="izquierda" >Fecha de Llegada : </label>
+				<input type="time" name="Hora Llegada" id="izquierda"requiered />
+				<input type="date" name="Fecha Llegada" id="izquierda" required/>
+				<label for="Fecha Atencion" id="derecha> Fecha de Inicio de Atención : </label>
+				<input type="time" name="Hora Atencion" id="derecha" requiered />
+				<input type="date" name="Fecha Atencion" id="derecha" required /> </br>
 				</br>
-				<label for="ID Prestador">ID Prestador : </label>
-				<input type="number" name="ID Prestador" readonly />
-				<label for="Practica"> Nro. Práctica :</label>
-				<input type="text" name="Practica" placeholder="Practica" required /></br>
+				<label for="ID Prestador" id="izquierda">ID Prestador : </label>
+				<input type="number" name="ID Prestador" readonly id="izquierda" />
+				<label for="Practica" id="derecha"> Nro. Práctica :</label>
+				<input type="text" name="Practica" placeholder="Practica" id="derecha" required /></br>
 				<!-- este campo requiere tooltip dinamico, que se realiza con este link
 				https://www.jacobtomlinson.co.uk/2012/09/11/ajax-database-tooltip/ -->
 				</br>

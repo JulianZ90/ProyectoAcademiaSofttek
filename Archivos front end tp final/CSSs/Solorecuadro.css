@@ -1,0 +1,18 @@
+fieldset {
+  padding: 1em;
+  font:80%/1 sans-serif;
+  border:1px solid green;
+  }
+  
+legend {
+  font-weight: bold;
+  padding: 0.2em 0.5em;
+  border:1px solid green;
+  color:green;
+  font-size:150%;
+  text-align:center;
+  }
+  
+label {
+	font-weight: bold;
+}

@@ -4,7 +4,8 @@
 		<meta charset="utf-8">
 		<title>Alta Afiliado</title>
 		<link rel="stylesheet" href="../CSSs/Navbar.css">
-		<link rel="stylesheet" href="css bsae.css">
+		<link rel="stylesheet" href="../CSSs/Botones.css">
+		<link rel="stylesheet" href="../CSSs/solorecuadro.css">
 	</head>
 	
 	<title> Alta Afiliado</title>
@@ -15,18 +16,6 @@
 		
 			<ul>
 				<li class="dropdown"><a href="../Home Principal AMB.html" class="dropbtn">Principal</a></li>
-				<li class="dropdown" ><a href="#" class="dropbtn">Paciente</a>
-					<div class="dropdown-content">
-						<a href="../AMB Afiliado/Alta de Afiliado.html"> Alta de Afiliado </a>
-						<a href="../AMB Afiliado/Baja de Afiliado.html"> Baja / Modificación de Afiliado </a>
-					</div>
-				</li>
-				<li class="dropdown" ><a href="#" class="dropbtn">Turnos</a>
-					<div class="dropdown-content">
-						<a href="../Registro de Turnos/Registro Turnos.html"> Registro de Turnos</a>
-						<a href="../Registro de Turnos/Modificacion Turnos.html"> Modificación de Turnos </a>
-					</div>
-				</li>
 				<li class="dropdown" ><a class="dropbtn" a href="../Busqueda Paciente/Busqueda de Paciente.html">Busqueda de Paciente</a>
 				</li>
 				<li style="float:right" class="dropdown"><a href="../	Home AMB.html" class="dropbtn">Salir</a></li>
@@ -35,13 +24,13 @@
 			<fieldset>
 				<legend> Ingrese los Datos del Nuevo Afiliado </legend>
 				
-				</br><label for="nombre"><strong>Nombre :</strong></label>
+				</br><label for="nombre">Nombre :</label>
 				<input type="text" name="nombre" required placeholder="Nombre del Afiliado" autofocus>
 				
-				<label for="apellido"><strong>  Apellido :</strong></label>
+				<label for="apellido">  Apellido :</label>
 				<input type="text" name="apellido" required placeholder="Apellido del Afiliado"></br>
 				
-				</br><label for="numdocumento"><strong>Nro. y Tipo de Documento :</strong></label>
+				</br><label for="numdocumento">Nro. y Tipo de Documento : </label>
 				<input type="number" name="numdocumento" required placeholder="Nro. de Documento" min="1">
 				<select name="tipodoc" required>
 					<option value="D.N.I."> D.N.I. </option>
@@ -49,30 +38,30 @@
 					<option value="L.C."> L.C.</option>
 				</select></br>
 				
-				</br><strong><label for="calle">Calle : </label></strong>
+				</br><label for="calle">Calle : </label>
 				<input type="text" name="calle" required placeholder="Calle" pattern="[A-z]">
-				<label for="altura"><strong> Altura : </strong></label>
+				<label for="altura"> Altura : </label>
 				<input type="number" name="altura" required placeholder="Altura" size="6" maxlength="5" min="1">
-				<label for="piso"><strong> Piso : </strong></label>
+				<label for="piso"> Piso : </label>
 				<input type="text" name="piso" placeholder="Piso" size="2" maxlength="2">
-				<label for="departamento"><strong> Departamento : </strong></label>
+				<label for="departamento"> Departamento : </label>
 				<input type="text" name="departamento" placeholder="Dpto" size="4" maxlength="3"></br>		
 				
-				</br><label for="telefono"><strong>Telefono : </strong></label>
+				</br><label for="telefono">Telefono : </label>
 				<input type="tel" name="telefono" required placeholder="numero de telefono" maxlength="10" pattern="[0-9]"></br>
 				
-				</br><label for="mail"><strong>Mail : </strong></label><input type="email" name="mail" required placeholder="dirección de correo"></br>		   
+				</br><label for="mail">Mail : </label><input type="email" name="mail" required placeholder="dirección de correo"></br>		   
 				
-				</br><label for="fechanac"><strong>Fecha de Nacimiento : </strong></label><input type="date" name="fechanac" placeholder="Fecha de Nacimiento" required></br>
+				</br><label for="fechanac">Fecha de Nacimiento : </label><input type="date" name="fechanac" placeholder="Fecha de Nacimiento" required></br>
 				
-				</br><label for="sexo"><strong>Sexo : </strong></label>
+				</br><label for="sexo">Sexo : </label>
 				<select name="sexo" required>
 						<option value="Masculino"> M </option>
 						<option value="Femenino"> F </option>
 				</select>
 				</br>
 	
-				</br><label for="estadocivil"><strong> Estado Civil : </strong></label>
+				</br><label for="estadocivil"> Estado Civil : </label>
 				<select name="estadocivil" required>
 					<option value="Soltero/a"> Soltero/a </option>
 					<option value="Casado/a"> Casado/a </option>
@@ -82,17 +71,16 @@
 					</select>
 				</br>
 				
-				</br><label for="canthijos"><strong>Cantidad de Hijos o Familiares a Cargo : </strong></label>
+				</br><label for="canthijos">Cantidad de Hijos o Familiares a Cargo : </label>
 				<input type="number" name="canthijos" size="2" required placeholder="N°" min="0"></br>
 				
-				</br><label for="plan"><strong>Plan Medico : </strong></label>
-				<input type="text" name="plan" placeholder="tipo de plan" required></br>
-				<!-- Aca falta definir el tipo de plan , ya que puede ser definido como una lista , un campo de texto o solo numerico-->
+				</br><label for="plan">Plan Medico : </label>
+				<input type="number" name="plan" placeholder="tipo de plan" required></br>
 				
-				</br><label for="numafiliado"><strong> N° de Afiliado : </strong></label>
+				</br><label for="numafiliado"> N° de Afiliado : </label>
 				<input type="number" name="numafiliado" disabled ></br> <!--Este casillero va a ser autoincremental , se realiza con css o js que en esta etapa no se incluye-->
 				
-				</br><input type="submit" value="Registrar">
+				</br><input type="submit" class="button" value="Registrar">
 			</fieldset>	
 		</form>
 	</body>
