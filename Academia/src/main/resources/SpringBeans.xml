@@ -10,10 +10,6 @@ http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
 	<import resource="config/spring/HibernateSessionFactory.xml"/>
 		
 	<!-- Beans Declaration -->
-	<import resource="ar/com/softtek/spring/PacienteBean.xml"/>
-	<import resource="ar/com/softtek/spring/CambioPlanBean.xml"/>
-	<import resource="ar/com/softtek/spring/RecetaBean.xml"/>
-	<import resource="ar/com/softtek/spring/TurnoBean.xml"/>
-	<import resource="ar/com/softtek/spring/TurnosPrestBean.xml"/>
+	<import resource="ar/com/softtek/spring/nuevoPacienteBean.xml"/>
 	
 </beans>

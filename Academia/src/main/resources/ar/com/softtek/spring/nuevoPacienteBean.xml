@@ -3,13 +3,9 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
-	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
  
- 	<bean id="pacienteAction" class="ar.com.softtek.action.PacienteAction">
-		<property name="pacienteService" ref="pacienteService" />	
-	</bean>
-	
-	<bean id="pacienteService" class="ar.com.softtek.service.impl.PacienteServiceImpl">
+ 	<bean id="nuevoPacienteAction" class="ar.com.softtek.action.nuevoPacienteAction">
 		<property name="pacienteBo" ref="pacienteBo" />	
 	</bean>
 
