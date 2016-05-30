@@ -6,6 +6,7 @@
 <struts>
     <constant name="struts.enable.DynamicMethodInvocation"
         value="false" />
+        <constant name="struts.mapper.action.prefix.enabled" value="true" />
     <constant name="struts.devMode" value="false" />
     <constant name="struts.custom.i18n.resources"
         value="ApplicationResources" />
@@ -14,16 +15,25 @@
     
         <action name="nuevoPaciente"
             class="ar.com.softtek.action.NuevoPacienteAction">
-            <result name="success">Success.jsp</result>
+            <result name="success">SuccessAlta.jsp</result>
             <result name="error">AltadeAfiliado.html</result>
+            
         </action>
     
-      <!--   <action name="bajaPaciente"
-            class="ar.com.softtek.action.BajaPacienteAction">
-            <result name="success">BajadeAfiliado.html</result>
+         <action name="bajaModificacionPaciente"
+            class="ar.com.softtek.action.BajaModificacionPacienteAction" >
+            <result name="success">SuccessBaja.jsp</result>
             <result name="error">BajadeAfiliado.html</result>
+            <result name="modificarPaciente">ModificaciondeAfiliado.jsp</result>
         </action>
-     -->
+     
+         <action name="enviarModificacion"
+            class="ar.com.softtek.action.AplicarModificacionAction" >
+            <result name="success">Success</result>
+            <result name="volverABusqueda">BajadeAfiliado.html</result>
+            <result name="error">ModificaciondeAfiliado.jsp</result>
+        </action>
+     
         
         <!-- <action name="login"
             class="ar.com.softtek.action.LoginAction">
