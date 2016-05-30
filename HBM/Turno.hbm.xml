@@ -12,11 +12,11 @@
         <property name="apellido" column="apellido" type="java.lang.String"/>
         <property name="idPaciente" column="idPaciente" type="java.lang.Integer"/>
 		<property name="planMedico" column="planMedico" type="java.lang.Integer"/>
-        <property name="fechaTurno" column="fechaTurno" type="java.lang.Date"/>
+        <property name="fechaTurno" column="fechaTurno" type="java.lang.String"/>
         <property name="horaTurno" column="horaTurno" type="java.lang.LocalTime"/>
-        <property name="fechaLlegada" column="fechaLlegada" type="java.lang.Date"/>
+        <property name="fechaLlegada" column="fechaLlegada" type="java.lang.String"/>
         <property name="horaLlegada" column="horaLlegada" type="java.lang.LocalTime"/>
-        <property name="fechaAtencion" column="fechaAtencion" type="java.lang.Date"/>
+        <property name="fechaAtencion" column="fechaAtencion" type="java.lang.String"/>
         <property name="horaAtencion" column="horaAtencion" type="java.lang.LocalTime"/>
         <property name="Id_Prestador" column="Id_Prestador" type="java.lang.Integer"/>
         <property name="idPractica" column="idPractica" type="java.lang.Integer"/>
