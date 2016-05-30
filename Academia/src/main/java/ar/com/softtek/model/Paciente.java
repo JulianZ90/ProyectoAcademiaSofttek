@@ -15,7 +15,7 @@ public class Paciente implements java.io.Serializable {
 	private String tipoDni;
 	private int telefono;
 	private String mail;
-	private Date fecNac;
+	private String fecNac;
 	private char sexo;
 	private String estadoCivil;
 	private String direccion;
@@ -66,10 +66,10 @@ public class Paciente implements java.io.Serializable {
 	public void setMail(String mail) {
 		this.mail = mail;
 	}
-	public Date getFecNac() {
+	public String getFecNac() {
 		return fecNac;
 	}
-	public void setFecNac(Date fecNac) {
+	public void setFecNac(String fecNac) {
 		this.fecNac = fecNac;
 	}
 	public char getSexo() {
