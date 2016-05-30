@@ -2,9 +2,14 @@ package ar.com.softtek.action;
 
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import com.opensymphony.xwork2.ActionSupport;
+
+import ar.com.softtek.bo.PacienteBo;
 import ar.com.softtek.dto.NuevoAfiliadoDto;
 import ar.com.softtek.dto.PlanDto;
 
@@ -29,7 +34,18 @@ public class NuevoPacienteAction extends ActionSupport {
 	private String piso;
 	private int altura;
 	private NuevoAfiliadoDto nuevoAfiliadoDto;
+	private PacienteBo pacienteBo;
+	List<NuevoAfiliadoDto> pacienteList = new ArrayList<NuevoAfiliadoDto>();
 
+	public List<NuevoAfiliadoDto> getPacienteList() {
+		return pacienteList;
+	}
+
+	public void setPacienteList(List<NuevoAfiliadoDto> pacienteList) {
+		this.pacienteList = pacienteList;
+	}
+
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -170,8 +186,12 @@ public class NuevoPacienteAction extends ActionSupport {
 					(this.getCalle() + this.getAltura() + this.getPiso() + this.getDepartamento()), this.getCanthijos(),
 					this.nuevoPlanMedico()));
 
+			
 			System.out.println(this.getNuevoAfiliadoDto().toString());
 
+		//	pacienteBo.addPaciente(this.getNuevoAfiliadoDto());
+			pacienteList.add(nuevoAfiliadoDto);
+			
 			return "success";
 
 		} catch (Exception e) {
@@ -186,4 +206,20 @@ public class NuevoPacienteAction extends ActionSupport {
 		return (new PlanDto(this.getPlan()));
 	}
 
+	
+
+	public void setPacienteBo(PacienteBo pacienteBo) {
+		this.pacienteBo = pacienteBo;
+	}
+
+	
+	//list all pacientes
+		public String listPacientes() throws Exception{
+			
+		//	pacienteList = pacienteBo.listPacientes();
+			
+			return "success";
+		
+		}
+	
 }
