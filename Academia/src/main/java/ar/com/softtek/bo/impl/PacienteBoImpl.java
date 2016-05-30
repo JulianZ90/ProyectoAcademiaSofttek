@@ -8,15 +8,18 @@ import ar.com.softtek.model.Paciente;
 public class PacienteBoImpl implements PacienteBo {
 
 	PacienteDAO pacienteDAO;
+	
+	public void setPacienteDAO(PacienteDAO paciente){
+		this.pacienteDAO=paciente;
+	}
 
-	public void addCustomer(Paciente paciente) {
-		// TODO Auto-generated method stub
+	public void addPaciente(Paciente paciente) {
+		this.pacienteDAO.addPaciente(paciente);
 		
 	}
 
 	public List<Paciente> listPaciente() {
-		// TODO Auto-generated method stub
-		return null;
+		return pacienteDAO.findAll();
 	}
 	
 	

@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface PacienteBo {
 
-	void addCustomer(Paciente paciente);
+	void addPaciente(Paciente paciente);
 	
 	List<Paciente> listPaciente();
 	
