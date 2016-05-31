@@ -3,11 +3,13 @@ package ar.com.softtek.action;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
+import com.opensymphony.xwork2.ActionSupport;
+
 import ar.com.softtek.bo.PacienteBo;
 import ar.com.softtek.dto.NuevoAfiliadoDto;
 import ar.com.softtek.dto.PlanDto;
 
-public abstract class  PacienteAction {
+public abstract class  PacienteAction extends ActionSupport {
 	
 	private static final long serialVersionUID = 1L;
 	private static final Logger log = LogManager.getLogger("NuevoAfiliadoAction: ");

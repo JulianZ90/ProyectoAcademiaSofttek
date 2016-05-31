@@ -1,0 +1,48 @@
+<!doctype>
+<!--script funcionAlta/Baja/Modifcacion-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> .:Turnos del Paciente:. </title>
+		<link rel="stylesheet" href="../CSSs/Style Table.css" />
+		<link rel="stylesheet" href="../CSSs/Navbar.css" />
+		<link rel="stylesheet" href="../CSSs/Botones.css" />
+		<link rel="stylesheet" href="../CSSs/fondo.css" />
+		<link rel="stylesheet" href="../CSSs/Solorecuadro.css" />
+		
+		<script src="../JSs/funcionalerta.js"></script>
+	</head>
+	
+	<body>
+		
+		<ul>
+			<li class="dropdown" ><a href="Busqueda de Paciente.html" class="dropbtn"> Busqueda de Paciente</a></li>
+			<li style="float:right" class="dropdown"><a href="#" onclick="funcionSalir()" class="dropbtn">Salir</a></li>
+		</ul>
+		</br>
+			
+		<fieldset>
+			<legend>Turnos</legend>
+			<table border="1" style="width:90%">
+				<tr>
+					<th>Nro. Turno <img class="arrow" src="../Imagenes/up.png" alt="up" onclick="funcionflecha()"><img class="arrow" src="../Imagenes/down.png" alt="down" onclick="funcionflecha()"></th>
+					<th>Nombre y Apellido</th>
+					<th>Nro. Paciente</th>
+					<th>Plan Medico</th>
+				</tr>
+				<tr>
+					<td> 1245 </td>
+					<td>Zorro Corvalan</td>
+					<td>456782</td>
+					<td>LMV12</td>
+				</tr>
+			</table>
+			<img src="../Imagenes/plus.png" alt="Nuevo Turno" class="BotonesLaterales" onclick="funcionAgregar()"></br></br></br></br>
+			<img src="../Imagenes/minus.png" alt="Baja Turno" class="BotonesLaterales" onclick="funcionBajar()"></br></br></br></br>
+			<img src="../Imagenes/edit.png" alt="Modificar Turno" class="BotonesLaterales" onclick="funcionEditar()">
+		</fieldset> 
+		</br>
+		<input type="button" name="Volver" value="Volver a Busqueda de Pacientes" onclick="location.href ='Busqueda de Paciente.html';" class="button"/>
+	</body>
+	
+</html>

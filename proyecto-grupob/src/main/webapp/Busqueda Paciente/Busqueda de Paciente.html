@@ -1,0 +1,68 @@
+<!doctype HTML>
+<!--funcion salir-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> Busqueda de Paciente</title>
+		<link rel="stylesheet" href="../CSSs/Style Table.css">
+		<link rel="stylesheet" href="../CSSs/Navbar.css">
+		<link rel="stylesheet" href="../CSSs/fondo.css">
+		<link rel="stylesheet" href="../CSSs/Solorecuadro.css">
+		<link rel="stylesheet" href="../CSSs/BarraBusqueda.css">
+		
+		<script src="../JSs/funcionalerta.js"></script>
+	</head>
+	
+	<body>
+	
+		<ul>
+			<li class="dropdown" ><a class="dropbtn" href="#">Busqueda de Paciente</a></li>
+			<li style="float:right" class="dropdown"><a href="#" onclick="funcionSalir()" class="dropbtn">Salir</a></li>
+		</ul>
+		</br>
+	
+		<p class="BarraBusqueda"> Buscar por : 
+		<select name="tipodato" required>
+			<option value="apenom"> Nombre y/o Apellido</option>
+			<option value="documento"> Documento</option>
+			<option value="plan">Plan</option>
+			<option value="paciente">Nro. Paciente</option>
+		</select>
+		<input type="search" name="Barra de Busqueda" placeholder="Ingrese Paciente / Documento / Plan / Nro. Paciente" size="50" />
+		<img src="/Imagenes/lupa.png" alt="Icono Lupa" class="lupa" onclick="buscarPaciente('Pacientes')" >
+		<!-- tiene que tener un evento onchange , para al escribir mostrar la tabla de pacientes -->
+	</p>
+	
+	<fieldset id="Pacientes">
+		<legend> Pacientes</legend>
+		<!-- https://www.um.es/atica/documentos/forja/js/jqueryPlugins/tablesorter/doc/ejemplo.html ordenamiento de los campos de la tabla -->
+		<table border="1" style="width:90%">	
+			<tr>
+				<th>Seleccionar</th>
+				<th>Nombre y Apellido<img class="arrow" src="/Imagenes/up.png" alt="up/down"></th>
+				<th>Tipo<img class="arrow" src="/Imagenes/up.png" alt="up/down"></th>
+				<th>Nro. Documento<img class="arrow" src="../Imagenes/up.png" alt="up/down"></th>
+				<th>Direccion<img class="arrow" src="../Imagenes/up.png" alt="up/down"></th>
+				<th>Teléfono<img class="arrow" src="../Imagenes/up.png" alt="up/down"></th>
+				<th>Mail<img class="arrow" src="../Imagenes/up.png" alt="up/down"></th>
+				<th>Fecha de Nacimiento<img class="arrow" src="../Imagenes/up.png" alt="up/down"></th>
+			</tr>
+			<tr>
+				<td><input type="radio" name="Paciente" ondblclick="location.href = 'Turnos del Paciente.html'" /></td> 
+				<td>Zorro Corvalan</td>
+				<td>L.E.</td>
+				<td>1234567</td>
+				<td>Rivadavia 123</td>
+				<td>41235678</td>
+				<td>zorro@corvalan.com</td>
+				<td> 12/12/1912</td>
+			</tr>
+		</table>
+		
+		<img src="../Imagenes/plus.png" alt="Nuevo Paciente" class="BotonesLaterales" onclick="location.href = '../AMB Afiliado/Alta de Afiliado.html'"></br></br></br></br>
+		<img src="../Imagenes/minus.png" alt="Baja Paciente" class="BotonesLaterales" onclick="location.href = '../AMB Afiliado/Baja de Afiliado.html'"></br></br></br></br>
+		<img src="../Imagenes/edit.png" alt="Modificar Paciente" class="BotonesLaterales" onclick="location.href = '../AMB Afiliado/Modificación de Afiliado.html'">
+	</fieldset>
+	
+	</body>
+</html>
