@@ -10,6 +10,6 @@ public interface PacienteBo {
 
 	void addPaciente(NuevoAfiliadoDto pacienteDto);
 	
-	List<Paciente> listPaciente();
+	List<Paciente> findPacientes();
 	
 }

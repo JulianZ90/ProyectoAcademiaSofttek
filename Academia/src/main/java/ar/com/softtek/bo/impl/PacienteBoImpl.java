@@ -5,8 +5,8 @@ import java.util.List;
 
 import ar.com.softtek.bo.PacienteBo;
 import ar.com.softtek.dao.PacienteDAO;
-import ar.com.softtek.model.Paciente;
 import ar.com.softtek.dto.NuevoAfiliadoDto;
+import ar.com.softtek.model.Paciente;
 
 public class PacienteBoImpl implements PacienteBo {
 
@@ -48,7 +48,13 @@ public class PacienteBoImpl implements PacienteBo {
 				
 		return paciente;
 	}
+	
+    public List<Paciente> getPacientes() {
+		
+		return this.pacientes;
+	}
 
+	
 	public void addPaciente(NuevoAfiliadoDto pacienteDto) {
 		
 		Paciente paciente= this.mapeo(pacienteDto);		
@@ -60,11 +66,5 @@ public class PacienteBoImpl implements PacienteBo {
 		
 		return pacienteDAO.findAll();
 	}
-	
-	public List<Paciente> getPacientes() {
-		
-		return this.pacientes;
-	}
-	
-	
+
 }

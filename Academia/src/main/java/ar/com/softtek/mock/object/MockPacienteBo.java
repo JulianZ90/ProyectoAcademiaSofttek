@@ -11,9 +11,10 @@ public class MockPacienteBo {
     private  ArrayList<Paciente> pacientes;
 	
 	
-	public MockPacienteBo() {
+	public MockPacienteBo(MockPacienteDAO pacienteDAO) {
 		
-		this.pacientes=  new ArrayList<Paciente>();
+		this.pacienteDAO = pacienteDAO;
+		this.pacientes =  new ArrayList<Paciente>();
 		for (Paciente paciente : this.findPacientes()) {
 
 			this.pacientes.add(paciente);

@@ -18,8 +18,8 @@ public class TestAltaPaciente {
 	public void testDeberiaDevolverMensajeSuccessAlAgregarUnNuevoPaciente() {
 		
 		MockNuevoPacienteAction nuevoPacienteAction = new MockNuevoPacienteAction();
-		MockPacienteBo pacienteBo = new MockPacienteBo();
 		MockPacienteDAO pacienteDAO = new MockPacienteDAO();
+		MockPacienteBo pacienteBo = new MockPacienteBo(pacienteDAO);
 		
 		nuevoPacienteAction.setPacienteBo(pacienteBo);
 		pacienteBo.setPacienteDAO(pacienteDAO);
@@ -40,7 +40,7 @@ public class TestAltaPaciente {
 		nuevoPacienteAction.setDepartamento("A");
 		nuevoPacienteAction.setPiso("5");
 		
-		Assert.assertTrue(nuevoPacienteAction.execute() == "sucess");
+		Assert.assertEquals(nuevoPacienteAction.execute(), "success");
 		
 	}
 	
@@ -48,12 +48,13 @@ public class TestAltaPaciente {
 	@Test
 	public void testDeberiaDevolverLaListaDePacientes() {
 		
+		
 		MockNuevoPacienteAction nuevoPacienteAction = new MockNuevoPacienteAction();
-		MockPacienteBo pacienteBo = new MockPacienteBo();
 		MockPacienteDAO pacienteDAO = new MockPacienteDAO();
+		MockPacienteBo pacienteBo = new MockPacienteBo(pacienteDAO);
+		
 		
 		nuevoPacienteAction.setPacienteBo(pacienteBo);
-		pacienteBo.setPacienteDAO(pacienteDAO);
 		
 		nuevoPacienteAction.setNombre("Juan");
 		nuevoPacienteAction.setApellido("Perez");
@@ -71,6 +72,7 @@ public class TestAltaPaciente {
 		nuevoPacienteAction.setDepartamento("A");
 		nuevoPacienteAction.setPiso("5");
 		
+		nuevoPacienteAction.execute();
 		List<Paciente> pacientes = pacienteBo.getPacientes();
 		
 		Assert.assertEquals(pacientes.get(0).getDni(), nuevoPacienteAction.getNroDoc());
@@ -99,13 +101,10 @@ public class TestAltaPaciente {
 		
 		pacienteDAO.addPaciente(paciente);
 		
+		MockPacienteBo pacienteBo = new MockPacienteBo(pacienteDAO);
 		MockNuevoPacienteAction nuevoPacienteAction = new MockNuevoPacienteAction();
-		MockPacienteBo pacienteBo = new MockPacienteBo();
-		
-		
 		nuevoPacienteAction.setPacienteBo(pacienteBo);
-		pacienteBo.setPacienteDAO(pacienteDAO);
-		
+			
 		List<Paciente> pacientes = pacienteBo.getPacientes();
 		
 		Assert.assertEquals(pacientes.size(), 1);
