@@ -1,33 +1,25 @@
 <!doctype>
+<!--script de salida-->
 <html>
 	<head>
 		<meta charset="utf-8">
 		<title> .:Turnos del Paciente:. </title>
 		<link rel="stylesheet" href="../CSSs/Style Table.css" />
 		<link rel="stylesheet" href="../CSSs/Navbar.css" />
+		<link rel="stylesheet" href="../CSSs/Botones.css" />
+		<link rel="stylesheet" href="../CSSs/fondo.css" />
+		<link rel="stylesheet" href="../CSSs/Solorecuadro.css" />
+		
+		
 	</head>
 	
 	<body>
 		
 		<ul>
-				<li class="dropdown"><a href="../Home Principal AMB.html" class="dropbtn">Principal</a></li>
-				<li class="dropdown" ><a href="#" class="dropbtn">Paciente</a>
-					<div class="dropdown-content">
-						<a href="../AMB Afiliado/Alta de Afiliado.html"> Alta  de Afiliado </a>
-						<a href="../AMB Afiliado/Modificación de Afiliado.html"> Modificación de Afiliado </a>
-					</div>
-				</li>
-				<li class="dropdown" ><a href="#" class="dropbtn">Turnos</a>
-					<div class="dropdown-content">
-						<a href="../Registro de Turnos/Registro Turnos.html"> Registro de Turnos</a>
-						<a href="../Registro de Turnos/Modificacion Turnos.html"> Modificación de Turnos </a>
-					</div>
-				</li>
-				<li class="dropdown" ><a href="Busqueda de Paciente.html" class="dropbtn"> Busqueda de Paciente</a>
-				</li>
-				<li style="float:right" class="dropdown"><a href="../Home AMB.html" class="dropbtn">Salir</a></li>
-			</ul>
-			</br>
+			<li class="dropdown" ><a href="Busqueda de Paciente.html" class="dropbtn"> Busqueda de Paciente</a></li>
+			<li style="float:right" class="dropdown"><a href="#" onclick="funcionSalida()" class="dropbtn">Salir</a></li>
+		</ul>
+		</br>
 			
 		<fieldset>
 			<legend>Turnos</legend>
@@ -47,7 +39,7 @@
 			</table>
 		</fieldset> 
 		
-		<input type="button" name="Volver" value="Volver a Busqueda de Pacientes" onclick="location.href ='Busqueda de Paciente.html';" />
+		<input type="button" name="Volver" value="Volver a Busqueda de Pacientes" onclick="location.href ='Busqueda de Paciente.html';" class="button"/>
 	</body>
 	
 </html>

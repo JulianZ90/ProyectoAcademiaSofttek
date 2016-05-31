@@ -1,25 +1,27 @@
 <!doctype HTML>
+<!-- corregir boton cancelar para que lleve a la busqueda de cliente
+	corregir funcionalidades JS-->
 <html>
 	<head>
 		<link rel="stylesheet" href="../CSSs/Navbar.css">
 		<link rel="stylesheet" href="../CSSs/Solorecuadro.css">
 		<link rel="stylesheet" href="../CSSs/Modificacion Afiliado.css">
 		<link rel="stylesheet" href="../CSSs/Botones.css">
+		<link rel="stylesheet" href="../CSSs/fondo.css">
 		
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
 		<title>Modificación de Afiliado</title>
 		
-		<script src="../JSs/funcionalerta.js"></script>
+		<script src="../JSs/funcionesModificacion.js"></script>
 	</head>
 	<body>
 		
 		<form>
 		
 			<ul>
-				<li class="dropdown"><a href="../Home Principal AMB.html" class="dropbtn">Principal</a></li>
 				<li class="dropdown" ><a href="../Busqueda Paciente/Busqueda de Paciente.html" class="dropbtn"> Busqueda de Paciente</a>
 				</li>
-				<li style="float:right" class="dropdown"><a href="../Home AMB.html" class="dropbtn">Salir</a></li>
+				<li style="float:right" class="dropdown"><a href="#" onclick="funcionSalir()" class="dropbtn">Salir</a></li>
 			</ul>
 			</br>
 			<fieldset>
@@ -83,7 +85,7 @@
 				</br> <textarea name="Motivo de Cambio" placeholder="Indique el motivo de cambio..." maxlength="140" cols="50" rows="7" ></textarea></br>
 				
 				</br><input class="button"id="izquierda" type="submit" value="Modificar" onclick="funcionalerta()"> 
-				<button class="button" id="derecha" type="button" value="Cancelar" onclick="funcioncancelar()" >  Cancelar</button>
+				<button class="button" id="derecha" type="button" value="Cancelar" onclick="cancelarModificacion()" >  Cancelar</button>
 			</fieldset>
 		</form>
 		

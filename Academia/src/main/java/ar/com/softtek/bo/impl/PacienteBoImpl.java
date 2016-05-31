@@ -1,35 +1,25 @@
 package ar.com.softtek.bo.impl;
 
-import java.util.ArrayList;
 import java.util.List;
-
 import ar.com.softtek.bo.PacienteBo;
 import ar.com.softtek.dao.PacienteDAO;
+import ar.com.softtek.dto.PacienteDto;
 import ar.com.softtek.model.Paciente;
-import ar.com.softtek.dto.NuevoAfiliadoDto;
 
 public class PacienteBoImpl implements PacienteBo {
 
 	private PacienteDAO pacienteDAO;
-	private  ArrayList<Paciente> pacientes;
 	
 	
-	public PacienteBoImpl() {
-		
-		this.pacientes=  new ArrayList<Paciente>();
-		for (Paciente paciente : this.findPacientes()) {
-
-			this.pacientes.add(paciente);
-		}
+    public PacienteDAO getPacienteDAO() {
+		return pacienteDAO;
 	}
 	
-	
 	public void setPacienteDAO(PacienteDAO pacienteDAO) {
-		
 		this.pacienteDAO = pacienteDAO;
 	}
 
-	private Paciente mapeo(NuevoAfiliadoDto pacienteDto) {
+	private Paciente mapeo(PacienteDto pacienteDto) {
 		
 		Paciente paciente = new Paciente();
 		int telefono = Integer.parseInt(pacienteDto.getTelefono());
@@ -49,22 +39,22 @@ public class PacienteBoImpl implements PacienteBo {
 		return paciente;
 	}
 
-	public void addPaciente(NuevoAfiliadoDto pacienteDto) {
-		
-		Paciente paciente= this.mapeo(pacienteDto);		
-		this.pacienteDAO.addPaciente(paciente);
-		this.pacientes.add(paciente);
-	}
 
 	public List<Paciente> findPacientes() {
 		
 		return pacienteDAO.findAll();
 	}
 	
-	public List<Paciente> getPacientes() {
+    public void addPaciente(PacienteDto pacienteDto) {
 		
-		return this.pacientes;
+		Paciente paciente = this.mapeo(pacienteDto);		
+		this.pacienteDAO.addPaciente(paciente);
 	}
-	
-	
+    
+    public void deletePaciente(PacienteDto pacienteDto) {
+    	
+    	Paciente paciente = this.mapeo(pacienteDto);		
+		this.pacienteDAO.deletePaciente(paciente);
+    }
+
 }

@@ -2,14 +2,11 @@ package ar.com.softtek.mock.object;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-
-import ar.com.softtek.bo.PacienteBo;
-import ar.com.softtek.dto.NuevoAfiliadoDto;
+import ar.com.softtek.dto.PacienteDto;
 import ar.com.softtek.dto.PlanMedicoDto;
 
 public class MockNuevoPacienteAction {
 
-	private static final long serialVersionUID = 1L;
 	private static final Logger log = LogManager.getLogger("NuevoAfiliadoAction: ");
 	
 	private String nombre;
@@ -162,16 +159,16 @@ public class MockNuevoPacienteAction {
 
 			log.info("Exito al crear nuevo Paciente");
 
-			NuevoAfiliadoDto nuevoAfiliadoDto = new NuevoAfiliadoDto(this.getNombre(), this.getApellido(), this.getNroDoc(),
+			PacienteDto pacienteDto = new PacienteDto(this.getNombre(), this.getApellido(), this.getNroDoc(),
 					this.getTipoDoc(), this.getTelefono(), this.getMail(), this.getFecNac(), this.getSexo(),
 					this.getEstadoCivil(),
 					(this.getCalle() + this.getAltura() + this.getPiso() + this.getDepartamento()), this.getFamiliaresACargo(),
 					this.nuevoPlanMedico());
 
 			
-			System.out.println(nuevoAfiliadoDto.toString());
+			System.out.println(pacienteDto.toString());
 
-			this.pacienteBo.addPaciente(nuevoAfiliadoDto);
+			this.pacienteBo.addPaciente(pacienteDto);
 
 			
 			return "success";
