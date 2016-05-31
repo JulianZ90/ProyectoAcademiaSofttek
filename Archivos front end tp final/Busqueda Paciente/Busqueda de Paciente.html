@@ -1,35 +1,26 @@
 <!doctype HTML>
+<!--funcion salir-->
 <html>
 	<head>
 		<meta charset="utf-8">
 		<title> Busqueda de Paciente</title>
 		<link rel="stylesheet" href="../CSSs/Style Table.css">
 		<link rel="stylesheet" href="../CSSs/Navbar.css">
+		<link rel="stylesheet" href="../CSSs/fondo.css">
+		<link rel="stylesheet" href="../CSSs/Solorecuadro.css">
+		
+		<script src="../JSs/funcionalerta.js"></script>
 	</head>
 	
 	<body>
 	
 		<ul>
-				<li class="dropdown"><a href="../Home Principal AMB.html" class="dropbtn">Principal</a></li>
-				<li class="dropdown" ><a href="#" class="dropbtn">Paciente</a>
-					<div class="dropdown-content">
-						<a href="../AMB Afiliado/Alta de Afiliado.html"> Alta  de Afiliado </a>
-						<a href="../AMB Afiliado/Modificación de Afiliado.html"> Modificación de Afiliado </a>
-					</div>
-				</li>
-				<li class="dropdown" ><a href="#" class="dropbtn">Turnos</a>
-					<div class="dropdown-content">
-						<a href="../Registro de Turnos/Registro Turnos.html"> Registro de Turnos</a>
-						<a href="../Registro de Turnos/Modificacion Turnos.html"> Modificación de Turnos </a>
-					</div>
-				</li>
-				<li class="dropdown" ><a class="dropbtn" href="#">Busqueda de Paciente</a>
-				</li>
-				<li style="float:right" class="dropdown"><a href="../Home AMB.html" class="dropbtn">Salir</a></li>
-			</ul>
-			</br>
+			<li class="dropdown" ><a class="dropbtn" href="#">Busqueda de Paciente</a></li>
+			<li style="float:right" class="dropdown"><a href="#" onclick="funcionSalir()" class="dropbtn">Salir</a></li>
+		</ul>
+		</br>
 	
-	<p> Buscar por : 
+		<p> Buscar por : 
 		<select name="tipodato" required>
 			<option value="apenom"> Nombre y/o Apellido</option>
 			<option value="documento"> Documento</option>
@@ -37,10 +28,11 @@
 			<option value="paciente">Nro. Paciente</option>
 		</select>
 		<input type="search" name="Barra de Busqueda" placeholder="Ingrese Paciente / Documento / Plan / Nro. Paciente" size="50" />
+		<img src="../Imagenes/lupa.png" alt="Icono Lupa" class="lupa" onclick="buscarPaciente('Pacientes')" >
 		<!-- tiene que tener un evento onchange , para al escribir mostrar la tabla de pacientes -->
 	</p>
 	
-	<fieldset>
+	<fieldset id="Pacientes">
 		<legend> Pacientes</legend>
 		<!-- https://www.um.es/atica/documentos/forja/js/jqueryPlugins/tablesorter/doc/ejemplo.html ordenamiento de los campos de la tabla -->
 		<table border="1" style="width:90%">	
