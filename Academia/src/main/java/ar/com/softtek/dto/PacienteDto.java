@@ -1,11 +1,8 @@
 package ar.com.softtek.dto;
 
 
-public class NuevoAfiliadoDto implements java.io.Serializable {
+public class PacienteDto implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	private String nombre;
@@ -22,7 +19,7 @@ public class NuevoAfiliadoDto implements java.io.Serializable {
 	private PlanMedicoDto planMedico;
 	
 
-	public NuevoAfiliadoDto(String nombre, String apellido, int dni, String tipoDni, String telefono, String mail, String fecNac,
+	public PacienteDto(String nombre, String apellido, int dni, String tipoDni, String telefono, String mail, String fecNac,
 			char sexo, String estadoCivil, String direccion, int familiaresACargo, PlanMedicoDto planMedico) {
 		
 		this.nombre = nombre;

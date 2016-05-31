@@ -1,9 +1,6 @@
 package ar.com.softtek.tests.mock;
 
-import static org.junit.Assert.*;
-
 import java.util.List;
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -15,11 +12,12 @@ import ar.com.softtek.model.Paciente;
 public class TestAltaPaciente {
 
 	@Test
-	public void testDeberiaDevolverMensajeSuccessAlAgregarUnNuevoPaciente() {
+	public void testDeberiaDevolverMensajeSuccessEnAltaDeUnNuevoPaciente() {
 		
 		MockNuevoPacienteAction nuevoPacienteAction = new MockNuevoPacienteAction();
 		MockPacienteDAO pacienteDAO = new MockPacienteDAO();
-		MockPacienteBo pacienteBo = new MockPacienteBo(pacienteDAO);
+		MockPacienteBo pacienteBo = new MockPacienteBo();
+		
 		
 		nuevoPacienteAction.setPacienteBo(pacienteBo);
 		pacienteBo.setPacienteDAO(pacienteDAO);
@@ -51,10 +49,11 @@ public class TestAltaPaciente {
 		
 		MockNuevoPacienteAction nuevoPacienteAction = new MockNuevoPacienteAction();
 		MockPacienteDAO pacienteDAO = new MockPacienteDAO();
-		MockPacienteBo pacienteBo = new MockPacienteBo(pacienteDAO);
+		MockPacienteBo pacienteBo = new MockPacienteBo();
 		
 		
 		nuevoPacienteAction.setPacienteBo(pacienteBo);
+		pacienteBo.setPacienteDAO(pacienteDAO);
 		
 		nuevoPacienteAction.setNombre("Juan");
 		nuevoPacienteAction.setApellido("Perez");
@@ -73,41 +72,9 @@ public class TestAltaPaciente {
 		nuevoPacienteAction.setPiso("5");
 		
 		nuevoPacienteAction.execute();
-		List<Paciente> pacientes = pacienteBo.getPacientes();
+		List<Paciente> pacientes = pacienteBo.findPacientes();
 		
 		Assert.assertEquals(pacientes.get(0).getDni(), nuevoPacienteAction.getNroDoc());
-		
-	}
-	
-	
-	@Test
-	public void testDeberiaIniciarLaListaDePacientesConUnPaciente() {
-		
-		MockPacienteDAO pacienteDAO = new MockPacienteDAO();
-		Paciente paciente = new Paciente();
-		
-		paciente.setNombre("Juan");
-		paciente.setApellido("Perez");
-		paciente.setDni(36587899);
-		paciente.setTipoDni("DNI");
-		paciente.setTelefono(48777777);
-		paciente.setMail("jp@gmail.com");
-		paciente.setFecNac("14/10/2000");
-		paciente.setSexo('M');
-		paciente.setEstadoCivil("Soltero");
-		paciente.setFamiliaresACargo(1);
-		paciente.setPlanMedico(2);
-		paciente.setDireccion("maipu");
-		
-		pacienteDAO.addPaciente(paciente);
-		
-		MockPacienteBo pacienteBo = new MockPacienteBo(pacienteDAO);
-		MockNuevoPacienteAction nuevoPacienteAction = new MockNuevoPacienteAction();
-		nuevoPacienteAction.setPacienteBo(pacienteBo);
-			
-		List<Paciente> pacientes = pacienteBo.getPacientes();
-		
-		Assert.assertEquals(pacientes.size(), 1);
 		
 	}
 	

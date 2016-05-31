@@ -3,12 +3,11 @@ package ar.com.softtek.action;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import com.opensymphony.xwork2.ActionSupport;
-
 import ar.com.softtek.bo.PacienteBo;
 import ar.com.softtek.dto.PacienteDto;
 import ar.com.softtek.dto.PlanMedicoDto;
 
-public class NuevoPacienteAction extends ActionSupport {
+public class BajaPacienteAction extends ActionSupport {
 
 	private static final long serialVersionUID = 1L;
 	private static final Logger log = LogManager.getLogger("NuevoAfiliadoAction: ");
@@ -165,25 +164,25 @@ public class NuevoPacienteAction extends ActionSupport {
 
 		try {
 
-			log.info("Exito al crear nuevo Paciente");
+			log.info("Exito al dar de baja un Paciente");
 
-			PacienteDto pacienteDto = new PacienteDto(this.getNombre(), this.getApellido(), this.getNroDoc(),
+			PacienteDto PacienteDto = new PacienteDto(this.getNombre(), this.getApellido(), this.getNroDoc(),
 					this.getTipoDoc(), this.getTelefono(), this.getMail(), this.getFecNac(), this.getSexo(),
 					this.getEstadoCivil(),
 					(this.getCalle() + this.getAltura() + this.getPiso() + this.getDepartamento()), this.getFamiliaresACargo(),
 					this.nuevoPlanMedico());
 
 			
-			System.out.println(pacienteDto.toString());
+			System.out.println(PacienteDto.toString());
 
-			this.pacienteBo.addPaciente(pacienteDto);
+			this.pacienteBo.deletePaciente(PacienteDto);
 
 			
 			return "success";
 
 		} catch (Exception e) {
 
-			log.error("Error al crear nuevo Paciente");
+			log.error("Error al dar de baja un Paciente");
 			return "error";
 		}
 
