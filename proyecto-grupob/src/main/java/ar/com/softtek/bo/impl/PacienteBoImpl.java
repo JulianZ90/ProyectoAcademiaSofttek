@@ -75,4 +75,13 @@ public class PacienteBoImpl implements PacienteBo {
 		return pacienteDAO.findAll();
 	}
 	
+	
+	public void deletePaciente(NuevoAfiliadoDto pacienteDto) {
+	    	
+	    	Paciente paciente = this.mapeo(pacienteDto);		
+			this.pacienteDAO.deletePaciente(paciente);
+	    }
+	
+	
+	
 }

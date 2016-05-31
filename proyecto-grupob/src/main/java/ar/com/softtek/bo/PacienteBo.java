@@ -12,4 +12,6 @@ public interface PacienteBo {
 	
 	List<Paciente> listPaciente();
 	
+	void deletePaciente(NuevoAfiliadoDto pacienteDto);
+	
 }
