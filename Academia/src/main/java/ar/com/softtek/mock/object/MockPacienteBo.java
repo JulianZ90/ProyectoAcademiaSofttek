@@ -1,20 +1,17 @@
-package ar.com.softtek.bo.impl;
+package ar.com.softtek.mock.object;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import ar.com.softtek.bo.PacienteBo;
-import ar.com.softtek.dao.PacienteDAO;
-import ar.com.softtek.model.Paciente;
 import ar.com.softtek.dto.NuevoAfiliadoDto;
+import ar.com.softtek.model.Paciente;
 
-public class PacienteBoImpl implements PacienteBo {
+public class MockPacienteBo {
 
-	private PacienteDAO pacienteDAO;
-	private  ArrayList<Paciente> pacientes;
+	private MockPacienteDAO pacienteDAO;
+    private  ArrayList<Paciente> pacientes;
 	
 	
-	public PacienteBoImpl() {
+	public MockPacienteBo() {
 		
 		this.pacientes=  new ArrayList<Paciente>();
 		for (Paciente paciente : this.findPacientes()) {
@@ -24,7 +21,7 @@ public class PacienteBoImpl implements PacienteBo {
 	}
 	
 	
-	public void setPacienteDAO(PacienteDAO pacienteDAO) {
+	public void setPacienteDAO(MockPacienteDAO pacienteDAO) {
 		
 		this.pacienteDAO = pacienteDAO;
 	}
@@ -65,6 +62,4 @@ public class PacienteBoImpl implements PacienteBo {
 		
 		return this.pacientes;
 	}
-	
-	
 }

@@ -10,7 +10,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import ar.com.softtek.dto.BajaAfiliadoDto;
 import ar.com.softtek.dto.PacienteAModificarDto;
 import ar.com.softtek.dto.PacienteModificacionDuplexDto;
-import ar.com.softtek.dto.PlanDto;
+import ar.com.softtek.dto.PlanMedicoDto;
 
 
 public class AplicarModificacionAction extends ActionSupport {

@@ -1,18 +1,17 @@
-package ar.com.softtek.action;
+package ar.com.softtek.mock.object;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import com.opensymphony.xwork2.ActionSupport;
 
 import ar.com.softtek.bo.PacienteBo;
 import ar.com.softtek.dto.NuevoAfiliadoDto;
 import ar.com.softtek.dto.PlanMedicoDto;
 
-public class NuevoPacienteAction extends ActionSupport {
+public class MockNuevoPacienteAction {
 
 	private static final long serialVersionUID = 1L;
 	private static final Logger log = LogManager.getLogger("NuevoAfiliadoAction: ");
-
+	
 	private String nombre;
 	private String apellido;
 	private int nroDoc;
@@ -28,7 +27,7 @@ public class NuevoPacienteAction extends ActionSupport {
 	private String departamento;
 	private String piso;
 	private int altura;
-	private PacienteBo pacienteBo;
+	private MockPacienteBo pacienteBo;
 
 	
 	public String getNombre() {
@@ -152,14 +151,13 @@ public class NuevoPacienteAction extends ActionSupport {
 	}
 
 
-	public void setPacienteBo(PacienteBo pacienteBo) {
+	public void setPacienteBo(MockPacienteBo pacienteBo) {
 		this.pacienteBo = pacienteBo;
 	}
 	
 	
 
 	public String execute() {
-
 		try {
 
 			log.info("Exito al crear nuevo Paciente");
@@ -183,12 +181,9 @@ public class NuevoPacienteAction extends ActionSupport {
 			log.error("Error al crear nuevo Paciente");
 			return "error";
 		}
-
 	}
 
 	private PlanMedicoDto nuevoPlanMedico() {
 		return (new PlanMedicoDto(this.getPlanMedico()));
 	}
-
-	
 }

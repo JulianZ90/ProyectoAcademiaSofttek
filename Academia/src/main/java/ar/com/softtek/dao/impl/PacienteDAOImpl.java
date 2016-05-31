@@ -9,19 +9,7 @@ import ar.com.softtek.model.Paciente;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
 public class PacienteDAOImpl extends HibernateDaoSupport implements PacienteDAO {
-	
-	
-	private Paciente paciente;
-	
-
-	public Paciente getPaciente() {
-		return paciente;
-	}
-
-	public void setPaciente(Paciente paciente) {
-		this.paciente = paciente;
-	}
-
+		
 
 	public List<Paciente> findAll() {
 		String queryString = "FROM PACIENTE";

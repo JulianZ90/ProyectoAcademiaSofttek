@@ -1,6 +1,6 @@
 package ar.com.softtek.model;
 
-public class Plan implements java.io.Serializable{
+public class PlanMedico implements java.io.Serializable{
 
 	/**
 	 * 
@@ -22,12 +22,6 @@ public class Plan implements java.io.Serializable{
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-	
-	
-	
 	
 
 }

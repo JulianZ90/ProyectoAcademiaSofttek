@@ -1,6 +1,5 @@
 package ar.com.softtek.dto;
 
-import java.util.Date;
 
 public class NuevoAfiliadoDto implements java.io.Serializable {
 
@@ -19,15 +18,12 @@ public class NuevoAfiliadoDto implements java.io.Serializable {
 	private char sexo;
 	private String estadoCivil;
 	private String direccion;
-	private int cantHijos;
-	private PlanDto planMedico;
+	private int familiaresACargo;
+	private PlanMedicoDto planMedico;
 	
-		
-	
-
 
 	public NuevoAfiliadoDto(String nombre, String apellido, int dni, String tipoDni, String telefono, String mail, String fecNac,
-			char sexo, String estadoCivil, String direccion, int cantHijos, PlanDto planMedico) {
+			char sexo, String estadoCivil, String direccion, int familiaresACargo, PlanMedicoDto planMedico) {
 		
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -39,7 +35,7 @@ public class NuevoAfiliadoDto implements java.io.Serializable {
 		this.sexo = sexo;
 		this.estadoCivil = estadoCivil;
 		this.direccion = direccion;
-		this.cantHijos = cantHijos;
+		this.familiaresACargo = familiaresACargo;
 		this.planMedico = planMedico;
 	}
 
@@ -49,7 +45,7 @@ public class NuevoAfiliadoDto implements java.io.Serializable {
 		return "PacienteDto [getDireccion()=" + getDireccion() + ", getNombre()=" + getNombre() + ", getApellido()="
 				+ getApellido() + ", getDni()=" + getDni() + ", getTipoDni()=" + getTipoDni() + ", getTelefono()="
 				+ getTelefono() + ", getMail()=" + getMail() + ", getFecNac()=" + getFecNac() + ", getSexo()="
-				+ getSexo() + ", getEstadoCivil()=" + getEstadoCivil() + ", getCantHijos()=" + getCantHijos()
+				+ getSexo() + ", getEstadoCivil()=" + getEstadoCivil() + ", getFamliaresACargo()=" + getFamiliaresACargo()
 				+ ", getPlanMedico()=" + getPlanMedico().getDescripcion() + "]";
 	}
 
@@ -115,19 +111,18 @@ public class NuevoAfiliadoDto implements java.io.Serializable {
 	public void setEstadoCivil(String estadoCivil) {
 		this.estadoCivil = estadoCivil;
 	}
-	public int getCantHijos() {
-		return cantHijos;
+	public int getFamiliaresACargo() {
+		return this.familiaresACargo;
 	}
-	public void setCantHijos(int cantHijos) {
-		this.cantHijos = cantHijos;
+	public void setFamiliaresACargo(int familiaresACargo) {
+		this.familiaresACargo = familiaresACargo;
 	}
-	public PlanDto getPlanMedico() {
+	public PlanMedicoDto getPlanMedico() {
 		return planMedico;
 	}
-	public void setPlanMedico(PlanDto planMedico) {
+	public void setPlanMedico(PlanMedicoDto planMedico) {
 		this.planMedico = planMedico;
 	}
 
-	
 	
 }

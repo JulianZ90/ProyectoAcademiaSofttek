@@ -20,7 +20,7 @@ public class PacienteModificacionDuplexDto implements java.io.Serializable {
 	private String estadoCivil;
 	private String direccion;
 	private int cantHijos;
-	private PlanDto planMedico;
+	private PlanMedicoDto planMedico;
 	private String motivoCambio;
 	
 		
@@ -123,10 +123,10 @@ public class PacienteModificacionDuplexDto implements java.io.Serializable {
 	public void setCantHijos(int cantHijos) {
 		this.cantHijos = cantHijos;
 	}
-	public PlanDto getPlanMedico() {
+	public PlanMedicoDto getPlanMedico() {
 		return planMedico;
 	}
-	public void setPlanMedico(PlanDto planMedico) {
+	public void setPlanMedico(PlanMedicoDto planMedico) {
 		this.planMedico = planMedico;
 	}
 	public String getMotivoCambio() {
@@ -144,7 +144,7 @@ public class PacienteModificacionDuplexDto implements java.io.Serializable {
 	}
 	public PacienteModificacionDuplexDto(int dni, String tipoDni,String nombre, String apellido,  String telefono,
 			String mail, String fecNac, char sexo, String estadoCivil, String direccion, int cantHijos,
-			PlanDto planMedico, String motivoCambio) {
+			PlanMedicoDto planMedico, String motivoCambio) {
 		this.dni = dni;
 		this.tipoDni = tipoDni;
 		this.nombre = nombre;

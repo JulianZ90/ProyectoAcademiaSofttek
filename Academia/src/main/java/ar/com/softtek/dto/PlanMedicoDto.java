@@ -1,6 +1,6 @@
 package ar.com.softtek.dto;
 
-public class PlanDto implements java.io.Serializable{
+public class PlanMedicoDto implements java.io.Serializable{
 
 	/**
 	 * 
@@ -11,7 +11,7 @@ public class PlanDto implements java.io.Serializable{
 	private int descripcion;
 	
 	
-	public PlanDto(int descripcion) {
+	public PlanMedicoDto(int descripcion) {
 		
 		this.descripcion = descripcion;
 	}
