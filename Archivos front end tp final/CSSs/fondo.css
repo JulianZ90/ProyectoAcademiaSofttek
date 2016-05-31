@@ -19,3 +19,18 @@ body {
 .lupa:hover {
 	opacity: 0.8;
 }
+
+.arrow {
+	height: 20px;
+	width: 20px;
+}
+
+.arrow:hover{
+	opacity: 0,1;
+}
+
+.BotonesLaterales {
+	height:40px;
+	width:40px;
+	float:right;
+}
