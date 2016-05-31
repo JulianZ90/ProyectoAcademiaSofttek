@@ -10,4 +10,6 @@
 	
 	<!-- BeanDefinitions propios de la aplicacion -->
 	<import resource="classpath:spring/backend/app-dao-spring.xml" />
+	<import resource="classpath:spring/backend/app-bo-spring.xml" />
+	<import resource="classpath:spring/backend/app-action-spring.xml" />
 </beans>

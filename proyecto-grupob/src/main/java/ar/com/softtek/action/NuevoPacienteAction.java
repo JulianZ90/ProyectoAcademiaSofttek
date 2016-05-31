@@ -186,20 +186,33 @@ public class NuevoPacienteAction extends ActionSupport {
 					(this.getCalle() + this.getAltura() + this.getPiso() + this.getDepartamento()), this.getCanthijos(),
 					this.nuevoPlanMedico()));
 
+		System.out.println("El pacienteDto creado es:");
 			
 			System.out.println(this.getNuevoAfiliadoDto().toString());
-
+			
 			pacienteBo.addPaciente(this.getNuevoAfiliadoDto());
-
+			
 			
 			return "success";
 
 		} catch (Exception e) {
 
-			log.error("Error al crear nuevo Paciente");
+			log.error("Error al crear nuevo Paciente"+e.getMessage());
 			return "error";
 		}
 
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public static Logger getLog() {
+		return log;
+	}
+
+	public PacienteBo getPacienteBo() {
+		return pacienteBo;
 	}
 
 	public PlanDto nuevoPlanMedico() {

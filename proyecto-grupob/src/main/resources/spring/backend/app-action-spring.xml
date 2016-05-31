@@ -6,10 +6,13 @@
 				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
 				http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
 				http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
-	<description>ROOT Contexto de la aplicación PROTOYPE </description>
+
+	<description>Contexto para la definicion de DAOs custom y genericos y
+		definicion de hibernate</description>
+<!-- 
+	<import resource="classpath:ar/com/softtek/config/datasource-appctx.xml" />
+	<import resource="classpath:ar/com/softtek/config/app-sessionfactory-appctx.xml" /> -->
+	<import resource="classpath:ar/com/softtek/config/action-appctx.xml" />	
 	
-	<!-- BeanDefinitions propios de la aplicacion -->
-	<import resource="classpath:spring/backend/app-dao-spring.xml" />
-	<import resource="classpath:spring/backend/app-bo-spring.xml" />
-	<import resource="classpath:spring/backend/app-action-spring.xml" />
+
 </beans>

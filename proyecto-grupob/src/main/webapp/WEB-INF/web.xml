@@ -22,7 +22,7 @@
 		</listener-class>
   </listener>
   <welcome-file-list>
-    <welcome-file>/pages/index.jsp</welcome-file>
+    <welcome-file>AltadeAfiliado.html</welcome-file>
   </welcome-file-list>
   <resource-ref>
     <description>database connection</description>

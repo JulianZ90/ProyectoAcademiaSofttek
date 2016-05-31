@@ -5,11 +5,13 @@ import java.util.List;
 import ar.com.softtek.dao.PacienteDAO;
 import ar.com.softtek.model.Paciente;
 
-
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 public class PacienteDAOImpl extends HibernateDaoSupport implements PacienteDAO {
-	
+	private static final long serialVersionUID = 1L;
+	private static final Logger log = LogManager.getLogger("PacienteDAOIMPL ");
 	
 	private Paciente paciente;
 	
@@ -40,8 +42,15 @@ public class PacienteDAOImpl extends HibernateDaoSupport implements PacienteDAO 
 	}
 
 	public long addPaciente(Paciente paciente) {
-		super.getHibernateTemplate().save(paciente);
-		return paciente.getId();
+
+		try {
+			super.getHibernateTemplate().save(paciente);
+			return paciente.getId();
+		} catch (Exception e) {
+			log.error("Error al intentar hace el save"+e.getMessage());
+		}
+	return -1;
+	
 	}
 
 	public void deletePaciente(Paciente paciente) {

@@ -3,8 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="ar.com.softtek.model.Paciente" 
-		table="Pacientes" catalog="softtek">
+    <class name="ar.com.softtek.model.Paciente"  table="Pacientes" >
         <id name="id" column="idPaciente" type="java.lang.Integer">
             <generator class="identity" />
         </id>
