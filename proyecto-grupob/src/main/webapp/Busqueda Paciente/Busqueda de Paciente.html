@@ -14,7 +14,7 @@
 	</head>
 	
 	<body>
-	
+		
 		<ul>
 			<li class="dropdown" ><a class="dropbtn" href="#">Busqueda de Paciente</a></li>
 			<li style="float:right" class="dropdown"><a href="#" onclick="funcionSalir()" class="dropbtn">Salir</a></li>
@@ -23,14 +23,17 @@
 	
 		<p class="BarraBusqueda"> Buscar por : 
 		<select name="tipodato" required>
-			<option value="apenom"> Nombre y/o Apellido</option>
-			<option value="documento"> Documento</option>
-			<option value="plan">Plan</option>
-			<option value="paciente">Nro. Paciente</option>
+			<option value="apenom" name="apenom"> Nombre y/o Apellido</option>
+			<option value="documento" name="numdocumento"> Documento</option>
+			<option value="plan" name="plan">Plan</option>
+			<option value="paciente" name="numafiliado">Nro. Paciente</option>
 		</select>
+		<form method="post" action="busquedaPaciente">
 		<input type="search" name="Barra de Busqueda" placeholder="Ingrese Paciente / Documento / Plan / Nro. Paciente" size="50" />
 		<img src="/Imagenes/lupa.png" alt="Icono Lupa" class="lupa" onclick="buscarPaciente('Pacientes')" >
+		
 		<!-- tiene que tener un evento onchange , para al escribir mostrar la tabla de pacientes -->
+		</form>
 	</p>
 	
 	<fieldset id="Pacientes">
@@ -62,7 +65,7 @@
 		<img src="../Imagenes/plus.png" alt="Nuevo Paciente" class="BotonesLaterales" onclick="location.href = '../AMB Afiliado/Alta de Afiliado.html'"></br></br></br></br>
 		<img src="../Imagenes/minus.png" alt="Baja Paciente" class="BotonesLaterales" onclick="location.href = '../AMB Afiliado/Baja de Afiliado.html'"></br></br></br></br>
 		<img src="../Imagenes/edit.png" alt="Modificar Paciente" class="BotonesLaterales" onclick="location.href = '../AMB Afiliado/Modificación de Afiliado.html'">
-	</fieldset>
+		</fieldset>
 	
 	</body>
 </html>
