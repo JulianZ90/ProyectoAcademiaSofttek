@@ -15,13 +15,11 @@ import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-
 public class PacienteDAOImpl extends HibernateDaoSupport implements PacienteDAO {
 	private static final long serialVersionUID = 1L;
 	private static final Logger log = LogManager.getLogger("PacienteDAOIMPL ");
-	
+
 	private Paciente paciente;
-	
 
 	public Paciente getPaciente() {
 		return paciente;
@@ -31,14 +29,13 @@ public class PacienteDAOImpl extends HibernateDaoSupport implements PacienteDAO 
 		this.paciente = paciente;
 	}
 
-
 	public List<Paciente> findAll() {
 		String queryString = "FROM PACIENTE";
 		return (List<Paciente>) super.getHibernateTemplate().find(queryString);
 	}
 
 	public Paciente findById(Long id) {
-		
+
 		Paciente paciente = (Paciente) super.getHibernateTemplate().load(Paciente.class, id);
 		return paciente;
 	}
@@ -54,10 +51,10 @@ public class PacienteDAOImpl extends HibernateDaoSupport implements PacienteDAO 
 			super.getHibernateTemplate().save(paciente);
 			return paciente.getIdPaciente();
 		} catch (Exception e) {
-			log.error("Error al intentar hace el save"+e.getMessage());
+			log.error("Error al intentar hace el save" + e.getMessage());
 		}
-	return -1;
-	
+		return -1;
+
 	}
 
 	public void deletePaciente(Paciente paciente) {
@@ -68,29 +65,28 @@ public class PacienteDAOImpl extends HibernateDaoSupport implements PacienteDAO 
 	public void updatePaciente(Paciente paciente) {
 		super.getHibernateTemplate().update(paciente);
 	}
-	
-	
-	public Paciente buscarPorValor(int valorBuscado,String tipodato){
+
+	public Paciente buscarPorValor(int valorBuscado, String tipodato) {
 		DetachedCriteria crit = DetachedCriteria.forClass(Paciente.class);
-			switch(tipodato){
-				case "documento": crit.add(Restrictions.eq("dni", valorBuscado));
-				case "paciente": crit.add(Restrictions.eq("idPaciente", valorBuscado));
-				case "plan": crit.add(Restrictions.eq("planMedico", valorBuscado));
-			}	
-	return (Paciente) getHibernateTemplate().findByCriteria(crit).get(0);
+		switch (tipodato) {
+		case "documento":
+			crit.add(Restrictions.eq("dni", valorBuscado));
+			break;
+		case "paciente":
+			crit.add(Restrictions.eq("idPaciente", valorBuscado));
+			break;
+		case "plan":
+			crit.add(Restrictions.eq("planMedico", valorBuscado));
+			break;
+		}
+		return (Paciente) getHibernateTemplate().findByCriteria(crit).get(0);
 	}
-	
+
 }
 
-
-
-
-
-
-
-//case "apenom": {
-//String[] splitted  = String.valueOf(valorBuscado).split("\\s+");
-//Criterion nombreCriteria = Restrictions.eq("nombre", splitted[0]);
-//Criterion apellidoCriteria = Restrictions.eq("apellido", splitted[1]);
-//crit.add(nombreCriteria).add(apellidoCriteria);
-//}
+// case "apenom": {
+// String[] splitted = String.valueOf(valorBuscado).split("\\s+");
+// Criterion nombreCriteria = Restrictions.eq("nombre", splitted[0]);
+// Criterion apellidoCriteria = Restrictions.eq("apellido", splitted[1]);
+// crit.add(nombreCriteria).add(apellidoCriteria);
+// }
