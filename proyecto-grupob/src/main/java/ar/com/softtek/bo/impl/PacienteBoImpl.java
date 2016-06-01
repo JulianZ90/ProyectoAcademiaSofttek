@@ -15,7 +15,7 @@ import ar.com.softtek.dto.NuevoAfiliadoDto;
 public class PacienteBoImpl implements PacienteBo {
 
 	PacienteDAO pacienteDAO;
-	private  ArrayList<Paciente> pacientes;
+	private  ArrayList<Paciente> pacientes = new ArrayList<Paciente>();
 	private static final long serialVersionUID = 1L;
 	private static final Logger log = LogManager.getLogger("Paciente BOIMPL");
 	

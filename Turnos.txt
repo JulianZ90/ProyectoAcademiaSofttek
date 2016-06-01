@@ -1,0 +1,17 @@
+create table Turnos(
+	idTurno int IDENTITY (1,1) NOT NULL primary key,
+	nombre varchar(50),
+	apellido varchar(50),
+	idPaciente int,
+	planMedico int,
+	fechaTurno varchar(20),
+	horaTurno varchar(20),
+	fechaLlegada varchar(20),
+	horaLlegada varchar(20),
+	fechaAtencion varchar(20),
+	horaAtencion varchar(20),
+	idPrestador int,
+	idPractica int,
+	importe int,
+	observaciones varchar(200)	
+)
