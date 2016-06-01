@@ -170,7 +170,7 @@ public abstract class  PacienteAction extends ActionSupport {
 					this.getTipodoc(), this.getTelefono(), this.getMail(), this.getFechanac(), this.getSexo(),
 					this.getEstadocivil(),
 					(this.getCalle() + this.getAltura() + this.getPiso() + this.getDepartamento()), this.getCanthijos(),
-					this.nuevoPlanMedico());
+					this.getPlan());
 
 		System.out.println("El pacienteDto creado es:");
 			
@@ -201,9 +201,6 @@ public abstract class  PacienteAction extends ActionSupport {
 		return pacienteBo;
 	}
 
-	public PlanDto nuevoPlanMedico() {
-		return (new PlanDto(this.getPlan()));
-	}
 
 	
 

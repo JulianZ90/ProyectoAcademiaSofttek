@@ -20,6 +20,13 @@
             
         </action>
     
+    	<action name="busquedaPaciente"
+    		class="ar.com.softtek.action.BusquedaPacienteAction">
+    		<result name = "succes">SuccessAlta.jsp</result>
+    		<result name="error">AltadeAfiliado.html</result>
+    	</action>
+    
+    
          <action name="bajaModificacionPaciente"
             class="ar.com.softtek.action.BajaModificacionPacienteAction" >
             <result name="success">SuccessBaja.jsp</result>

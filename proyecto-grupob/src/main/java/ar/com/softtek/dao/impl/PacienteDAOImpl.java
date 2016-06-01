@@ -3,11 +3,14 @@ package ar.com.softtek.dao.impl;
 import java.util.List;
 
 import ar.com.softtek.dao.PacienteDAO;
+import ar.com.softtek.dto.BusquedaAfiliadoDto;
 import ar.com.softtek.model.Paciente;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.hibernate.Query;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
 
 public class PacienteDAOImpl extends HibernateDaoSupport implements PacienteDAO {
 	private static final long serialVersionUID = 1L;
@@ -61,6 +64,17 @@ public class PacienteDAOImpl extends HibernateDaoSupport implements PacienteDAO 
 	public void updatePaciente(Paciente paciente) {
 		super.getHibernateTemplate().update(paciente);
 	}
+	
+	
+	public Paciente buscarPorValor(int valorBuscado){
+//	Session session = super.getSession();
+	String hql = "FROM PACIENTES P WHERE p.dni = :valorBuscado";
+	Query query = super.getSession().createQuery(hql);
+	Paciente paciente = (Paciente) query.list().get(0);
+	return paciente;
+	}
+	
+	
 
 
 	

@@ -20,14 +20,30 @@ public class NuevoAfiliadoDto implements java.io.Serializable {
 	private String estadoCivil;
 	private String direccion;
 	private int cantHijos;
-	private PlanDto planMedico;
+	private int planMedico;
 	
 		
 	
+	
+
+
+	public int getPlanMedico() {
+		return planMedico;
+	}
+
+
+	public void setPlanMedico(int planMedico) {
+		this.planMedico = planMedico;
+	}
+
+
+	public NuevoAfiliadoDto() {
+		
+	}
 
 
 	public NuevoAfiliadoDto(String nombre, String apellido, int dni, String tipoDni, String telefono, String mail, String fecNac,
-			char sexo, String estadoCivil, String direccion, int cantHijos, PlanDto planMedico) {
+			char sexo, String estadoCivil, String direccion, int cantHijos, int planMedico) {
 		
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -50,7 +66,7 @@ public class NuevoAfiliadoDto implements java.io.Serializable {
 				+ getApellido() + ", getDni()=" + getDni() + ", getTipoDni()=" + getTipoDni() + ", getTelefono()="
 				+ getTelefono() + ", getMail()=" + getMail() + ", getFecNac()=" + getFecNac() + ", getSexo()="
 				+ getSexo() + ", getEstadoCivil()=" + getEstadoCivil() + ", getCantHijos()=" + getCantHijos()
-				+ ", getPlanMedico()=" + getPlanMedico().getDescripcion() + "]";
+				+ ", getPlanMedico()=" + getPlanMedico() + "]";
 	}
 
 
@@ -121,12 +137,7 @@ public class NuevoAfiliadoDto implements java.io.Serializable {
 	public void setCantHijos(int cantHijos) {
 		this.cantHijos = cantHijos;
 	}
-	public PlanDto getPlanMedico() {
-		return planMedico;
-	}
-	public void setPlanMedico(PlanDto planMedico) {
-		this.planMedico = planMedico;
-	}
+
 
 	
 	

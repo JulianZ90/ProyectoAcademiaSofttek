@@ -1,6 +1,7 @@
 package ar.com.softtek.dao;
 import java.util.List;
 
+import ar.com.softtek.dto.BusquedaAfiliadoDto;
 import ar.com.softtek.model.Paciente;
 
 
@@ -14,7 +15,7 @@ public interface PacienteDAO {
 	long addPaciente(Paciente paciente);
 	void deletePaciente(Paciente paciente);
 	void updatePaciente(Paciente paciente);
-
+	Paciente buscarPorValor(int valorBuscado);
 	
 	
 }

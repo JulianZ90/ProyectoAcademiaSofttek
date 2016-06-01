@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 import ar.com.softtek.bo.PacienteBo;
 import ar.com.softtek.dao.PacienteDAO;
 import ar.com.softtek.model.Paciente;
+import ar.com.softtek.dto.BusquedaAfiliadoDto;
 import ar.com.softtek.dto.NuevoAfiliadoDto;
 
 public class PacienteBoImpl implements PacienteBo {
@@ -20,7 +21,7 @@ public class PacienteBoImpl implements PacienteBo {
 	
 
 
-	private Paciente mapeo(NuevoAfiliadoDto pacienteDto) {
+	private Paciente mapeoAModelo(NuevoAfiliadoDto pacienteDto) {
 		
 		Paciente paciente = new Paciente();
 		int telefono = Integer.parseInt(pacienteDto.getTelefono());
@@ -35,10 +36,32 @@ public class PacienteBoImpl implements PacienteBo {
 		paciente.setEstadoCivil(pacienteDto.getEstadoCivil());
 		paciente.setDireccion(pacienteDto.getDireccion());
 		paciente.setFamiliaresACargo(pacienteDto.getCantHijos());
-		paciente.setPlanMedico(pacienteDto.getPlanMedico().getDescripcion());
-				
+		paciente.setPlanMedico(pacienteDto.getPlanMedico());	
 		return paciente;
 	}
+	
+	
+	private NuevoAfiliadoDto mapeoADto(Paciente paciente){
+		NuevoAfiliadoDto afiliadoDto = new NuevoAfiliadoDto();
+		String telefono = String.valueOf(paciente.getTelefono());
+		afiliadoDto.setTelefono(telefono);
+		afiliadoDto.setApellido(paciente.getApellido());
+		afiliadoDto.setCantHijos(paciente.getFamiliaresACargo());
+		afiliadoDto.setDireccion(paciente.getDireccion());
+		afiliadoDto.setDni(paciente.getDni());
+		afiliadoDto.setEstadoCivil(paciente.getEstadoCivil());
+		String fecNac = String.valueOf(paciente.getFecNac());
+		afiliadoDto.setFecNac(fecNac);
+		afiliadoDto.setTipoDni(paciente.getTipoDni());
+		afiliadoDto.setMail(paciente.getMail());
+		afiliadoDto.setSexo(paciente.getSexo());
+		afiliadoDto.setPlanMedico(paciente.getPlanMedico());
+		afiliadoDto.setNombre(paciente.getNombre());
+		return afiliadoDto;
+	}
+	
+	
+	
 
 	public PacienteDAO getPacienteDAO() {
 		return pacienteDAO;
@@ -60,7 +83,7 @@ public class PacienteBoImpl implements PacienteBo {
 		
 		
 		try {
-			Paciente paciente = this.mapeo(pacienteDto);
+			Paciente paciente = this.mapeoAModelo(pacienteDto);
 			this.pacienteDAO.addPaciente(paciente);
 //			this.pacientes.add(paciente);
 		} catch (Exception e) {
@@ -68,6 +91,13 @@ public class PacienteBoImpl implements PacienteBo {
 			// TODO: handle exception
 		}
 		
+		
+	}
+	
+	public NuevoAfiliadoDto busquedaPaciente(BusquedaAfiliadoDto pacienteBuscado){
+		Paciente paciente = new Paciente();	
+		paciente = this.pacienteDAO.buscarPorValor(pacienteBuscado.getValorbuscado());
+		return this.mapeoADto(paciente);	
 		
 	}
 
@@ -78,7 +108,7 @@ public class PacienteBoImpl implements PacienteBo {
 	
 	public void deletePaciente(NuevoAfiliadoDto pacienteDto) {
 	    	
-	    	Paciente paciente = this.mapeo(pacienteDto);		
+	    	Paciente paciente = this.mapeoAModelo(pacienteDto);		
 			this.pacienteDAO.deletePaciente(paciente);
 	    }
 	
