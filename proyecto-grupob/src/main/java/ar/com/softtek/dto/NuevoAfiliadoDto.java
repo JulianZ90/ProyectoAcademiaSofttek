@@ -21,10 +21,21 @@ public class NuevoAfiliadoDto implements java.io.Serializable {
 	private String direccion;
 	private int cantHijos;
 	private int planMedico;
+	private String apenom;
 	
 		
 	
 	
+
+
+	public String getApenom() {
+		return apenom;
+	}
+
+
+	public void setApenom(String apenom) {
+		this.apenom = apenom;
+	}
 
 
 	public int getPlanMedico() {

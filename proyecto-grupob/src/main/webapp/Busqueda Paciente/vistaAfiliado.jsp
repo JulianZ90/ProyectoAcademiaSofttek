@@ -54,7 +54,7 @@
 
 			<tr>
 				<td><input type="radio" name="Paciente" ondblclick="location.href = 'Turnos del Paciente.html'" /></td>
-			    <td><s:property value="afiliadoDto.nombre"/> </td>
+			    <td><s:property value="afiliadoDto.apenom"/> </td>
 				<td><s:property value="afiliadoDto.tipoDNI"/></td>
 				<td><s:property value="afiliadoDto.dni"/></td>
 				<td><s:property value="afiliadoDto.direccion"/></td>

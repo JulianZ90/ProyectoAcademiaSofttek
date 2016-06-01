@@ -80,6 +80,7 @@ public class BusquedaPacienteAction extends ActionSupport {
 			log.info(String.valueOf(afiliadoBuscadoDto.getTipodato()));
 			log.info("Creado afiliadoBuscado");
 			afiliadoDto = this.pacienteBo.busquedaPaciente(afiliadoBuscadoDto);
+			afiliadoDto.setApenom( afiliadoDto.getNombre()+ " " + afiliadoDto.getApellido());
 			System.out.println(afiliadoDto.getApellido());
 			
 			return "success";
