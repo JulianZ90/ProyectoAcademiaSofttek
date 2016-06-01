@@ -20,12 +20,35 @@ public class BusquedaPacienteAction extends ActionSupport {
 	private int valorbuscado;
 	private NuevoAfiliadoDto afiliadoDto;
 	private PacienteBo pacienteBo;	
+	private String tipodato;
 	
 	
 
 	
 
 	
+	public String getTipodato() {
+		return tipodato;
+	}
+
+
+
+
+
+
+
+
+	public void setTipodato(String tipodato) {
+		this.tipodato = tipodato;
+	}
+
+
+
+
+
+
+
+
 	public NuevoAfiliadoDto getAfiliadoDto() {
 		return afiliadoDto;
 	}
@@ -52,8 +75,9 @@ public class BusquedaPacienteAction extends ActionSupport {
 
 		try {
 			log.info("Action");
-			BusquedaAfiliadoDto afiliadoBuscadoDto = new BusquedaAfiliadoDto(this.getValorbuscado());
+			BusquedaAfiliadoDto afiliadoBuscadoDto = new BusquedaAfiliadoDto(this.getValorbuscado(),this.getTipodato());
 			log.info(String.valueOf(afiliadoBuscadoDto.getValorbuscado()));
+			log.info(String.valueOf(afiliadoBuscadoDto.getTipodato()));
 			log.info("Creado afiliadoBuscado");
 			afiliadoDto = this.pacienteBo.busquedaPaciente(afiliadoBuscadoDto);
 			System.out.println(afiliadoDto.getApellido());

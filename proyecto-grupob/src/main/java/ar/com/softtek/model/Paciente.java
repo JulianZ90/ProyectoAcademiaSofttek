@@ -1,6 +1,6 @@
 package ar.com.softtek.model;
 
-import java.util.Date;
+
 
 public class Paciente implements java.io.Serializable {
 
@@ -8,7 +8,7 @@ public class Paciente implements java.io.Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private int id;
+	private int idPaciente;
 	private String nombre;
 	private String apellido;
 	private int dni;
@@ -30,11 +30,11 @@ public class Paciente implements java.io.Serializable {
 	public void setFechaBaja(String fechaBaja) {
 		this.fechaBaja = fechaBaja;
 	}
-	public int getId() {
-		return id;
+	public int getIdPaciente() {
+		return idPaciente;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setIdPaciente(int id) {
+		this.idPaciente = id;
 	}
 	public String getNombre() {
 		return nombre;

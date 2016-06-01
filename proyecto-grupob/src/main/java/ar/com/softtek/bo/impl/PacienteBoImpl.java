@@ -96,7 +96,7 @@ public class PacienteBoImpl implements PacienteBo {
 	
 	public NuevoAfiliadoDto busquedaPaciente(BusquedaAfiliadoDto pacienteBuscado){
 		Paciente paciente = new Paciente();	
-		paciente = this.pacienteDAO.buscarPorValor(pacienteBuscado.getValorbuscado());
+		paciente = this.pacienteDAO.buscarPorValor(pacienteBuscado.getValorbuscado(),pacienteBuscado.getTipodato());
 		return this.mapeoADto(paciente);	
 		
 	}

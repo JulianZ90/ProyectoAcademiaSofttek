@@ -21,19 +21,21 @@
 		</ul>
 		</br>
 	
-		<p class="BarraBusqueda"> Buscar por : 
+	<p class="BarraBusqueda"> Buscar por : 
+	<form method="post" action="busquedaPaciente">
 		<select name="tipodato" required>
-			<option value="apenom"> Nombre y/o Apellido</option>
-			<option value="documento"> Documento</option>
-			<option value="plan">Plan</option>
-			<option value="paciente">Nro. Paciente</option>
+			<option value="apenom" name="apenom"> Nombre y/o Apellido</option>
+			<option value="documento" name="numdoc"> Documento</option>
+			<option value="plan" name="plan">Plan</option>
+			<option value="paciente" name="idPaciente">Nro. Paciente</option>
 		</select>
-		<form method="post" action="busquedaPaciente">
+		
 		<input type="number" name="valorbuscado" placeholder="Ingrese Paciente / Documento / Plan / Nro. Paciente" size="50" />
+		
 		</br><input type="submit" class="button" value="Registrar">
 		<img src="../Imagenes/lupa.png" alt="Icono Lupa" class="lupa" onclick="buscarPaciente('Pacientes')" >
 		<!-- tiene que tener un evento onchange , para al escribir mostrar la tabla de pacientes -->
-		</form>
+	</form>
 	</p>
 	
 	<fieldset id="Pacientes">
@@ -60,11 +62,6 @@
 				<td>zorro@corvalan.com</td>
 				<td> 12/12/1912</td>
 			</tr>
-			<tbody>
-				#foreach( $obj in $objs )
-					<tr><td>$obj.Item1</td><td>$obj.Item2</td></tr>
-				<tr>
-			</tbody>
 		</table>
 		
 		<img src="../Imagenes/plus.png" alt="Nuevo Paciente" class="BotonesLaterales" onclick="location.href = '../AMB Afiliado/Alta de Afiliado.html'"></br></br></br></br>

@@ -7,7 +7,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import ar.com.softtek.bo.PacienteBo;
 import ar.com.softtek.dto.NuevoAfiliadoDto;
-import ar.com.softtek.dto.PlanDto;
+
 
 public abstract class  PacienteAction extends ActionSupport {
 	
