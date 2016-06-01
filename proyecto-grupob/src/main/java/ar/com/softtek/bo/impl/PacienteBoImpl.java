@@ -9,8 +9,10 @@ import org.apache.log4j.Logger;
 import ar.com.softtek.bo.PacienteBo;
 import ar.com.softtek.dao.PacienteDAO;
 import ar.com.softtek.model.Paciente;
+import ar.com.softtek.model.Turno;
 import ar.com.softtek.dto.BusquedaAfiliadoDto;
 import ar.com.softtek.dto.NuevoAfiliadoDto;
+import ar.com.softtek.dto.TurnoDto;
 
 public class PacienteBoImpl implements PacienteBo {
 
@@ -60,6 +62,23 @@ public class PacienteBoImpl implements PacienteBo {
 		return afiliadoDto;
 	}
 	
+	
+	private TurnoDto mapeoADto(Turno turno){
+		
+		TurnoDto turnoDto = new TurnoDto();
+		turnoDto.setNombre(turno.getNombre());
+		turnoDto.setApellido(turno.getApellido());
+		turnoDto.setPlanMedico(turno.getPlanMedico());
+		turnoDto.setFechaTurno(turno.getFechaTurno());
+		turnoDto.setHoraTurno(turno.getHoraTurno());
+		turnoDto.setFechaLlegada(turno.getFechaLlegada());
+		turnoDto.setHoraLlegada(turno.getHoraLlegada());
+		turnoDto.setFechaAtencion(turno.getFechaAtencion());
+		turnoDto.setHoraAtencion(turno.getHoraAtencion());
+		turnoDto.setImporte(turno.getImporte());
+		turnoDto.setObservaciones(turno.getObservaciones());
+		return turnoDto;
+	}
 	
 	
 
@@ -111,6 +130,24 @@ public class PacienteBoImpl implements PacienteBo {
 	    	Paciente paciente = this.mapeoAModelo(pacienteDto);		
 			this.pacienteDAO.deletePaciente(paciente);
 	    }
+
+
+
+	@Override
+	public List<TurnoDto> getTurnosByIdPaciente(int idPaciente) {
+		
+		List<Turno> turnos = new ArrayList<Turno>();
+		List<TurnoDto> turnosDto = new ArrayList<TurnoDto>();
+		
+	//	turnos = this.pacienteDAO.findTurnosByIdPaciente(idPaciente);
+		
+		for (Turno turno: turnos) {
+			
+			turnosDto.add(this.mapeoADto(turno));
+		}
+		
+		return turnosDto;
+	}
 	
 	
 	
