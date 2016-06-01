@@ -81,6 +81,7 @@ public class BusquedaPacienteAction extends ActionSupport {
 			log.info("Creado afiliadoBuscado");
 			afiliadoDto = this.pacienteBo.busquedaPaciente(afiliadoBuscadoDto);
 			System.out.println(afiliadoDto.getApellido());
+			
 			return "success";
 
 		} catch (Exception e) {
