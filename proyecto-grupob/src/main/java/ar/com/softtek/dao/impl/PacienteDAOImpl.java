@@ -9,6 +9,9 @@ import ar.com.softtek.model.Paciente;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 
@@ -67,11 +70,9 @@ public class PacienteDAOImpl extends HibernateDaoSupport implements PacienteDAO 
 	
 	
 	public Paciente buscarPorValor(int valorBuscado){
-//	Session session = super.getSession();
-	String hql = "FROM PACIENTES P WHERE p.dni = :valorBuscado";
-	Query query = super.getSession().createQuery(hql);
-	Paciente paciente = (Paciente) query.list().get(0);
-	return paciente;
+	DetachedCriteria crit = DetachedCriteria.forClass(Paciente.class);
+	crit.add(Restrictions.eq("dni", valorBuscado));
+	return (Paciente) getHibernateTemplate().findByCriteria(crit).get(0);
 	}
 	
 	

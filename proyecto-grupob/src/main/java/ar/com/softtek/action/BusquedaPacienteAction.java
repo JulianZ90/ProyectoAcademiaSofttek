@@ -53,6 +53,7 @@ public class BusquedaPacienteAction extends ActionSupport {
 		try {
 			log.info("Action");
 			BusquedaAfiliadoDto afiliadoBuscadoDto = new BusquedaAfiliadoDto(this.getValorbuscado());
+			log.info(String.valueOf(afiliadoBuscadoDto.getValorbuscado()));
 			log.info("Creado afiliadoBuscado");
 			afiliadoDto = this.pacienteBo.busquedaPaciente(afiliadoBuscadoDto);
 			System.out.println(afiliadoDto.getApellido());

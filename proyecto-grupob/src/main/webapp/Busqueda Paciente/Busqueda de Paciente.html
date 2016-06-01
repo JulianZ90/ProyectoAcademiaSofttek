@@ -14,7 +14,7 @@
 	</head>
 	
 	<body>
-		<form method="post" action="busquedaPaciente">
+	
 		<ul>
 			<li class="dropdown" ><a class="dropbtn" href="#">Busqueda de Paciente</a></li>
 			<li style="float:right" class="dropdown"><a href="#" onclick="funcionSalir()" class="dropbtn">Salir</a></li>
@@ -26,12 +26,12 @@
 			<option value="apenom"> Nombre y/o Apellido</option>
 			<option value="documento"> Documento</option>
 			<option value="plan">Plan</option>
-			<option value="paciente" >Nro. Paciente</option>
+			<option value="paciente">Nro. Paciente</option>
 		</select>
-		
-		<input type="search" name="valorbuscado" placeholder="Ingrese Paciente / Documento / Plan / Nro. Paciente" size="50" />
-		<img src="/Imagenes/lupa.png" alt="Icono Lupa" class="lupa" onclick="buscarPaciente('Pacientes')" >
-		
+		<form method="post" action="busquedaPaciente">
+		<input type="number" name="valorbuscado" placeholder="Ingrese Paciente / Documento / Plan / Nro. Paciente" size="50" />
+		</br><input type="submit" class="button" value="Registrar">
+		<img src="../Imagenes/lupa.png" alt="Icono Lupa" class="lupa" onclick="buscarPaciente('Pacientes')" >
 		<!-- tiene que tener un evento onchange , para al escribir mostrar la tabla de pacientes -->
 		</form>
 	</p>
@@ -42,8 +42,8 @@
 		<table border="1" style="width:90%">	
 			<tr>
 				<th>Seleccionar</th>
-				<th>Nombre y Apellido<img class="arrow" src="/Imagenes/up.png" alt="up/down"></th>
-				<th>Tipo<img class="arrow" src="/Imagenes/up.png" alt="up/down"></th>
+				<th>Nombre y Apellido<img class="arrow" src="../Imagenes/up.png" alt="up/down"></th>
+				<th>Tipo<img class="arrow" src="../Imagenes/up.png" alt="up/down"></th>
 				<th>Nro. Documento<img class="arrow" src="../Imagenes/up.png" alt="up/down"></th>
 				<th>Direccion<img class="arrow" src="../Imagenes/up.png" alt="up/down"></th>
 				<th>Teléfono<img class="arrow" src="../Imagenes/up.png" alt="up/down"></th>
@@ -60,12 +60,17 @@
 				<td>zorro@corvalan.com</td>
 				<td> 12/12/1912</td>
 			</tr>
+			<tbody>
+				#foreach( $obj in $objs )
+					<tr><td>$obj.Item1</td><td>$obj.Item2</td></tr>
+				<tr>
+			</tbody>
 		</table>
 		
 		<img src="../Imagenes/plus.png" alt="Nuevo Paciente" class="BotonesLaterales" onclick="location.href = '../AMB Afiliado/Alta de Afiliado.html'"></br></br></br></br>
 		<img src="../Imagenes/minus.png" alt="Baja Paciente" class="BotonesLaterales" onclick="location.href = '../AMB Afiliado/Baja de Afiliado.html'"></br></br></br></br>
 		<img src="../Imagenes/edit.png" alt="Modificar Paciente" class="BotonesLaterales" onclick="location.href = '../AMB Afiliado/Modificación de Afiliado.html'">
-		</fieldset>
+	</fieldset>
 	
 	</body>
 </html>
