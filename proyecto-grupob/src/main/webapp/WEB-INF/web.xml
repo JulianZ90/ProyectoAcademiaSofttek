@@ -33,4 +33,13 @@
   <session-config>
     <session-timeout>60</session-timeout>
   </session-config>
+  <servlet>
+    <display-name>HelloWorld</display-name>
+    <servlet-name>HelloWorld</servlet-name>
+    <servlet-class>org.jboss.samples.webservices.HelloWorld</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HelloWorld</servlet-name>
+    <url-pattern>/HelloWorld</url-pattern>
+  </servlet-mapping>
 </web-app>

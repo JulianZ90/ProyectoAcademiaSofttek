@@ -10,7 +10,9 @@
 		<link rel="stylesheet" href="../CSSs/Solorecuadro.css">
 		<link rel="stylesheet" href="../CSSs/BarraBusqueda.css">
 		
+		<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 		<script src="../JSs/funcionalerta.js"></script>
+		<script src="../JSs/ajax.js"></script>
 	</head>
 <body>
 	
@@ -31,8 +33,8 @@
 		
 		<input name="valorbuscado" placeholder="Ingrese Paciente / Documento / Plan / Nro. Paciente" size="50" />
 		
-		</br><input type="submit" class="button" value="Registrar">
-		<img src="../Imagenes/lupa.png" alt="Icono Lupa" class="lupa" onclick="buscarPaciente('Pacientes')" >
+		</br><button id="idboton"  class="button" value="Registrar">Registrar</button>
+				<img src="../Imagenes/lupa.png" alt="Icono Lupa" class="lupa" onclick="buscarPaciente('Pacientes')" >
 		<!-- tiene que tener un evento onchange , para al escribir mostrar la tabla de pacientes -->
 	</form>
 	</p>
