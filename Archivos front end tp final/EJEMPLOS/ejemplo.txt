@@ -1,0 +1,52 @@
+$.ajax({
+		url: link,
+		data : parametros,
+		success: function (resultado) {
+			$("#" + divVisualizarRelacionesDeCIU).html(stripScripts(resultado));
+			var scripts = extractScripts(resultado);
+			processShowVisualizarRelacionesDeCIU(scripts);
+		},
+		error: function() { 
+        	showWait(false); 
+        	Alerta.notify("Error en el servidor al llamar: " + link); 
+        },
+        complete: function(){
+        	// MG SPRINT25 CHROME
+        	preventDefault(event);
+        }
+	});
+
+//FUNCION COMPLETA
+
+
+function showVisualizarRelacionesDeCIU2(idGrilla, ciu, periodoDesde, periodoHasta, filialId) {
+
+	showWait(true);
+	
+	divVisualizarRelacionesDeCIU = 'divVisualizarRelacionesCIU';
+	
+	var parametros = 'idGrilla='+ idGrilla + '&nroCIUVisualizar=' + ciu + '&periodoDesdeVisualizar=' + periodoDesde 
+		+ '&periodoHastaVisualizar=' + periodoHasta + '&filialVisualizar=' + filialId;
+	var link = 'visualizarRelacionesDeCIUAction.do?method=showRelacionesDeCIU';
+
+	
+
+	$.ajax({
+		url: link,
+		data : parametros,
+		success: function (resultado) {
+			$("#" + divVisualizarRelacionesDeCIU).html(stripScripts(resultado));
+			var scripts = extractScripts(resultado);
+			processShowVisualizarRelacionesDeCIU(scripts);
+		},
+		error: function() { 
+        	showWait(false); 
+        	Alerta.notify("Error en el servidor al llamar: " + link); 
+        },
+        complete: function(){
+        	// MG SPRINT25 CHROME
+        	preventDefault(event);
+        }
+	});
+
+}

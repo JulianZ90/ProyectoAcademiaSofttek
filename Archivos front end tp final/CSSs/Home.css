@@ -1,0 +1,6 @@
+.button{
+	 position:absolute;
+    transition: .5s ease;
+    top: 8%;
+    left: 40%;
+}

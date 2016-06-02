@@ -1,3 +1,7 @@
 .BarraBusqueda {
 	text-align:center
 }
+
+div {
+	display:none;
+}
