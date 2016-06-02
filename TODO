@@ -1,0 +1,7 @@
+- Cambiar el tipo de dato de la barra de busqueda de number a text en la pagina BusquedaPaciente
+- Hacer un HashMap para eliminar el case en la busqueda
+- Para realizar los tests mirar en:
+  -https://dzone.com/articles/hibernate-spring-testing-data
+  -http://howtodoinjava.com/hibernate/hibernate-4-using-in-memory-database-with-hibernate/
+  -http://howtodoinjava.com/best-practices/how-you-should-unit-test-dao-layer/
+-Hacer una clase abstracta Dto para que las demas clases Dto hereden los atributos compartidos y agreguen sus propios atributos
