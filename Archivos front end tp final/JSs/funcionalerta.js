@@ -7,7 +7,6 @@ function funcioncancelar(){
 	var respconfirm = confirm("¿Esta seguro que desea cancelar? se perderan todos los datos no  guardados");
 	if ( respconfirm == true ) {
 		window.location.href = "../Busqueda Paciente/Busqueda de Paciente.html"
-		return true;
 	}
 }
 
