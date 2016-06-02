@@ -9,16 +9,16 @@
         </id>
         <property name="nombre" column="nombre" type="java.lang.String"/>
         <property name="apellido" column="apellido" type="java.lang.String"/>
-        <id name="idPaciente" column="idPaciente" type="java.lang.Integer">
-		<id name="planMedico" column="planMedico" type="java.lang.Integer">
+        <property name="idPaciente" column="idPaciente" type="java.lang.Integer"/>
+	<property name="planMedico" column="planMedico" type="java.lang.Integer"/>
         <property name="fechaTurno" column="fechaTurno" type="java.lang.String"/>
         <property name="horaTurno" column="horaTurno" type="java.lang.String"/>
         <property name="fechaLlegada" column="fechaLlegada" type="java.lang.String"/>
         <property name="horaLlegada" column="horaLlegada" type="java.lang.String"/>
         <property name="fechaAtencion" column="fechaAtencion" type="java.lang.String"/>
         <property name="fechaAtencion" column="fechaAtencion" type="java.lang.String"/>
-        <id name="idPrestador" column="idPrestador" type="java.lang.Integer">
-        <id name="idPractica" column="idPractica" type="java.lang.Integer">
+        <property name="idPrestador" column="idPrestador" type="java.lang.Integer"/>
+        <property name="idPractica" column="idPractica" type="java.lang.Integer"/>
         <property name="importe" column="importe" type="java.lang.Integer"/>
         <property name="observaciones" column="observaciones" type="java.lang.String"/>
     </class>
