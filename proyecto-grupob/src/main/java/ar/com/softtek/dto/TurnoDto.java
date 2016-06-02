@@ -7,6 +7,7 @@ public class TurnoDto implements java.io.Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	private int idTurno;
 	private String nombre;
 	private String apellido;
 	private int planMedico;
@@ -19,24 +20,14 @@ public class TurnoDto implements java.io.Serializable {
 	private int importe;
 	private String observaciones;
 	
-	
-	public TurnoDto() {}
-	
-	public TurnoDto(String nombre, String apellido, int planMedico, String fechaTurno, String horaTurno,
-			String fechaLlegada, String horaLlegada, String fechaAtencion, String horaAtencion, int importe,
-			String observaciones) {
-		super();
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.planMedico = planMedico;
-		this.fechaTurno = fechaTurno;
-		this.horaTurno = horaTurno;
-		this.fechaLlegada = fechaLlegada;
-		this.horaLlegada = horaLlegada;
-		this.fechaAtencion = fechaAtencion;
-		this.horaAtencion = horaAtencion;
-		this.importe = importe;
-		this.observaciones = observaciones;
+
+	public int getIdTurno() {
+		return idTurno;
+	}
+
+
+	public void setIdTurno(int idTurno) {
+		this.idTurno = idTurno;
 	}
 
 

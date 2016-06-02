@@ -9,7 +9,7 @@ import ar.com.softtek.bo.PacienteBo;
 
 import ar.com.softtek.dto.TurnoDto;
 
-public abstract class  TurnoPacienteAction extends ActionSupport {
+public abstract class  TurnosPacienteAction extends ActionSupport {
 	
 	private static final long serialVersionUID = 1L;
 	private static final Logger log = LogManager.getLogger("TurnoAction: ");

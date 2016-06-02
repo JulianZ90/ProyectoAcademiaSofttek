@@ -1,14 +1,17 @@
 package ar.com.softtek.dao.impl;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 import ar.com.softtek.dao.PacienteDAO;
 import ar.com.softtek.dto.BusquedaAfiliadoDto;
 import ar.com.softtek.model.Paciente;
+import ar.com.softtek.model.Turno;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.Criterion;
@@ -59,14 +62,28 @@ public class PacienteDAOImpl extends HibernateDaoSupport implements PacienteDAO 
 	}
 
 	public void deletePaciente(Paciente paciente) {
-		super.getHibernateTemplate().delete(paciente);
-
+		
+		Session session = super.getSession();
+		Query query = session.getNamedQuery("bajaPaciente");
+        query.setParameter("dni", paciente.getDni());
 	}
 
 	public void updatePaciente(Paciente paciente) {
 		super.getHibernateTemplate().update(paciente);
 	}
 
+	
+    public List<Turno> findTurnosByIdPaciente(int idPaciente) {
+		
+		List<Turno> turnos = new ArrayList<Turno>();
+		Session session = super.getSession();
+		Criteria criteria = session.createCriteria(Turno.class);
+		criteria.add(Restrictions.eq("idPaciente", idPaciente));
+		turnos = (List<Turno>) criteria.list();
+		return turnos;
+    }
+	
+	
 	public Paciente buscarPorValor(String valorBuscado, String tipodato) {
 		
 		HashMap<String, String> mapito = new HashMap<String,String>();

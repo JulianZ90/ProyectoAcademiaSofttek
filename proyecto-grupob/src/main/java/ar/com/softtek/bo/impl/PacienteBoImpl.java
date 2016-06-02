@@ -17,13 +17,12 @@ import ar.com.softtek.dto.TurnoDto;
 public class PacienteBoImpl implements PacienteBo {
 
 	PacienteDAO pacienteDAO;
-	private  ArrayList<Paciente> pacientes = new ArrayList<Paciente>();
 	private static final long serialVersionUID = 1L;
 	private static final Logger log = LogManager.getLogger("Paciente BOIMPL");
 	
 
 
-	private Paciente mapeoAModelo(NuevoAfiliadoDto pacienteDto) {
+private Paciente mapeoAModelo(NuevoAfiliadoDto pacienteDto) {
 		
 		Paciente paciente = new Paciente();
 		int telefono = Integer.parseInt(pacienteDto.getTelefono());
@@ -47,6 +46,7 @@ public class PacienteBoImpl implements PacienteBo {
 		NuevoAfiliadoDto afiliadoDto = new NuevoAfiliadoDto();
 		String telefono = String.valueOf(paciente.getTelefono());
 		afiliadoDto.setTelefono(telefono);
+		afiliadoDto.setIdPaciente(paciente.getIdPaciente());
 		afiliadoDto.setApellido(paciente.getApellido());
 		afiliadoDto.setCantHijos(paciente.getFamiliaresACargo());
 		afiliadoDto.setDireccion(paciente.getDireccion());
@@ -66,6 +66,7 @@ public class PacienteBoImpl implements PacienteBo {
 	private TurnoDto mapeoADto(Turno turno){
 		
 		TurnoDto turnoDto = new TurnoDto();
+		turnoDto.setIdTurno(turno.getIdTurno());
 		turnoDto.setNombre(turno.getNombre());
 		turnoDto.setApellido(turno.getApellido());
 		turnoDto.setPlanMedico(turno.getPlanMedico());
@@ -80,7 +81,6 @@ public class PacienteBoImpl implements PacienteBo {
 		return turnoDto;
 	}
 	
-	
 
 	public PacienteDAO getPacienteDAO() {
 		return pacienteDAO;
@@ -89,14 +89,7 @@ public class PacienteBoImpl implements PacienteBo {
 	public void setPacienteDAO(PacienteDAO pacienteDAO) {
 		this.pacienteDAO = pacienteDAO;
 	}
-
-	public ArrayList<Paciente> getPacientes() {
-		return pacientes;
-	}
-
-	public void setPacientes(ArrayList<Paciente> pacientes) {
-		this.pacientes = pacientes;
-	}
+	
 
 	public void addPaciente(NuevoAfiliadoDto pacienteDto) {
 		
@@ -104,7 +97,7 @@ public class PacienteBoImpl implements PacienteBo {
 		try {
 			Paciente paciente = this.mapeoAModelo(pacienteDto);
 			this.pacienteDAO.addPaciente(paciente);
-//			this.pacientes.add(paciente);
+
 		} catch (Exception e) {
 			log.error("Error al tratar de hacer addPaciente "+ e.getMessage());
 			// TODO: handle exception
@@ -139,7 +132,7 @@ public class PacienteBoImpl implements PacienteBo {
 		List<Turno> turnos = new ArrayList<Turno>();
 		List<TurnoDto> turnosDto = new ArrayList<TurnoDto>();
 		
-	//	turnos = this.pacienteDAO.findTurnosByIdPaciente(idPaciente);
+		turnos = this.pacienteDAO.findTurnosByIdPaciente(idPaciente);
 		
 		for (Turno turno: turnos) {
 			
