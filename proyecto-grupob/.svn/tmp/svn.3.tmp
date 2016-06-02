@@ -1,7 +1,0 @@
-package ar.com.softtek.grupob.service.impl;
-
-import ar.com.softtek.grupob.service.AfiliadoService;
-
-public class AfiliadoServiceImpl implements AfiliadoService {
-
-}

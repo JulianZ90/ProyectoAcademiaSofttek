@@ -1,5 +1,0 @@
-package ar.com.softtek.grupob.service;
-
-public interface PracticaService {
-
-}

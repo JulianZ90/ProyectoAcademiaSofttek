@@ -1,7 +1,0 @@
-package ar.com.softtek.grupob.service.impl;
-
-import ar.com.softtek.grupob.service.PlanService;
-
-public class PlanServiceImpl implements PlanService {
-
-}

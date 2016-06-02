@@ -1,7 +1,0 @@
-package ar.com.softtek.grupob.service.impl;
-
-import ar.com.softtek.grupob.service.PrestadorService;
-
-public class PrestadorServiceImpl implements PrestadorService {
-
-}
