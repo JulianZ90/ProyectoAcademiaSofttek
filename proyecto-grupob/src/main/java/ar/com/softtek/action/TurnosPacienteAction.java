@@ -8,7 +8,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import ar.com.softtek.bo.TurnoBo;
 import ar.com.softtek.dto.TurnoDto;
 
-public abstract class  TurnoPacienteAction extends ActionSupport {
+public abstract class  TurnosPacienteAction extends ActionSupport {
 	
 	private static final long serialVersionUID = 1L;
 	private static final Logger log = LogManager.getLogger("TurnoAction: ");
@@ -42,7 +42,7 @@ public abstract class  TurnoPacienteAction extends ActionSupport {
 		return log;
 	}
 
-	
+		
 	public TurnoBo getTurnoBo() {
 		return turnoBo;
 	}

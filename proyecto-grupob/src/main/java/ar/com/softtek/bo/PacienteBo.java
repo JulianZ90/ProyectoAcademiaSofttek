@@ -18,6 +18,4 @@ public interface PacienteBo {
 	
 	void deletePaciente(NuevoAfiliadoDto pacienteDto);
 	
-	List<TurnoDto>  getTurnosByIdPaciente(int idPaciente);
-	
 }
