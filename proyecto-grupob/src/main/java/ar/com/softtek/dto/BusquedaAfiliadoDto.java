@@ -2,7 +2,7 @@ package ar.com.softtek.dto;
 
 public class BusquedaAfiliadoDto {
 	
-	private int valorbuscado;
+	private String valorbuscado;
 	private String tipodato;
 	
 	
@@ -18,29 +18,23 @@ public class BusquedaAfiliadoDto {
 
 
 
-	public int getValorbuscado() {
+	public String getValorbuscado() {
 		return valorbuscado;
 	}
 
 
 
-	public void setValorbuscado(int valorbuscado) {
+	public void setValorbuscado(String valorbuscado) {
 		this.valorbuscado = valorbuscado;
 	}
 
 
 
-	public BusquedaAfiliadoDto(int valorbuscado, String tipodato) {
+	public BusquedaAfiliadoDto(String valorbuscado, String tipodato) {
 		this.valorbuscado = valorbuscado;
 		this.tipodato = tipodato;
 	}
 
 
-	
-
-	
-	
-	
-	
 
 }

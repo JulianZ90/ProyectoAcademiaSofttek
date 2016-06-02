@@ -17,10 +17,14 @@ public class BusquedaPacienteAction extends ActionSupport {
 	 */
 	private static final Logger log = LogManager.getLogger("NuevoAfiliadoAction: ");
 	private static final long serialVersionUID = 1L;
-	private int valorbuscado;
+	
+	
+	private String valorbuscado;
+	private String tipodato;
+	
 	private NuevoAfiliadoDto afiliadoDto;
 	private PacienteBo pacienteBo;	
-	private String tipodato;
+
 	
 	
 
@@ -100,7 +104,7 @@ public class BusquedaPacienteAction extends ActionSupport {
 
 
 
-	public int getValorbuscado() {
+	public String getValorbuscado() {
 		return valorbuscado;
 	}
 
@@ -111,7 +115,7 @@ public class BusquedaPacienteAction extends ActionSupport {
 
 
 
-	public void setValorbuscado(int valorbuscado) {
+	public void setValorbuscado(String valorbuscado) {
 		this.valorbuscado = valorbuscado;
 	}
 

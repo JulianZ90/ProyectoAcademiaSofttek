@@ -1,5 +1,6 @@
 package ar.com.softtek.dao.impl;
 
+import java.util.HashMap;
 import java.util.List;
 
 import ar.com.softtek.dao.PacienteDAO;
@@ -66,19 +67,22 @@ public class PacienteDAOImpl extends HibernateDaoSupport implements PacienteDAO 
 		super.getHibernateTemplate().update(paciente);
 	}
 
-	public Paciente buscarPorValor(int valorBuscado, String tipodato) {
+	public Paciente buscarPorValor(String valorBuscado, String tipodato) {
+		
+		HashMap<String, String> mapito = new HashMap<String,String>();
+			mapito.put("documento", "dni");
+			mapito.put("paciente", "idPaciente");
+			mapito.put("plan", "planMedico");
+//			mapito.put("apenom",""));
+		
+		HashMap<String,Object> convertTo = new HashMap<String,Object>();
+			convertTo.put("documento", Integer.parseInt(valorBuscado));
+			convertTo.put("paciente",Integer.parseInt(valorBuscado) );
+			convertTo.put("plan", Integer.parseInt(valorBuscado));
+			convertTo.put("apenom", valorBuscado);
+		
 		DetachedCriteria crit = DetachedCriteria.forClass(Paciente.class);
-		switch (tipodato) {
-		case "documento":
-			crit.add(Restrictions.eq("dni", valorBuscado));
-			break;
-		case "paciente":
-			crit.add(Restrictions.eq("idPaciente", valorBuscado));
-			break;
-		case "plan":
-			crit.add(Restrictions.eq("planMedico", valorBuscado));
-			break;
-		}
+		crit.add(Restrictions.eq(mapito.get(tipodato),convertTo.get(tipodato)));
 		return (Paciente) getHibernateTemplate().findByCriteria(crit).get(0);
 	}
 

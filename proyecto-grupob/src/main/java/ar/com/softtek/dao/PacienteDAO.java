@@ -15,7 +15,7 @@ public interface PacienteDAO {
 	long addPaciente(Paciente paciente);
 	void deletePaciente(Paciente paciente);
 	void updatePaciente(Paciente paciente);
-	Paciente buscarPorValor(int valorBuscado,String tipodato);
+	Paciente buscarPorValor(String valorBuscado,String tipodato);
 	
 	
 }

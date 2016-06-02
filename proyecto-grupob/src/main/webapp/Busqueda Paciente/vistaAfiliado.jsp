@@ -29,7 +29,7 @@
 			<option value="paciente" name="idPaciente">Nro. Paciente</option>
 		</select>
 		
-		<input type="number" name="valorbuscado" placeholder="Ingrese Paciente / Documento / Plan / Nro. Paciente" size="50" />
+		<input type="text" name="valorbuscado" placeholder="Ingrese Paciente / Documento / Plan / Nro. Paciente" size="50" />
 		
 		</br><input type="submit" class="button" value="Registrar">
 		<img src="../Imagenes/lupa.png" alt="Icono Lupa" class="lupa" onclick="buscarPaciente('Pacientes')" >

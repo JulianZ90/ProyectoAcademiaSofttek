@@ -47,17 +47,17 @@ public class testBackEnd {
 		assertEquals("success",nuevoPacienteAction.execute());	
 	}	
 	
-	@Test
-	@Transaction
-	@Rollback(true)
-	public void testSelect(){
-		busquedaPacienteAction.setTipodato("paciente");
-		busquedaPacienteAction.setValorbuscado(3);
-		BusquedaAfiliadoDto afiliadoBuscadoDto = new BusquedaAfiliadoDto(busquedaPacienteAction.getValorbuscado(),busquedaPacienteAction.getTipodato());
-		afiliadoDto = this.pacienteBo.busquedaPaciente(afiliadoBuscadoDto);
-		//Hacer el assertEquals;
+//	@Test
+//	@Transactional
+//	@Rollback(true)
+//	public void testSelect(){
+//		busquedaPacienteAction.setTipodato("paciente");
+//		busquedaPacienteAction.setValorbuscado(3);
+//		BusquedaAfiliadoDto afiliadoBuscadoDto = new BusquedaAfiliadoDto(busquedaPacienteAction.getValorbuscado(),busquedaPacienteAction.getTipodato());
+//		afiliadoDto = this.pacienteBo.busquedaPaciente(afiliadoBuscadoDto);
+//		//Hacer el assertEquals;
 		
-	}
+	
 	
 	
 
