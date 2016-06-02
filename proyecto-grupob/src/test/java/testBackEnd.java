@@ -7,7 +7,11 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import ar.com.softtek.action.BusquedaPacienteAction;
 import ar.com.softtek.action.NuevoPacienteAction;
+import ar.com.softtek.bo.PacienteBo;
+import ar.com.softtek.dto.BusquedaAfiliadoDto;
+import ar.com.softtek.dto.NuevoAfiliadoDto;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {})
@@ -17,6 +21,10 @@ import ar.com.softtek.action.NuevoPacienteAction;
 public class testBackEnd {
 	
 	private NuevoPacienteAction nuevoPacienteAction = new NuevoPacienteAction();
+	private BusquedaPacienteAction busquedaPacienteAction = new BusquedaPacienteAction();
+	private PacienteBo pacienteBo;
+	private NuevoAfiliadoDto afiliadoDto;
+	
 	
 	@Test
 	@Transactional
@@ -35,8 +43,22 @@ public class testBackEnd {
 		nuevoPacienteAction.setEstadocivil("Soltero");
 		nuevoPacienteAction.setCanthijos(0);
 		nuevoPacienteAction.setPlan(210);
+		
 		assertEquals("success",nuevoPacienteAction.execute());	
 	}	
+	
+	@Test
+	@Transaction
+	@Rollback(true)
+	public void testSelect(){
+		busquedaPacienteAction.setTipodato("paciente");
+		busquedaPacienteAction.setValorbuscado(3);
+		BusquedaAfiliadoDto afiliadoBuscadoDto = new BusquedaAfiliadoDto(busquedaPacienteAction.getValorbuscado(),busquedaPacienteAction.getTipodato());
+		afiliadoDto = this.pacienteBo.busquedaPaciente(afiliadoBuscadoDto);
+		//Hacer el assertEquals;
+		
+	}
+	
 	
 
 }
