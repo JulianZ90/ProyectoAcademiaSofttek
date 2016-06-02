@@ -1,0 +1,18 @@
+package ar.com.softtek.grupob.dao;
+
+import java.util.List;
+//import java.util.Set;
+
+
+
+
+import ar.com.softtek.grupob.entity.Practica;
+
+public interface PracticaDAO {
+	
+	public List<Practica> getAll();
+
+	public Practica  get(long legajo);
+
+	public List<Practica> getAll(String practicaID);
+}

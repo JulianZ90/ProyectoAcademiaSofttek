@@ -1,0 +1,53 @@
+package ar.com.softtek.grupob.service.impl;
+
+import java.util.List;
+
+import ar.com.softtek.grupob.dao.AfiliadoDAO;
+import ar.com.softtek.grupob.entity.Afiliado;
+import ar.com.softtek.grupob.dto.AfiliadoDTO;
+import ar.com.softtek.grupob.service.AfiliadoService;
+
+public class AfiliadoServiceImpl implements AfiliadoService {
+	
+	AfiliadoDAO afiliadoDAO;
+
+	public void add(AfiliadoDTO afiliado) {
+		Afiliado afiliadoNuevo = new Afiliado();
+		afiliadoNuevo.setNombre(afiliado.getNombre());
+		afiliadoNuevo.setApellido(afiliado.getApellido());
+		afiliadoDAO.add(afiliadoNuevo);
+	}
+
+	public void delete(int id_afiliado) {
+		// TODO Auto-generated method stub
+		afiliadoDAO.delete(id_afiliado);
+		
+	}
+
+	public List<Afiliado> getAll() {
+		// TODO Auto-generated method stub
+		afiliadoDAO.getAll();
+		return null;
+	}
+
+	public Afiliado get(int numero_afiliado) {
+		// TODO Auto-generated method stub
+		return afiliadoDAO.get(numero_afiliado);
+	}
+
+	public List<Afiliado> getAllByNombre(String nombreAfiliado) {
+		// TODO Auto-generated method stub
+		return afiliadoDAO.getAllByNombre(nombreAfiliado);
+	}
+
+	public List<Afiliado> getAllByApellido(String apellidoAfiliado) {
+		// TODO Auto-generated method stub
+		return afiliadoDAO.getAllByApellido(apellidoAfiliado);
+	}
+
+	public Afiliado update(Afiliado afiliado) {
+		// TODO Auto-generated method stub
+		return afiliadoDAO.update(afiliado);
+	}
+
+}

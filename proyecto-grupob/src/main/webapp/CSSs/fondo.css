@@ -1,0 +1,36 @@
+body {
+	background-image: url("../Imagenes/wallpaper.jpg");
+}
+
+body {
+	color: white;
+}
+
+.imgdeco {
+	opacity: 0.6;
+	float: right;
+}
+
+.lupa {
+	height: 30px;
+	width: 30px;
+}
+
+.lupa:hover {
+	opacity: 0.8;
+}
+
+.arrow {
+	height: 20px;
+	width: 20px;
+}
+
+.arrow:hover{
+	opacity: 0,1;
+}
+
+.BotonesLaterales {
+	height:40px;
+	width:40px;
+	float:right;
+}

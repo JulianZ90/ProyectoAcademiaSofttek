@@ -1,0 +1,5 @@
+package ar.com.softtek.grupob.services;
+
+public interface AfiliadoService {
+
+}

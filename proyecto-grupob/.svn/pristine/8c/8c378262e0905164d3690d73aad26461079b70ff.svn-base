@@ -1,0 +1,25 @@
+package ar.com.softtek.grupob.dao;
+
+import java.util.List;
+//import java.util.Set;
+
+
+import ar.com.softtek.grupob.entity.Turno;
+
+
+public interface TurnoDAO {
+	
+	public long anadirTurno(Turno turno);
+
+	public Turno actualizarAlumno(Turno turno);
+
+	public void eliminarTurno(long legajo);
+
+	public List<Turno> getAllTurnos();
+
+	public Turno  getTurno(long legajo);
+
+	public List<Turno> getAllTurnos(String turnoID);
+
+	
+}

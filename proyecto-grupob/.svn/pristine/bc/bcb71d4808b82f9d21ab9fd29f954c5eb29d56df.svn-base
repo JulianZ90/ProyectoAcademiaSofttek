@@ -1,0 +1,26 @@
+package ar.com.softtek.grupob.dto;
+
+import java.io.Serializable;
+
+public class PrestadorDTO implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private String idPrestador;
+	
+
+	public PrestadorDTO(){}
+
+
+	public String getIdPrestador() {
+		return idPrestador;
+	}
+
+
+	public void setIdPrestador(String idPrestador) {
+		this.idPrestador = idPrestador;
+	}
+}

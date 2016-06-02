@@ -1,0 +1,7 @@
+package ar.com.softtek.grupob.service.impl;
+
+import ar.com.softtek.grupob.service.TurnoService;
+
+public class TurnoServiceImpl implements TurnoService {
+
+}

@@ -1,0 +1,174 @@
+package ar.com.softtek.grupob.dao.impl;
+
+import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
+import ar.com.softtek.grupob.dao.AfiliadoDAO;
+import ar.com.softtek.grupob.entity.Afiliado;
+import ar.com.softtek.grupob.util.HibernateUtil;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+
+public class AfiliadoDAOImpl /*extends HibernateDaoSupport */
+implements AfiliadoDAO {
+
+	@Autowired
+	private HibernateUtil hibernateUtil;
+
+	public void add(Afiliado afiliado) {
+		hibernateUtil.create(afiliado);
+		//this.getHibernateTemplate().save(afiliado);
+	}
+
+	public Afiliado update(Afiliado afiliado) {
+		hibernateUtil.update(afiliado);
+		//this.getHibernateTemplate().update(afiliado);
+		return null;
+	}
+
+	public void delete(long numeroAfiliado) {
+		//Afiliado afiliado = (Afiliado)getHibernateTemplate().find("from Afiliado where numeroAfiliado=?", numeroAfiliado).get(0);
+		Afiliado afiliado = hibernateUtil.fetchById(numeroAfiliado, Afiliado.class);
+		afiliado.setEstado(false);
+		//this.getHibernateTemplate().update(afiliado);
+		hibernateUtil.update(afiliado);
+	}
+
+	public List<Afiliado> getAll() {
+		return hibernateUtil.fetchAll(Afiliado.class);
+		//return getHibernateTemplate().find("from Afiliado");
+	}
+
+	public Afiliado get(int numeroAfiliado) {
+		//Afiliado afiliado = (Afiliado)getHibernateTemplate().find("from Afiliado where numeroAfiliado=?", numeroAfiliado).get(0);
+		//return afiliado;
+		return hibernateUtil.fetchById(numeroAfiliado, Afiliado.class);
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Afiliado> getAll(String nombreAfiliado) {
+		String query = "SELECT e.* FROM AFILIADO e WHERE e.estado = TRUE";
+		List<Object[]> objetosAfiliado = hibernateUtil.fetchAll(query);
+		List<Afiliado> listaAfiliados = new ArrayList<Afiliado>();
+		for (Object[] objetoAfiliado : objetosAfiliado) {
+			Afiliado afiliado = new Afiliado();
+			int numeroAfiliado = ((Integer) objetoAfiliado[0]).intValue();
+			String nombre = (String) objetoAfiliado[1];
+			String apellido = (String) objetoAfiliado[2];
+			String tipoDni = (String) objetoAfiliado[3];
+			int dni = ((Integer) objetoAfiliado[4]).intValue();
+			Date fechaDeNacimiento = ((Date) objetoAfiliado[5]);
+			char sexo = ((Character) objetoAfiliado[6]).charValue();
+			String direccion = (String) objetoAfiliado[7];
+			int telefono = ((Integer) objetoAfiliado[8]).intValue();
+			String mail = (String) objetoAfiliado[9];
+			String planMedico = (String) objetoAfiliado[10];
+			int cantidadACargo = ((Integer) objetoAfiliado[11]).intValue();
+			String estadoCivil = (String) objetoAfiliado[12];
+			boolean estado = ((Boolean) objetoAfiliado [13]).booleanValue();
+			afiliado.setApellido(apellido);
+			afiliado.setCantidadACargo(cantidadACargo);
+			afiliado.setDireccion(direccion);
+			afiliado.setDni(dni);
+			afiliado.setEstado(estado);
+			afiliado.setEstadoCivil(estadoCivil);
+			afiliado.setFechaDeNacimiento(fechaDeNacimiento);
+			afiliado.setMail(mail);
+			afiliado.setPlanMedico(planMedico);
+			afiliado.setSexo(sexo);
+			afiliado.setTelefono(telefono);
+			afiliado.setTipoDni(tipoDni);
+			afiliado.setNombre(nombre);
+			afiliado.setNumeroAfiliado(numeroAfiliado);
+			listaAfiliados.add(afiliado);
+		}
+		return listaAfiliados;
+		//return getHibernateTemplate().find("from Afiliado where nombreAfiliado=?", nombreAfiliado);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Afiliado> getAllByNombre(String nombreAfiliado) {
+		String query = "SELECT e.* FROM AFILIADO e WHERE e.estado = TRUE & e.nombre ="+nombreAfiliado;
+		List<Object[]> objetosAfiliado = hibernateUtil.fetchAll(query);
+		List<Afiliado> listaAfiliados = new ArrayList<Afiliado>();
+		for (Object[] objetoAfiliado : objetosAfiliado) {
+			Afiliado afiliado = new Afiliado();
+			int numeroAfiliado = ((Integer) objetoAfiliado[0]).intValue();
+			String nombre = (String) objetoAfiliado[1];
+			String apellido = (String) objetoAfiliado[2];
+			String tipoDni = (String) objetoAfiliado[3];
+			int dni = ((Integer) objetoAfiliado[4]).intValue();
+			Date fechaDeNacimiento = ((Date) objetoAfiliado[5]);
+			char sexo = ((Character) objetoAfiliado[6]).charValue();
+			String direccion = (String) objetoAfiliado[7];
+			int telefono = ((Integer) objetoAfiliado[8]).intValue();
+			String mail = (String) objetoAfiliado[9];
+			String planMedico = (String) objetoAfiliado[10];
+			int cantidadACargo = ((Integer) objetoAfiliado[11]).intValue();
+			String estadoCivil = (String) objetoAfiliado[12];
+			boolean estado = ((Boolean) objetoAfiliado [13]).booleanValue();
+			afiliado.setApellido(apellido);
+			afiliado.setCantidadACargo(cantidadACargo);
+			afiliado.setDireccion(direccion);
+			afiliado.setDni(dni);
+			afiliado.setEstado(estado);
+			afiliado.setEstadoCivil(estadoCivil);
+			afiliado.setFechaDeNacimiento(fechaDeNacimiento);
+			afiliado.setMail(mail);
+			afiliado.setPlanMedico(planMedico);
+			afiliado.setSexo(sexo);
+			afiliado.setTelefono(telefono);
+			afiliado.setTipoDni(tipoDni);
+			afiliado.setNombre(nombre);
+			afiliado.setNumeroAfiliado(numeroAfiliado);
+			listaAfiliados.add(afiliado);
+		}
+		return listaAfiliados;
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Afiliado> getAllByApellido(String apellidoAfiliado) {
+		String query = "SELECT e.* FROM AFILIADO e WHERE e.estado = TRUE & e.apellido ="+apellidoAfiliado;
+		List<Object[]> objetosAfiliado = hibernateUtil.fetchAll(query);
+		List<Afiliado> listaAfiliados = new ArrayList<Afiliado>();
+		for (Object[] objetoAfiliado : objetosAfiliado) {
+			Afiliado afiliado = new Afiliado();
+			int numeroAfiliado = ((Integer) objetoAfiliado[0]).intValue();
+			String nombre = (String) objetoAfiliado[1];
+			String apellido = (String) objetoAfiliado[2];
+			String tipoDni = (String) objetoAfiliado[3];
+			int dni = ((Integer) objetoAfiliado[4]).intValue();
+			Date fechaDeNacimiento = ((Date) objetoAfiliado[5]);
+			char sexo = ((Character) objetoAfiliado[6]).charValue();
+			String direccion = (String) objetoAfiliado[7];
+			int telefono = ((Integer) objetoAfiliado[8]).intValue();
+			String mail = (String) objetoAfiliado[9];
+			String planMedico = (String) objetoAfiliado[10];
+			int cantidadACargo = ((Integer) objetoAfiliado[11]).intValue();
+			String estadoCivil = (String) objetoAfiliado[12];
+			boolean estado = ((Boolean) objetoAfiliado [13]).booleanValue();
+			afiliado.setApellido(apellido);
+			afiliado.setCantidadACargo(cantidadACargo);
+			afiliado.setDireccion(direccion);
+			afiliado.setDni(dni);
+			afiliado.setEstado(estado);
+			afiliado.setEstadoCivil(estadoCivil);
+			afiliado.setFechaDeNacimiento(fechaDeNacimiento);
+			afiliado.setMail(mail);
+			afiliado.setPlanMedico(planMedico);
+			afiliado.setSexo(sexo);
+			afiliado.setTelefono(telefono);
+			afiliado.setTipoDni(tipoDni);
+			afiliado.setNombre(nombre);
+			afiliado.setNumeroAfiliado(numeroAfiliado);
+			listaAfiliados.add(afiliado);
+		}
+		return listaAfiliados;
+		
+	}
+
+}

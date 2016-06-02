@@ -1,0 +1,103 @@
+package ar.com.softtek.grupob.entity;
+
+import java.io.Serializable;
+
+
+import java.util.Date;
+
+public class Turno implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private int numeroTurno;
+	private String nombrePaciente; 
+	private String apellidoPaciente;
+	private int numeroAfiliado;
+	private String planMedico;
+	private Date fechaLlegada;
+	private Date fechaAtencion;
+	private int idPrestador;
+	private int numeroPractica;
+	private double importe;
+	private String observaciones;
+
+
+	public Turno(){}
+	
+	
+	public int getNumeroTurno() {
+		return numeroTurno;
+	}
+	public void setNumeroTurno(int numeroTurno) {
+		this.numeroTurno = numeroTurno;
+	}
+	public String getNombrePaciente() {
+		return nombrePaciente;
+	}
+	public void setNombrePaciente(String nombrePaciente) {
+		this.nombrePaciente = nombrePaciente;
+	}
+	public String getApellidoPaciente() {
+		return apellidoPaciente;
+	}
+	public void setApellidoPaciente(String apellidoPaciente) {
+		this.apellidoPaciente = apellidoPaciente;
+	}
+	public int getNumeroAfiliado() {
+		return numeroAfiliado;
+	}
+	public void setNumeroAfiliado(int numeroAfiliado) {
+		this.numeroAfiliado = numeroAfiliado;
+	}
+	
+	public String getPlanMedico() {
+		return planMedico;
+	}
+	public void setPlanMedico(String planMedico) {
+		this.planMedico = planMedico;
+	}
+	
+	
+	
+	public Date getFechaLlegada() {
+		return fechaLlegada;
+	}
+	public void setFechaLlegada(Date fechaLlegada) {
+		this.fechaLlegada = fechaLlegada;
+	}
+	public void setFechaAtencion(Date fechaAtencion) {
+		this.fechaAtencion = fechaAtencion;
+	}
+	public Date getFechaAtencion() {
+		return fechaAtencion;
+	}
+	
+	public int getIdPrestador() {
+		return idPrestador;
+	}
+	public void setIdPrestador(int idPrestador) {
+		this.idPrestador = idPrestador;
+	}
+	public int getNumeroPractica() {
+		return numeroPractica;
+	}
+	public void setNumeroPractica(int numeroPractica) {
+		this.numeroPractica = numeroPractica;
+	}
+	public double getImporte() {
+		return importe;
+	}
+	public void setImporte(double importe) {
+		this.importe = importe;
+	}
+	public String getObservaciones() {
+		return observaciones;
+	}
+	public void setObservaciones(String observaciones) {
+		this.observaciones = observaciones;
+	}
+
+}

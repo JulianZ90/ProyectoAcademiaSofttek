@@ -1,0 +1,38 @@
+package ar.com.softtek.grupob.entity;
+
+import java.io.Serializable;
+
+
+public class Plan implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private int idPlan;
+private String descripcion;
+	
+
+	public Plan(){}
+
+
+	public int getIdPlan() {
+		return idPlan;
+	}
+
+
+	public void setIdPlan(int idPlan) {
+		this.idPlan = idPlan;
+	}
+
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+}

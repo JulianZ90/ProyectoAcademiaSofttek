@@ -1,0 +1,15 @@
+package ar.com.softtek.grupob.service;
+
+
+import java.util.List;
+
+import ar.com.softtek.grupob.dto.PrestadorDTO;
+
+
+public interface PrestadorService {
+
+	public List<PrestadorDTO> getAll();
+	public PrestadorDTO get(int numero_prestador);
+	public PrestadorDTO get(String nombre);
+	
+}

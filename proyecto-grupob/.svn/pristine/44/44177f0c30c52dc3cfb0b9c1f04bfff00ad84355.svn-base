@@ -1,0 +1,24 @@
+package ar.com.softtek.grupob.dao;
+
+import java.util.List;
+//import java.util.Set;
+
+
+
+import ar.com.softtek.grupob.entity.Plan;
+
+public interface PlanDao {
+	
+	public long anadirPlan(Plan plan);
+
+	public Plan actualizarPlan(Plan plan);
+
+	public void eliminarPlan(long legajo);
+
+	public List<Plan> getAllPlanes();
+
+	public Plan  getPlan(long legajo);
+
+	public List<Plan> getAllPlanes(String planID);
+
+}
