@@ -10,7 +10,24 @@
 		<link rel="stylesheet" href="../CSSs/fondo.css" />
 		<link rel="stylesheet" href="../CSSs/Solorecuadro.css" />
 		
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 		<script src="../JSs/funcionalerta.js"></script>
+		<script src="../JSs/jspdf.min.js"></script>
+		<script src="../JSs/html2canvas.js"></script>
+		<script type="text/javascript">
+
+		function genPDF() {
+			html2canvas(document.body, {
+				onrendered: function (canvas) {
+			
+					var img = canvas.toDataURL("image/png");
+					var doc = new jsPDF('l', 'mm', [350, 210]);
+					doc.addImage(img, 'JPEG',0,0);
+					doc.save('reporte.pdf');
+				}
+			});	
+		}
+		</script>
 	</head>
 	
 	<body>
@@ -22,7 +39,7 @@
 		</br>
 			
 		<fieldset>
-			<legend>Turnos</legend>
+			<legend>Reporte de Turnos</legend>
 			<table border="1" style="width:90%">
 				<tr>
 					<th>Nro. Turno <img class="arrow" src="../Imagenes/up.png" alt="up" onclick="funcionflecha()"><img class="arrow" src="../Imagenes/down.png" alt="down" onclick="funcionflecha()"></th>
@@ -39,7 +56,8 @@
 			</table>
 			<img src="../Imagenes/plus.png" alt="Nuevo Turno" class="BotonesLaterales" onclick="funcionAgregar()"></br></br></br></br>
 			<img src="../Imagenes/minus.png" alt="Baja Turno" class="BotonesLaterales" onclick="funcionBajar()"></br></br></br></br>
-			<img src="../Imagenes/edit.png" alt="Modificar Turno" class="BotonesLaterales" onclick="funcionEditar()">
+			<img src="../Imagenes/edit.png" alt="Modificar Turno" class="BotonesLaterales" onclick="funcionEditar()"></br></br></br></br>
+			<img src="../Imagenes/pdf.png" alt="generar pdf" class="BotonesLaterales" onclick="genPDF()">
 		</fieldset> 
 		</br>
 		<input type="button" name="Volver" value="Volver a Busqueda de Pacientes" onclick="location.href ='Busqueda de Paciente.html';" class="button"/>
