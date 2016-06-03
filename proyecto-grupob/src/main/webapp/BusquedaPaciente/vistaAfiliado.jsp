@@ -54,7 +54,8 @@
 			</tr>
 		<s:iterator value="afiliadoDtos">
 			<tr>
-				<td><input type="radio" name="Paciente" ondblclick="location.href = 'Turnos del Paciente.html'" /></th>
+				<td><input type="radio" name="Paciente" ondblclick="location.href = 'TurnosdelPaciente.jsp
+					'" /></th>
 				<td> <s:property value="apenom" /> </th>
 				<td>  <s:property value="tipoDni" /> </th>
 				<td>  <s:property value="dni" /> </th>
@@ -67,8 +68,8 @@
 		</table>
 		
 		<img src="../Imagenes/plus.png" alt="Nuevo Paciente" class="BotonesLaterales" onclick="location.href = '../AMB/AltadeAfiliado.jsp'"></br></br></br></br>
-		<img src="../Imagenes/minus.png" alt="Baja Paciente" class="BotonesLaterales" onclick="location.href = 'AMB Afiliado/Baja de Afiliado.html'"></br></br></br></br>
-		<img src="../Imagenes/edit.png" alt="Modificar Paciente" class="BotonesLaterales" onclick="location.href = 'AMB Afiliado/Modificación de Afiliado.html'">
+		<img src="../Imagenes/minus.png" alt="Baja Paciente" class="BotonesLaterales" onclick="location.href = '../AMB/BajadeAfiliado.jsp'"></br></br></br></br>
+		<img src="../Imagenes/edit.png" alt="Modificar Paciente" class="BotonesLaterales" onclick="location.href = '../AMB/ModificacióndeAfiliado.jsp'">
 	</fieldset>
 
 </body>
