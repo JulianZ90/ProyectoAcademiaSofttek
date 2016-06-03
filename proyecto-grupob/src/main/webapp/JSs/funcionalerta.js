@@ -6,7 +6,7 @@ function funcionalerta() {
 function funcioncancelar(){
 	var respconfirm = confirm("¿Esta seguro que desea cancelar? se perderan todos los datos no  guardados");
 	if ( respconfirm == true ) {
-		window.history.go(-1);
+		window.location.href = "../BusquedaPaciente/vistaAfiliado.jsp";
 		return true;
 	}
 }
@@ -21,13 +21,13 @@ function cancelarTurno(){
 
 function bajaTurno(){
 	alert("El Turno ha sido dado de baja exitosamente")
-	window.location.href = "../Busqueda Paciente/Busqueda de Paciente.html"
+	window.location.href = "../BusquedaPaciente/vistaAfiliado.jsp"
 }
 
 function funcionSalir(){
 	var salirconfirm = confirm("¿Esta seguro que desea cancelar? se perderan todos los datos no  guardados");
 	if (salirconfirm == true){
-		window.location.href = "../Home AMB.html"
+		window.location.href = "../Home/HomeAMB2.jsp"
 		return true;
 	}
 }

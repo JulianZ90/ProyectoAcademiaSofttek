@@ -20,7 +20,7 @@
 	
 	<body>
 		
-		<form method="post" action="nuevoPaciente" > <!-- Agregar action -->
+		<form method="post" action="nuevoPaciente" >
 		
 			<ul>
 				<li class="dropdown" ><a class="dropbtn" a href="#" onclick="funcioncancelar()">Busqueda de Paciente</a>
@@ -32,7 +32,7 @@
 				<legend> Ingrese los Datos del Nuevo Paciente </legend>
 				
 				</br><label for="nombre">Nombre :</label>
-				<input type="text" name="nombre" required placeholder="Nombre del Paciente" autofocus>
+				<input type="text" name="nombre" required placeholder="Nombre del Paciente" autofocus autocomplete="off">
 				
 				<label for="apellido">  Apellido :</label>
 				<input type="text" name="apellido" required placeholder="Apellido del Paciente"></br>
@@ -85,7 +85,7 @@
 				<input type="number" name="plan" placeholder="tipo de plan" required></br>
 				
 				</br><label for="numafiliado"> N° de Afiliado : </label>
-				<input type="number" name="numafiliado" disabled ></br> <!--Este casillero va a ser autoincremental , se realiza con css o js que en esta etapa no se incluye-->
+				<input type="number" name="numafiliado" disabled ></br> 
 				
 				</br><input type="submit" class="button" value="Registrar" onclick="alert('El Paciente fue Agregado Exitosamente');">
 				

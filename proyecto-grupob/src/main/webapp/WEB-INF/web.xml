@@ -22,7 +22,7 @@
 		</listener-class>
   </listener>
   <welcome-file-list>
-    <welcome-file>/BusquedaPaciente/vistaAfiliado.jsp</welcome-file>
+    <welcome-file>/Home/HomeAMB.jsp</welcome-file>
   </welcome-file-list>
   <resource-ref>
     <description>database connection</description>
