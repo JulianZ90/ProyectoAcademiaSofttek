@@ -14,7 +14,7 @@ function funcioncancelar(){
 function cancelarTurno(){
 	var respconfirm = confirm("¿Esta seguro que desea cancelar? se perderan todos los datos no  guardados");
 	if (respconfirm == true) {
-		window.location.href = "../Busqueda Paciente/ Turnos del Paciente.html" 
+		window.location.href = "../BusquedaPaciente/TurnosdelPaciente.html" 
 		return true;
 	}
 }
