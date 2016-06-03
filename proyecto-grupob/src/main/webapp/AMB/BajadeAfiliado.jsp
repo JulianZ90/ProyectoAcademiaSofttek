@@ -14,7 +14,7 @@
 	<body>
 	
 		<ul>
-			<li class="dropdown" ><a class="dropbtn" a href="../Busqueda Paciente/Busqueda de Paciente.html">Busqueda de Paciente</a>
+			<li class="dropdown" ><a class="dropbtn" a href="../BusquedaPaciente/vistaAfiliado.jsp">Busqueda de Paciente</a>
 				</li>
 			<li style="float:right"><a href="#" onclick="funcionSalir()">Salir</a></li>
 		</ul>	
