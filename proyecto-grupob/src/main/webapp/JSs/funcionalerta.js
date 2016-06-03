@@ -1,12 +1,12 @@
 function funcionalerta() {
     alert("El Paciente ha sido modificado exitosamente");
-	window.location.href = "../Busqueda Paciente/Busqueda de Paciente.html"
+	window.location.href = "../BusquedaPaciente/vistaAfiliado.jsp"
 }
 
 function funcioncancelar(){
 	var respconfirm = confirm("¿Esta seguro que desea cancelar? se perderan todos los datos no  guardados");
 	if ( respconfirm == true ) {
-		window.location.href = "../Busqueda Paciente/Busqueda de Paciente.html"
+		window.history.go(-1);
 		return true;
 	}
 }
@@ -31,3 +31,7 @@ function funcionSalir(){
 		return true;
 	}
 }
+
+//function avisoNuevoPaciente(){
+//	alert("El Paciente fue Agregado Exitosamente");
+//}

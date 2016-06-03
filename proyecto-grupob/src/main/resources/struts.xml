@@ -15,15 +15,15 @@
     
         <action name="nuevoPaciente"
             class="ar.com.softtek.action.NuevoPacienteAction">
-            <result name="success">SuccessAlta.jsp</result>
-            <result name="error">AltadeAfiliado.html</result>
+            <result name="success">/AMB/AltadeAfiliado.jsp</result>
+            <result name="error">AltadeAfiliado.jsp</result>
             
         </action>
     
     	<action name="busquedaPaciente"
     		class="ar.com.softtek.action.BusquedaPacienteAction">
     		<result name = "success">/BusquedaPaciente/vistaAfiliado.jsp</result>
-    		<result name="error">AltadeAfiliado.html</result>
+    		<result name="error">AltadeAfiliado.jsp</result>
     	</action>
     
     

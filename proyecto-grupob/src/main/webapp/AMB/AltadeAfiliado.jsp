@@ -9,11 +9,11 @@
 		
 		<link rel="stylesheet" href="../CSSs/Navbar.css">
 		<link rel="stylesheet" href="../CSSs/Botones.css">
-		<link rel="stylesheet" href="../CSSs/solorecuadro.css">
+		<link rel="stylesheet" href="../CSSs/Solorecuadro.css">
 		<link rel="stylesheet" href="../CSSs/fondo.css">
 		<link rel="stylesheet" href="../CSSs/Modificacion Afiliado.css">
 		
-		<script src="/JSs/funcionalerta.js"></script>
+		<script src="../JSs/funcionalerta.js"></script>
 	</head>
 	
 	<title> Alta Paciente</title>
@@ -23,7 +23,7 @@
 		<form method="post" action="nuevoPaciente" > <!-- Agregar action -->
 		
 			<ul>
-				<li class="dropdown" ><a class="dropbtn" a href="BusquedaPaciente/vistaAfiliado.jsp">Busqueda de Paciente</a>
+				<li class="dropdown" ><a class="dropbtn" a href="#" onclick="funcioncancelar()">Busqueda de Paciente</a>
 				</li>
 				<li style="float:right" class="dropdown"><a href="#" onclick="funcionSalir()" class="dropbtn">Salir</a></li>
 			</ul>
@@ -87,7 +87,7 @@
 				</br><label for="numafiliado"> N° de Afiliado : </label>
 				<input type="number" name="numafiliado" disabled ></br> <!--Este casillero va a ser autoincremental , se realiza con css o js que en esta etapa no se incluye-->
 				
-				</br><input type="submit" class="button" value="Registrar">
+				</br><input type="submit" class="button" value="Registrar" onclick="alert('El Paciente fue Agregado Exitosamente');">
 				
 				<button class="button" id="derecha" type="button" value="Cancelar" onclick="funcioncancelar()" >  Cancelar</button>
 			</fieldset>	

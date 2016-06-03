@@ -67,7 +67,7 @@
 		</s:iterator>
 		</table>
 		
-		<img src="Imagenes/plus.png" alt="Nuevo Paciente" class="BotonesLaterales" onclick="location.href = 'AMB/AltadeAfiliado.html'"></br></br></br></br>
+		<img src="Imagenes/plus.png" alt="Nuevo Paciente" class="BotonesLaterales" onclick="location.href = 'AMB/AltadeAfiliado.jsp'"></br></br></br></br>
 		<img src="Imagenes/minus.png" alt="Baja Paciente" class="BotonesLaterales" onclick="location.href = 'AMB Afiliado/Baja de Afiliado.html'"></br></br></br></br>
 		<img src="Imagenes/edit.png" alt="Modificar Paciente" class="BotonesLaterales" onclick="location.href = 'AMB Afiliado/Modificación de Afiliado.html'">
 	</fieldset>
