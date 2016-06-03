@@ -22,7 +22,7 @@
     
     	<action name="busquedaPaciente"
     		class="ar.com.softtek.action.BusquedaPacienteAction">
-    		<result name = "success">vistaAfiliado.jsp</result>
+    		<result name = "success">/BusquedaPaciente/vistaAfiliado.jsp</result>
     		<result name="error">AltadeAfiliado.html</result>
     	</action>
     

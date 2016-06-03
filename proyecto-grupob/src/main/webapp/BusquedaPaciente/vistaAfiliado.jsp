@@ -33,7 +33,7 @@
 		
 		<input name="valorbuscado" placeholder="Ingrese Paciente / Documento / Plan / Nro. Paciente" size="50" />
 		
-		</br><button id="idboton"  class="button" value="Registrar"><img src="Imagenes/lupa.png" alt="Icono Lupa" class="lupa" onclick="buscarPaciente('Pacientes')" ></button>
+		</br><button id="idboton"  class="button" value="Registrar">Registrar</button>
 				
 		<!-- tiene que tener un evento onchange , para al escribir mostrar la tabla de pacientes -->
 	</form>
