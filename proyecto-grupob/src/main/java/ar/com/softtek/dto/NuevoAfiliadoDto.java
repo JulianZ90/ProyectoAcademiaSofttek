@@ -9,6 +9,7 @@ public class NuevoAfiliadoDto implements java.io.Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	private int idPaciente;
 	private String nombre;
 	private String apellido;
 	private int dni;
@@ -23,9 +24,16 @@ public class NuevoAfiliadoDto implements java.io.Serializable {
 	private int planMedico;
 	private String apenom;
 	
-		
+
 	
-	
+	public int getIdPaciente() {
+		return idPaciente;
+	}
+
+
+	public void setIdPaciente(int idPaciente) {
+		this.idPaciente = idPaciente;
+	}
 
 
 	public String getApenom() {

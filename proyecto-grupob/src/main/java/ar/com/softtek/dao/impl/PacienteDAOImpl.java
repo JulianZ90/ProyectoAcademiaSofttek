@@ -1,23 +1,22 @@
 package ar.com.softtek.dao.impl;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 import ar.com.softtek.dao.PacienteDAO;
-import ar.com.softtek.dto.BusquedaAfiliadoDto;
 import ar.com.softtek.model.Paciente;
+import ar.com.softtek.model.Turno;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 public class PacienteDAOImpl extends HibernateDaoSupport implements PacienteDAO {
+	
 	private static final long serialVersionUID = 1L;
 	private static final Logger log = LogManager.getLogger("PacienteDAOIMPL ");
 
@@ -53,20 +52,25 @@ public class PacienteDAOImpl extends HibernateDaoSupport implements PacienteDAO 
 			super.getHibernateTemplate().save(paciente);
 			return paciente.getIdPaciente();
 		} catch (Exception e) {
-			log.error("Error al intentar hace el save" + e.getMessage());
+			log.error("Error al intentar hacer el save" + e.getMessage());
 		}
 		return -1;
 
 	}
 
+    
 	public void deletePaciente(Paciente paciente) {
-		super.getHibernateTemplate().delete(paciente);
-
+		
+		Session session = super.getSession();
+		Query query = session.getNamedQuery("bajaPaciente");
+        query.setParameter("dni", paciente.getDni());
 	}
 
 	public void updatePaciente(Paciente paciente) {
 		super.getHibernateTemplate().update(paciente);
 	}
+	
+	
 
 	public List<Paciente> buscarPorValor(String valorBuscado, String tipodato) {
 		
@@ -95,11 +99,6 @@ public class PacienteDAOImpl extends HibernateDaoSupport implements PacienteDAO 
 		return ps;
 	}
 
+
 }
 
-// case "apenom": {
-// String[] splitted = String.valueOf(valorBuscado).split("\\s+");
-// Criterion nombreCriteria = Restrictions.eq("nombre", splitted[0]);
-// Criterion apellidoCriteria = Restrictions.eq("apellido", splitted[1]);
-// crit.add(nombreCriteria).add(apellidoCriteria);
-// }

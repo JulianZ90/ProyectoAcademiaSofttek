@@ -16,8 +16,7 @@ import ar.com.softtek.dto.TurnoDto;
 
 public class PacienteBoImpl implements PacienteBo {
 
-	PacienteDAO pacienteDAO;
-	private  ArrayList<Paciente> pacientes = new ArrayList<Paciente>();
+	private PacienteDAO pacienteDAO;
 	private static final long serialVersionUID = 1L;
 	private static final Logger log = LogManager.getLogger("Paciente BOIMPL");
 	
@@ -46,8 +45,8 @@ public class PacienteBoImpl implements PacienteBo {
 		NuevoAfiliadoDto afiliadoDto = new NuevoAfiliadoDto();
 		String telefono = String.valueOf(paciente.getTelefono());
 		afiliadoDto.setTelefono(telefono);
+		afiliadoDto.setIdPaciente(paciente.getIdPaciente());
 		afiliadoDto.setApenom(paciente.getNyAp());
-//		afiliadoDto.setApellido(paciente.getApellido());
 		afiliadoDto.setCantHijos(paciente.getFamiliaresACargo());
 		afiliadoDto.setDireccion(paciente.getDireccion());
 		afiliadoDto.setDni(paciente.getDni());
@@ -58,30 +57,11 @@ public class PacienteBoImpl implements PacienteBo {
 		afiliadoDto.setMail(paciente.getMail());
 		afiliadoDto.setSexo(paciente.getSexo());
 		afiliadoDto.setPlanMedico(paciente.getPlanMedico());
-//		afiliadoDto.setNombre(paciente.getNombre());
 		return afiliadoDto;
 	}
 	
 	
-	private TurnoDto mapeoADto(Turno turno){
-		
-		TurnoDto turnoDto = new TurnoDto();
-		turnoDto.setNombre(turno.getNombre());
-		turnoDto.setApellido(turno.getApellido());
-		turnoDto.setPlanMedico(turno.getPlanMedico());
-		turnoDto.setFechaTurno(turno.getFechaTurno());
-		turnoDto.setHoraTurno(turno.getHoraTurno());
-		turnoDto.setFechaLlegada(turno.getFechaLlegada());
-		turnoDto.setHoraLlegada(turno.getHoraLlegada());
-		turnoDto.setFechaAtencion(turno.getFechaAtencion());
-		turnoDto.setHoraAtencion(turno.getHoraAtencion());
-		turnoDto.setImporte(turno.getImporte());
-		turnoDto.setObservaciones(turno.getObservaciones());
-		return turnoDto;
-	}
 	
-	
-
 	public PacienteDAO getPacienteDAO() {
 		return pacienteDAO;
 	}
@@ -89,14 +69,7 @@ public class PacienteBoImpl implements PacienteBo {
 	public void setPacienteDAO(PacienteDAO pacienteDAO) {
 		this.pacienteDAO = pacienteDAO;
 	}
-
-	public ArrayList<Paciente> getPacientes() {
-		return pacientes;
-	}
-
-	public void setPacientes(ArrayList<Paciente> pacientes) {
-		this.pacientes = pacientes;
-	}
+	
 
 	public void addPaciente(NuevoAfiliadoDto pacienteDto) {
 		
@@ -104,7 +77,7 @@ public class PacienteBoImpl implements PacienteBo {
 		try {
 			Paciente paciente = this.mapeoAModelo(pacienteDto);
 			this.pacienteDAO.addPaciente(paciente);
-//			this.pacientes.add(paciente);
+
 		} catch (Exception e) {
 			log.error("Error al tratar de hacer addPaciente "+ e.getMessage());
 			// TODO: handle exception
@@ -138,24 +111,6 @@ public class PacienteBoImpl implements PacienteBo {
 	    	Paciente paciente = this.mapeoAModelo(pacienteDto);		
 			this.pacienteDAO.deletePaciente(paciente);
 	    }
-
-
-
-	@Override
-	public List<TurnoDto> getTurnosByIdPaciente(int idPaciente) {
-		
-		List<Turno> turnos = new ArrayList<Turno>();
-		List<TurnoDto> turnosDto = new ArrayList<TurnoDto>();
-		
-	//	turnos = this.pacienteDAO.findTurnosByIdPaciente(idPaciente);
-		
-		for (Turno turno: turnos) {
-			
-			turnosDto.add(this.mapeoADto(turno));
-		}
-		
-		return turnosDto;
-	}
 	
 	
 	
